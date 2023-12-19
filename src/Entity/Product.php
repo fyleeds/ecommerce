@@ -26,7 +26,6 @@ class Product
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $createdAt = null;
 
-    #[ORM\Id]
     #[ORM\Column]
     private ?int $authorId = null;
 
