@@ -8,7 +8,7 @@ use App\Controller\ApiCallController;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class CategoryShopFixtures extends Fixture
+class cd ..CategoryShopFixtures extends Fixture
 {
     private ApiCallController $apiService;
 
