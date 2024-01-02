@@ -1,2 +1,6 @@
-php bin/console d:m:m --no-interaction
+
+# Run Symfony migrations
+php /var/www/bin/console doctrine:migrations:migrate
+
+# Start Apache in the foreground
 exec apache2-foreground

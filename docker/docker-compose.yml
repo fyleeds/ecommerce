@@ -14,9 +14,15 @@ services:
       - db_data:/var/lib/mysql
 
   web:
-    image: ecommerce
+    build:
+      context: ../
+      dockerfile: Dockerfile
     ports:
       - "80:80"
+    volumes:
+      - type: bind
+        source: .
+        target: /var/www
     depends_on:
       - db
     environment:
@@ -35,3 +41,4 @@ services:
 
 volumes:
   db_data:
+  .:
