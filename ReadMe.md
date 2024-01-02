@@ -30,6 +30,16 @@ git clone https://github.com/fyleeds/ecommerce
 cd ecommerce
 ```
 
+### Étape 2: Connexion à Docker Hub
+
+Avant de tirer des images depuis Docker Hub, assurez-vous de vous connecter à votre compte Docker Hub en utilisant la commande suivante dans le terminal ou l'invite de commande :
+
+```bash
+docker login
+```
+
+Entrez votre nom d'utilisateur et votre mot de passe lorsque vous y êtes invité.
+
 ### WINDOWS : 
 
 ## Étapes
@@ -40,7 +50,7 @@ Ouvrez l'Explorateur de Fichiers et naviguez jusqu'à votre répertoire de trava
 
 ### 2: Récupérer l'Image Docker
 
-Avant de lancer votre environnement Docker, assurez-vous de récupérer l'image nécessaire. Ouvrez le terminal ou l'invite de commande et exécutez la commande suivante :
+Après vous être connecté à Docker Hub, récupérez l'image nécessaire. Ouvrez le terminal ou l'invite de commande et exécutez la commande suivante :
 
 ```bash
 docker pull fyleeds/ecommerce:latest
@@ -80,7 +90,7 @@ cd chemin/vers/Projet
 
 #### 2: Récupérer l'Image Docker
 
-Avant de lancer votre environnement Docker, assurez-vous de récupérer l'image nécessaire. Ouvrez le terminal ou l'invite de commande et exécutez la commande suivante :
+Après vous être connecté à Docker Hub, récupérez l'image nécessaire. Ouvrez le terminal ou l'invite de commande et exécutez la commande suivante :
 
 ```bash
 docker pull fyleeds/ecommerce:latest
