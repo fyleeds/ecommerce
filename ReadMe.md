@@ -28,6 +28,7 @@ Clonez le repository GitHub contenant les fichiers nécessaires pour votre proje
 ```bash
 git clone https://github.com/fyleeds/ecommerce
 cd ecommerce
+git checkout Back (pour l'instant)
 ```
 
 ### Étape 2: Connexion à Docker Hub
