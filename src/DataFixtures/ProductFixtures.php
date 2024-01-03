@@ -20,7 +20,7 @@ class ProductFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        $data = $this->apiService->dateTransform($this->apiService->fetchSpecificAmiibosFromSeries());
+        $data = $this->apiService->fetchSpecificAmiibosFromSeries();
 
         $faker = Faker\Factory::create('fr_FR');
 
@@ -32,7 +32,7 @@ class ProductFixtures extends Fixture
             $product->setPrice($faker->randomFloat(2, 10, 1000));
             // for example, prices between 10 and 1000 with 2 decimals
             $product->setAttachment($value['image']);
-            $product->setCreatedAt($value['release']['eu']);
+            $product->setCreatedAt(date_create($value['release']['eu']));
             $product->setCategory($category);
             $product->setType($value['type']);
             $product->setGameCharacter($value['character']);

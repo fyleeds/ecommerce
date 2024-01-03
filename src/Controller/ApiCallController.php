@@ -22,7 +22,7 @@ class ApiCallController extends AbstractController
     public function index(): Response
     {
         return $this->render('api_call/index.html.twig', [
-            'details' => $this->dateTransform($this->fetchSpecificAmiibosFromSeries())
+            'details' => $this->fetchSpecificAmiibosFromSeries()
         ]);
 
     }
@@ -62,20 +62,6 @@ class ApiCallController extends AbstractController
         // $content = ['id' => 521583, 'name' => 'symfony-docs', ...]
 
         return $content["amiibo"];
-    }
-    public function dateTransform(array $content): array
-    {
-        foreach ($content as $key => $value) {
-
-            // Create a DateTime object from the string
-            $date = new \DateTime($value['release']['eu']);
-
-            // Format the DateTime object to d/m/Y format
-            $formattedDate = $date->format('d/m/Y');
-
-            $content[$key]['release']['eu'] = $formattedDate;
-        }
-        return $content;
     }
 
     public function fetchSpecificAmiibosFromSeries(): array

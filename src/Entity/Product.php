@@ -23,8 +23,8 @@ class Product
     #[ORM\Column]
     private ?float $price = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $createdAt = null;
+    #[ORM\Column (type:"datetime")]
+    private ?\DateTimeInterface $createdAt = null;
 
     #[ORM\Column]
     private ?int $authorId = null;
@@ -83,11 +83,11 @@ class Product
         return $this;
     }
 
-    public function getCreatedAt(): ?string{
+    public function getCreatedAt(): ?\DateTimeInterface{
         return $this->createdAt;
     }
 
-    public function setCreatedAt(string $createdAt): static
+    public function setCreatedAt(\DateTimeInterface $createdAt): static
     {
         $this->createdAt = $createdAt;
 
