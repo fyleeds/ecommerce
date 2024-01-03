@@ -23,8 +23,8 @@ class Product
     #[ORM\Column]
     private ?float $price = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $createdAt = null;
+    #[ORM\Column(length: 255)]
+    private ?string $createdAt = null;
 
     #[ORM\Column]
     private ?int $authorId = null;
@@ -35,6 +35,12 @@ class Product
     #[ORM\ManyToOne(inversedBy: 'products')]
     #[ORM\JoinColumn(nullable: false)]
     private ?CategoryShop $category = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $type = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $game_character = null;
 
     public function getId(): ?int
     {
@@ -77,12 +83,11 @@ class Product
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
-    {
+    public function getCreatedAt(): ?string{
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeInterface $createdAt): static
+    public function setCreatedAt(string $createdAt): static
     {
         $this->createdAt = $createdAt;
 
@@ -121,6 +126,30 @@ class Product
     public function setCategory(?CategoryShop $category): static
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): static
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getGameCharacter(): ?string
+    {
+        return $this->game_character;
+    }
+
+    public function setGameCharacter(string $game_character): static
+    {
+        $this->game_character = $game_character;
 
         return $this;
     }

@@ -1,10 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Amiiboss version zelda!{% endblock %}
 
 {% block body %}
-
-<div class="example-wrapper">
-    <h1>Hello ! ✅</h1>
-</div>
+    <h2>Liste des Produit Zelda</h2>
+    {% for product in products %}
+        <div class="product">
+            <h3>{{ product.title }}</h3>
+            <p><strong>ID :</strong> {{ product.id }}</p>
+            <img src="{{ product.attachment }}" alt="{{ product.title }}">
+            <p><strong>Prix :</strong> {{ product.price|number_format(2, ',', ' ') }}€</p>
+            {# <p><strong>Série :</strong> {{ product.category.name }}</p> #}
+        </div>
+    {% else %}
+        <p>Aucun produit trouvé.</p>
+    {% endfor %}
 {% endblock %}

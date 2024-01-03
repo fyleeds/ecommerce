@@ -6,14 +6,17 @@
         <div class="product">
             <h3>{{ product.title }}</h3>
             <p><strong>ID :</strong> {{ product.id }}</p>
+            <img src="{{ product.attachment }}" alt="{{ product.title }}">
             <p><strong>Description :</strong> {{ product.content }}</p>
             <p><strong>Prix :</strong> {{ product.price|number_format(2, ',', ' ') }}€</p>
-            <p><strong>Date de Création :</strong> {{ product.createdAt|date('d/m/Y H:i:s') }}</p>
+            <p><strong>Date de Sortie :</strong> {{ product.createdAt}}</p>
             <p><strong>ID de l'Auteur :</strong> {{ product.authorId }}</p>
-            <p><strong>Pièce Jointe :</strong> {{ product.attachment }}</p>
-            <p><strong>Catégorie :</strong> {{ product.category.name }}</p>
+            {# <p><strong>Série :</strong> {{ product.category.name }}</p> #}
+            <p><strong>Type: {{ product.type }}<strong></p>
+            <p><strong>Character: {{ product.gameCharacter}}<strong></p>
         </div>
     {% else %}
         <p>Aucun produit trouvé.</p>
     {% endfor %}
 {% endblock %}
+

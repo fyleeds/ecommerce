@@ -22,7 +22,7 @@ class ApiCallController extends AbstractController
     public function index(): Response
     {
         return $this->render('api_call/index.html.twig', [
-            'details' => $this->fetchApi()
+            'details' => $this->dateTransform($this->fetchSpecificAmiibosFromSeries())
         ]);
 
     }
@@ -38,7 +38,7 @@ class ApiCallController extends AbstractController
         // $statusCode = 200
         $contentType = $response->getHeaders()['content-type'][0];
         // $contentType = 'application/json'
-        $content = $response->getContent();
+        // $content = $response->getContent();
         // $content = '{"id":521583, "name":"symfony-docs", ...}'
         $content = $response->toArray();
         // $content = ['id' => 521583, 'name' => 'symfony-docs', ...]
@@ -56,7 +56,40 @@ class ApiCallController extends AbstractController
         // $statusCode = 200
         $contentType = $response->getHeaders()['content-type'][0];
         // $contentType = 'application/json'
-        $content = $response->getContent();
+        // $content = $response->getContent();
+        // $content = '{"id":521583, "name":"symfony-docs", ...}'
+        $content = $response->toArray();
+        // $content = ['id' => 521583, 'name' => 'symfony-docs', ...]
+
+        return $content["amiibo"];
+    }
+    public function dateTransform(array $content): array
+    {
+        foreach ($content as $key => $value) {
+
+            // Create a DateTime object from the string
+            $date = new \DateTime($value['release']['eu']);
+
+            // Format the DateTime object to d/m/Y format
+            $formattedDate = $date->format('d/m/Y');
+
+            $content[$key]['release']['eu'] = $formattedDate;
+        }
+        return $content;
+    }
+
+    public function fetchSpecificAmiibosFromSeries(): array
+    {
+        $response = $this->client->request(
+            'GET',
+            'https://www.amiiboapi.com/api/amiibo/?amiiboSeries=Legend%20Of%20Zelda'
+        );
+
+        $statusCode = $response->getStatusCode();
+        // $statusCode = 200
+        $contentType = $response->getHeaders()['content-type'][0];
+        // $contentType = 'application/json'
+        // $content = $response->getContent();
         // $content = '{"id":521583, "name":"symfony-docs", ...}'
         $content = $response->toArray();
         // $content = ['id' => 521583, 'name' => 'symfony-docs', ...]

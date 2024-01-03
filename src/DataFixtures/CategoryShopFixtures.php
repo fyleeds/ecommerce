@@ -20,11 +20,12 @@ class CategoryShopFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $data = $this->apiService->fetchAmiiboseries();
-        // create 20 products! Bam!
+
         foreach ($data as $k => $value){
             $categoryshop = new CategoryShop();
             $categoryshop->setName($value['name']);
             $manager->persist($categoryshop);
+            $this->addReference($value['name'], $categoryshop);
         }
 
         $manager->flush();
