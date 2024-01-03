@@ -10,7 +10,7 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: password
     volumes:
-      - db_data:/var/lib/mysql
+      - ../ecommercedev:/var/lib/mysql
     networks:
       - ecommerce-network
 
