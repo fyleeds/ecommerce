@@ -18,11 +18,20 @@ class CartService
     }
     public function addToCart(int $id):void
     {
-        $cart = $this->requestStack->getSession()->get("cart",[]);
+        $cart = $this->getSession()->get("cart",[]);
         if (!empty($cart[$id])) {
             $cart[$id]++;
         }else{
             $cart[$id] = 1;
+        }
+        $this->getSession()->set("cart", $cart);
+
+    }
+    public function removeFromCart(int $id):void
+    {
+        $cart = $this->getSession()->get("cart",[]);
+        if (!empty($cart[$id])) {
+            unset($cart[$id]);
         }
         $this->getSession()->set("cart", $cart);
 

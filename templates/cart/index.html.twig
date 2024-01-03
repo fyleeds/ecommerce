@@ -7,14 +7,18 @@
 <div class="example-wrapper">
 
     {% if cart|length > 0 %}
+        {% set total = null %}
         {% for item in cart %}
-        <div class="product">
-            <h2>{{ item.product.title }}</h2>
-            <img src="{{ item.product.attachment }}" alt="{{ item.product.title }}">
-            <p>Price à l'unité: ${{ item.product.price }}</p>
-            <p>Quantity: {{ item.quantity }}</p>
-            <p>Created At: {{ item.product.createdAt|date('Y-m-d H:i:s') }}</p>
-        </div>
+            {% set total = total + (item.product.price * item.quantity) %}
+            <div class="product">
+                <h2>{{ item.product.title }}</h2>
+                <img src="{{ item.product.attachment }}" alt="{{ item.product.title }}">
+                <p>Price à l'unité: ${{ item.product.price }}</p>
+                <p>Quantity: {{ item.quantity }}</p>
+                <p>Total: {{ (total/100)|number_format(2,',','.') }}€</p>
+                <p>Created At: {{ item.product.createdAt|date('Y-m-d H:i:s') }} </p>
+                <a href="{{ path('cart_remove',{id:item.product.id}) }}">Retirer du panier</a>
+            </div>
         {% endfor %}
     {% else %}
         <h2> Panier vide <h2>
