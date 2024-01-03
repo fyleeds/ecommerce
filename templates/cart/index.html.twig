@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+
+    {% if cart|length > 0 %}
+        {% for item in cart %}
+        <div class="product">
+            <h2>{{ item.product.title }}</h2>
+            <img src="{{ item.product.attachment }}" alt="{{ item.product.title }}">
+            <p>Price à l'unité: ${{ item.product.price }}</p>
+            <p>Quantity: {{ item.quantity }}</p>
+            <p>Created At: {{ item.product.createdAt|date('Y-m-d H:i:s') }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <h2> Panier vide <h2>
+    {% endif %}
+</div>
+
+{% endblock %}
