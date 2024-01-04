@@ -12,7 +12,7 @@
 
     {% if cart|length > 0 %}
         {# {% set total = null %} #}
-        {% for product in cart.product %}
+        {% for product in cart %}
             {# {% set total = total + (product.product.price * product.quantity) %} #}
             <div class="product">
                 <h2>{{ product.title }}</h2>

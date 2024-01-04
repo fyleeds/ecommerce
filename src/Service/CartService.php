@@ -22,15 +22,21 @@ class CartService
         $user_id = $user->getId();
         $cart = $this->em->getRepository(Cart::class)->findOneBy(['user'=>$user_id]);
         $product = $this->em->getRepository(Product::class)->findOneBy(['id'=>$id]);
-
+        $quantity=1;
         if (empty($cart)) {
             $cart = new Cart();
             $cart->addProduct($product);
             $cart->setUser($user);
         }else{
-            $cart->addProduct($product);
-            
+            $products = $cart->getProduct();
+            foreach ($products as $product_test) {
+                $product_test_id = $product_test->getId();
+                if ($product_test_id == $id) {
+                    $quantity +=1;
+                }
+            }
         }
+        $cart->addProduct($product);
         // tell Doctrine you want to (eventually) save the Product (no queries yet)
         $this->em->persist($cart);
     
@@ -92,6 +98,7 @@ class CartService
         //         ];
         //     }
         // }
+        $cart = $cart->getProduct();
         return $cart;
         
     }
