@@ -22,6 +22,9 @@ class Cart
     #[ORM\OneToMany(mappedBy: 'cart', targetEntity: CartProduct::class)]
     private Collection $cartProducts;
 
+    #[ORM\Column]
+    private ?float $totalprice = null;
+
     public function __construct()
     {
         $this->cartProducts = new ArrayCollection();
@@ -70,6 +73,18 @@ class Cart
                 $cartProduct->setCart(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getTotalprice(): ?float
+    {
+        return $this->totalprice;
+    }
+
+    public function setTotalprice(float $totalprice): static
+    {
+        $this->totalprice = $totalprice;
 
         return $this;
     }

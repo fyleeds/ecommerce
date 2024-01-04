@@ -22,7 +22,7 @@ class ProductFixtures extends Fixture implements OrderedFixtureInterface
 
     public function getOrder()
     {
-        return 2; // Load second, after UserFixtures
+        return 3; // Load second, after UserFixtures
     }
 
     public function load( ObjectManager $manager)

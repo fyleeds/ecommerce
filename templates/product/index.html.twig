@@ -10,6 +10,7 @@
             <img src="{{ product.attachment }}" alt="{{ product.title }}">
             <p><strong>Description :</strong> {{ product.content }}</p>
             <p><strong>Prix :</strong> {{ product.price|number_format(2, ',', ' ') }}€</p>
+            <p><strong> En Stock :</strong> {{ product.stock.quantity }}</p>
             <p><strong>Date de Sortie :</strong> {{ product.createdAt|date('d/m/Y')}}</p>
             <p><strong>Nom de l'Auteur :</strong> {{ product.author.username }}</p>
             <p><strong>Série :</strong> {{ product.category.name }}</p>

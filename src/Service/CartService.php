@@ -25,6 +25,7 @@ class CartService
         if (empty($cart_user)) {
             $cart_user = new Cart();
             $cart_user->setUser($user);
+            $cart_user->setTotalprice(0);
             // tell Doctrine you want to (eventually) save the Product (no queries yet)
             $this->em->persist($cart_user);
         
@@ -42,7 +43,9 @@ class CartService
             $carts_product->setProduct($product);
             $carts_product->setCart( $cart_user);
             $carts_product->setQuantity(1);
+            $carts_product->setTotalPrice($product->getPrice());
             $this->em->persist($carts_product);
+            $this->em->flush(); // Flush outside the loop to apply all changes
 
         }else{
             $isQuantityModified = false;
@@ -50,9 +53,11 @@ class CartService
             foreach ($carts_product as $cart_product) {
                 $product_cart = $cart_product->getProduct();
                 if ($product_cart->getId() == $id) {
-                    $quantity = $cart_product->getQuantity();
-                    $cart_product->setQuantity($quantity + 1);
+                    $quantity = $cart_product->getQuantity() + 1;
+                    $cart_product->setQuantity($quantity);
+                    $cart_product->setTotalPrice($product->getPrice() * $quantity );
                     $this->em->persist($cart_product);
+                    $this->em->flush(); // Flush outside the loop to apply all changes
                     $isQuantityModified = true;
                     break; // Exit the loop once the product is found and updated
                 }
@@ -63,12 +68,14 @@ class CartService
                 $newCartProduct->setProduct($product);
                 $newCartProduct->setCart($cart_user);
                 $newCartProduct->setQuantity(1);
+                $newCartProduct->setTotalPrice($product->getPrice());
                 $this->em->persist($newCartProduct);
+                $this->em->flush(); // Flush outside the loop to apply all changes
             }
 
         }
 
-        $this->em->flush(); // Flush outside the loop to apply all changes
+       
 
     }
     public function decreaseFromCart($id,$user):void
@@ -87,9 +94,10 @@ class CartService
                 foreach ($carts_product as $cart_product) {
                     $product_cart = $cart_product->getProduct();
                     if ($product_cart->getId() == $id) {
-                        $quantity = $cart_product->getQuantity();
-                        if ($quantity >1) {
-                            $cart_product->setQuantity($quantity - 1);
+                        $quantity = $cart_product->getQuantity() -1;
+                        if ($quantity >=1) {
+                            $cart_product->setQuantity($quantity);
+                            $cart_product->setTotalPrice($product->getPrice() * $quantity );
                             $this->em->persist($cart_product);
                             $this->em->flush();
                             break; // Exit the loop once the product is found and updated
@@ -128,8 +136,6 @@ class CartService
         }
 
     }
-
-
     public function removeCart($user){
         $user_id = $user->getId();
         $cart_user = $this->em->getRepository(Cart::class)->findOneBy(['user' => $user_id]);
@@ -148,22 +154,43 @@ class CartService
             $this->em->flush();
         }
     }
-    
-
-    public function getTotal($user)
+    public function getTotalProducts($user)
     {
         $user_id = $user->getId();
         $cart_user = $this->em->getRepository(Cart::class)->findOneBy(['user'=>$user_id]);
         if (!empty($cart_user)) {
             $cart_user_id = $cart_user->getId();
-            $cart_product = $this->em->getRepository(CartProduct::class)->findBy(['cart' => $cart_user_id]);
+            $carts_product = $this->em->getRepository(CartProduct::class)->findBy(['cart' => $cart_user_id]);
+            
+            if (!empty($carts_product)) {
 
-            if (!empty($cart_product)) {
                 $cart = $cart_user->getCartProducts();
                 return $cart;
             }
-            return $cart_product;
+            return $carts_product;
         }
         return $cart_user;
+    }
+    public function getTotalPrice($user)
+    {
+        $user_id = $user->getId();
+        $cart_user = $this->em->getRepository(Cart::class)->findOneBy(['user'=>$user_id]);
+        if (!empty($cart_user)) {
+            $cart_user_id = $cart_user->getId();
+            $carts_product = $this->em->getRepository(CartProduct::class)->findBy(['cart' => $cart_user_id]);
+            
+            if (!empty($carts_product)) {
+
+                $total = 0;
+                foreach ($carts_product as $cart_product) {
+                    $total += $cart_product->getTotalPrice();
+                }
+                $cart_user->setTotalprice($total);
+
+                return $total;
+            }
+            return 0;
+        }
+        return 0;
     }
 }
