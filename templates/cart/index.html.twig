@@ -6,6 +6,8 @@
 
 <div class="example-wrapper">
 
+    <a href="{{ path('removeCart') }}">Retirer tout du panier</a>
+
     {% if cart|length > 0 %}
         {% set total = null %}
         {% for item in cart %}
@@ -17,7 +19,9 @@
                 <p>Quantity: {{ item.quantity }}</p>
                 <p>Total: {{ (total/100)|number_format(2,',','.') }}€</p>
                 <p>Created At: {{ item.product.createdAt|date('Y-m-d H:i:s') }} </p>
-                <a href="{{ path('cart_remove',{id:item.product.id}) }}">Retirer du panier</a>
+                <a href="{{ path('cart_remove',{id:item.product.id}) }}">Retirer totalement du panier</a>
+                <a href="{{ path('cart_add',{id:item.product.id}) }}">Ajouter un autre au panier</a>
+                <a href="{{ path('cart_decrease',{id:item.product.id}) }}">Diminuer quantité</a>
             </div>
         {% endfor %}
     {% else %}

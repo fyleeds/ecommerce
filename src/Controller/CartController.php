@@ -23,6 +23,12 @@ class CartController extends AbstractController
         $cartService->addToCart($id);
         return $this->redirectToRoute('cart_index');
     }
+    #[Route('/cart/decrease/{id<\d+>}', name: 'cart_decrease')]
+    public function decreaseFromCart(CartService $cartService, int $id): Response	
+    {
+        $cartService->decreaseFromCart($id);
+        return $this->redirectToRoute('cart_index');
+    }
     #[Route('/cart/removeCart', name: 'removeCart')]
     public function removeCart(CartService $cartService): Response	
     {

@@ -20,7 +20,7 @@ class CartService
     {
         $cart = $this->getSession()->get("cart",[]);
         if (!empty($cart[$id])) {
-            $cart[$id]++;
+            $cart[$id] += 1;
         }else{
             $cart[$id] = 1;
         }
@@ -32,6 +32,16 @@ class CartService
         $cart = $this->getSession()->get("cart",[]);
         if (!empty($cart[$id])) {
             unset($cart[$id]);
+        }
+        $this->getSession()->set("cart", $cart);
+
+    }
+
+    public function decreaseFromCart(int $id):void
+    {
+        $cart = $this->getSession()->get("cart",[]);
+        if ($cart[$id]>1) {
+            $cart[$id] -= 1;
         }
         $this->getSession()->set("cart", $cart);
 
