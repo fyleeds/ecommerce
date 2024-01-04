@@ -54,7 +54,7 @@ class SellController extends AbstractController
              // ... Do something with $userId
         }
 
-        return $this->redirectToRoute('homepage');
+        return $this->redirectToRoute('app_login');
         
     }
 

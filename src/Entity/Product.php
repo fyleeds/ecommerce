@@ -31,9 +31,6 @@ class Product
     #[ORM\Column (type:"datetime")]
     private ?\DateTimeInterface $createdAt = null;
 
-    #[ORM\Column]
-    private ?int $authorId = null;
-
     #[Assert\NotBlank]
     #[ORM\Column(length: 255)]
     private ?string $attachment = null;
@@ -50,6 +47,10 @@ class Product
     #[Assert\NotBlank]
     #[ORM\Column(length: 255)]
     private ?string $game_character = null;
+
+    #[ORM\ManyToOne(inversedBy: 'products')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $author = null;
 
     public function getId(): ?int
     {
@@ -103,18 +104,6 @@ class Product
         return $this;
     }
 
-    public function getAuthorId(): ?int
-    {
-        return $this->authorId;
-    }
-
-    public function setAuthorId(int $authorId): static
-    {
-        $this->authorId = $authorId;
-
-        return $this;
-    }
-
     public function getAttachment(): ?string
     {
         return $this->attachment;
@@ -159,6 +148,18 @@ class Product
     public function setGameCharacter(string $game_character): static
     {
         $this->game_character = $game_character;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $author): static
+    {
+        $this->author = $author;
 
         return $this;
     }

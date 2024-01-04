@@ -7,6 +7,8 @@
     {% if userEmail %}
         <p><strong>Connecté en tant que :</strong>{{ userEmail }}</p>
         <a href="{{ path('app_logout') }}">Se Deconnecter</a>
+        <a href="{{ path('sell_index') }}">Vendre</a>
+        <a href="{{ path('cart_index') }}">Mon Panier</a>
     {% else %}
         <a href="{{ path('app_login') }}">Se Connecter</a>
         <a href="{{ path('register_index') }}">S'inscrire</a>

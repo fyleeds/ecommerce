@@ -3,22 +3,29 @@
 namespace App\DataFixtures;
 
 use App\Entity\Product;
+use App\Entity\User;
 use App\Service\ApiAmiiboService;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface; 
 use Faker;
 
-class ProductFixtures extends Fixture
+class ProductFixtures extends Fixture implements OrderedFixtureInterface
 {
     private ApiAmiiboService $apiService;
 
     public function __construct(ApiAmiiboService $apiService)
     {
         $this->apiService = $apiService;
+
     }
 
-    public function load(ObjectManager $manager)
+    public function getOrder()
+    {
+        return 2; // Load second, after UserFixtures
+    }
+
+    public function load( ObjectManager $manager)
     {
         $data = $this->apiService->fetchSpecificAmiibosFromSeries();
 
@@ -26,6 +33,7 @@ class ProductFixtures extends Fixture
 
         foreach ($data as $k => $value){
             $category = $this->getReference($value['amiiboSeries']);
+            $authors = $manager->getRepository(User::class)->findAll();
             $product = new Product();
             $product->setTitle($value['name']);
             $product->setContent($faker->realText($maxNbChars = 155, $indexSize = 2));
@@ -36,7 +44,7 @@ class ProductFixtures extends Fixture
             $product->setCategory($category);
             $product->setType($value['type']);
             $product->setGameCharacter($value['character']);
-            $product->setAuthorId(2);
+            $product->setAuthor($authors[0]);
             $manager->persist($product);
         }
 

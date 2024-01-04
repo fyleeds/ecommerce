@@ -4,6 +4,8 @@
 
 {% block body %}
 
+<a href="{{ path('homepage') }}">Clickez ici pour retourner à la page principale</a>
+
 <div class="example-wrapper">
 
     <a href="{{ path('removeCart') }}">Retirer tout du panier</a>
@@ -28,5 +30,6 @@
         <h2> Panier vide <h2>
     {% endif %}
 </div>
+
 
 {% endblock %}
