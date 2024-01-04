@@ -42,7 +42,7 @@ class CartController extends AbstractController
         $user = $this->getUser();
         // Check if the user is logged in
         if ($user) {
-            $cartService->decreaseFromCart($id);
+            $cartService->decreaseFromCart($id,$user);
             return $this->redirectToRoute('cart_index');
         }
         return $this->redirectToRoute('app_login');
