@@ -22,11 +22,9 @@ class SellController extends AbstractController
 
         // Check if the user is logged in
         if ($user) {
-            // Get the user ID
-            $userId = $user->getId();
-
             $product = new Product();
-            $product->setAuthorId($userId);
+            $product->setAuthor($user);
+            $product->setReleaseDate(new \DateTime());
      
             $form = $this->createForm(CreateProductType::class, $product);
      
