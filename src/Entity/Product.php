@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\ProductRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -14,31 +15,39 @@ class Product
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\NotBlank]
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
+    #[Assert\NotBlank]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
+    #[Assert\NotBlank]
     #[ORM\Column]
     private ?float $price = null;
 
+    #[Assert\NotBlank]
     #[ORM\Column (type:"datetime")]
     private ?\DateTimeInterface $createdAt = null;
 
     #[ORM\Column]
     private ?int $authorId = null;
 
+    #[Assert\NotBlank]
     #[ORM\Column(length: 255)]
     private ?string $attachment = null;
 
+    #[Assert\NotBlank]
     #[ORM\ManyToOne(inversedBy: 'products')]
     #[ORM\JoinColumn(nullable: false)]
     private ?CategoryShop $category = null;
 
+    #[Assert\NotBlank]
     #[ORM\Column(length: 255)]
     private ?string $type = null;
 
+    #[Assert\NotBlank]
     #[ORM\Column(length: 255)]
     private ?string $game_character = null;
 

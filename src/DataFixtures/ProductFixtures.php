@@ -3,17 +3,17 @@
 namespace App\DataFixtures;
 
 use App\Entity\Product;
-use App\Controller\ApiCallController;
+use App\Service\ApiAmiiboService;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use App\DataFixtures\DateTime;
+
 use Faker;
 
 class ProductFixtures extends Fixture
 {
-    private ApiCallController $apiService;
+    private ApiAmiiboService $apiService;
 
-    public function __construct(ApiCallController $apiService)
+    public function __construct(ApiAmiiboService $apiService)
     {
         $this->apiService = $apiService;
     }
@@ -36,7 +36,7 @@ class ProductFixtures extends Fixture
             $product->setCategory($category);
             $product->setType($value['type']);
             $product->setGameCharacter($value['character']);
-            $product->setAuthorId(1);
+            $product->setAuthorId(2);
             $manager->persist($product);
         }
 

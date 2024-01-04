@@ -2,17 +2,16 @@
 // src/DataFixtures/AppFixtures.php
 namespace App\DataFixtures;
 
-use App\Entity\Product;
 use App\Entity\CategoryShop;
-use App\Controller\ApiCallController;
+use App\Service\ApiAmiiboService;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 class CategoryShopFixtures extends Fixture
 {
-    private ApiCallController $apiService;
+    private ApiAmiiboService $apiService;
 
-    public function __construct(ApiCallController $apiService)
+    public function __construct(ApiAmiiboService $apiService)
     {
         $this->apiService = $apiService;
     }

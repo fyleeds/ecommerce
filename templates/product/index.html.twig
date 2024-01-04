@@ -2,7 +2,7 @@
 
 {% block body %}
     <h2>Détails du Produit</h2>
-    {% for product in products %}
+    {% if product %}
         <div class="product">
             <h3>{{ product.title }}</h3>
             <p><strong>ID :</strong> {{ product.id }}</p>
@@ -18,6 +18,6 @@
         </div>
     {% else %}
         <p>Aucun produit trouvé.</p>
-    {% endfor %}
+    {% endif %}
 {% endblock %}
 

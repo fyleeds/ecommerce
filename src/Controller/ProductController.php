@@ -4,7 +4,6 @@ namespace App\Controller;
 
 
 use App\Repository\ProductRepository;
-use App\Repository\CategoryShopRepository;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,11 +11,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProductController extends AbstractController
 {
-    #[Route('/detail', name: 'app_product')]
+    #[Route('/detail/{id<\d+>}', name: 'product_index')]
 
-    public function index(ProductRepository $productRepository, CategoryShopRepository $categoryShopRepository): Response
+    public function index(ProductRepository $productRepository, $id): Response
     {
-        $products= $productRepository->findAll();
-        return $this->render('product/index.html.twig',['products'=>$products]);
+        $id_array = ['id'=>$id];
+        $product= $productRepository->findOneBy($id_array);
+        return $this->render('product/index.html.twig',['product'=>$product]);
     }
 }
