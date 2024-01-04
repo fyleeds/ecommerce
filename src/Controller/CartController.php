@@ -17,20 +17,20 @@ class CartController extends AbstractController
         $user = $this->getUser();
         // Check if the user is logged in
         if ($user) {
-            $cartService->getTotal();
-            return $this->render('cart/index.html.twig',['cart'=>$cartService->getTotal()]);
+            // $cartService->getTotal($user_id);
+            return $this->render('cart/index.html.twig',['cart'=>$cartService->getTotal($user)]);
         }
         return $this->redirectToRoute('app_login');
     }
 
     #[Route('/cart/add/{id<\d+>}', name: 'cart_add')]
-    public function addToCart(CartService $cartService, int $id): Response	
+    public function addToCart(CartService $cartService,int $id): Response	
     {
         // Get the user object
         $user = $this->getUser();
         // Check if the user is logged in
         if ($user) {
-            $cartService->addToCart($id);
+            $cartService->addToCart($id,$user);
             return $this->redirectToRoute('cart_index');
         }
         return $this->redirectToRoute('app_login');
@@ -55,7 +55,7 @@ class CartController extends AbstractController
         $user = $this->getUser();
         // Check if the user is logged in
         if ($user) {
-            $cartService->removeCart();
+            $cartService->removeCart($user);
             return $this->redirectToRoute('homepage');
         }
         return $this->redirectToRoute('app_login');
@@ -67,7 +67,7 @@ class CartController extends AbstractController
         $user = $this->getUser();
         // Check if the user is logged in
         if ($user) {
-            $cartService->removeFromCart($id);
+            $cartService->removeFromCart($id,$user);
             return $this->redirectToRoute('cart_index');
         }
         return $this->redirectToRoute('app_login');

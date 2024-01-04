@@ -44,8 +44,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $pfp = null;
 
-    #[ORM\OneToMany(mappedBy: 'author', targetEntity: Product::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'author', targetEntity: Product::class)]
     private Collection $products;
+
+    #[ORM\OneToOne(mappedBy: 'user')]
+    private ?Cart $cart = null;
 
     public function __construct()
     {
@@ -184,6 +187,23 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $product->setAuthor(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCart(): ?Cart
+    {
+        return $this->cart;
+    }
+
+    public function setCart(Cart $cart): static
+    {
+        // set the owning side of the relation if necessary
+        if ($cart->getUser() !== $this) {
+            $cart->setUser($this);
+        }
+
+        $this->cart = $cart;
 
         return $this;
     }

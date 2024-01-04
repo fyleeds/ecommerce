@@ -3,9 +3,10 @@
 namespace App\Service;
 
 use App\Entity\Product;
+use App\Entity\User;
+use App\Entity\Cart;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class CartService
 {
@@ -16,64 +17,82 @@ class CartService
         $this->requestStack = $requestStack;
         $this->em = $em;
     }
-    public function addToCart(int $id):void
+    public function addToCart($id,$user):void
     {
-        $cart = $this->getSession()->get("cart",[]);
-        if (!empty($cart[$id])) {
-            $cart[$id] += 1;
+        $user_id = $user->getId();
+        $cart = $this->em->getRepository(Cart::class)->findOneBy(['user'=>$user_id]);
+        $product = $this->em->getRepository(Product::class)->findOneBy(['id'=>$id]);
+
+        if (empty($cart)) {
+            $cart = new Cart();
+            $cart->addProduct($product);
+            $cart->setUser($user);
         }else{
-            $cart[$id] = 1;
+            $cart->addProduct($product);
+            
         }
-        $this->getSession()->set("cart", $cart);
+        // tell Doctrine you want to (eventually) save the Product (no queries yet)
+        $this->em->persist($cart);
+    
+        // actually executes the queries (i.e. the INSERT query)
+        $this->em->flush();
 
     }
-    public function removeFromCart(int $id):void
+    public function removeFromCart($id,$user):void
     {
-        $cart = $this->getSession()->get("cart",[]);
-        if (!empty($cart[$id])) {
-            unset($cart[$id]);
+        $user_id = $user->getId();
+        $cart = $this->em->getRepository(Cart::class)->findOneBy(['user'=>$user_id]);
+        $product = $this->em->getRepository(Product::class)->findOneBy(['id'=>$id]);
+
+        if (!empty($cart)) {
+            $cart->removeProduct($product);
         }
-        $this->getSession()->set("cart", $cart);
+        // tell Doctrine you want to (eventually) save the Product (no queries yet)
+        $this->em->persist($cart);
+    
+        // actually executes the queries (i.e. the INSERT query)
+        $this->em->flush();
 
     }
 
-    public function decreaseFromCart(int $id):void
-    {
-        $cart = $this->getSession()->get("cart",[]);
-        if ($cart[$id]>1) {
-            $cart[$id] -= 1;
+    // public function decreaseFromCart(int $id):void
+    // {
+    //     $cart = $this->getSession()->get("cart",[]);
+    //     if ($cart[$id]>1) {
+    //         $cart[$id] -= 1;
+    //     }
+    //     $this->getSession()->set("cart", $cart);
+
+    // }
+
+    public function removeCart($user){
+        $user_id = $user->getId();
+        $cart = $this->em->getRepository(Cart::class)->findOneBy(['user'=>$user_id]);
+        if($cart){
+            $this->em->remove($cart);
+            $this->em->flush();
         }
-        $this->getSession()->set("cart", $cart);
 
     }
 
-    public function removeCart(){
-        return $this->getSession()->remove("cart");
-    }
-
-    public function getTotal():array
+    public function getTotal($user)
     {
-
-        $cart = $this->getSession()->get("cart");
-        
-        $cart_data = [];
-        if ($cart!=null) {
-            foreach ($cart as $id =>$quantity) {
-                $product = $this->em->getRepository(Product::class)->findOneBy(['id'=>$id]);
-                if (!$product) {
+        $user_id = $user->getId();
+        $cart = $this->em->getRepository(Cart::class)->findOneBy(['user'=>$user_id]);
+        // $cart_data = [];
+        // if ($cart!=null) {
+        //     foreach ($cart as $id =>$quantity) {
+        //         $product = $this->em->getRepository(Product::class)->findOneBy(['id'=>$id]);
+        //         if (!$product) {
                 
-                }
-                $cart_data[]=[
-                    'product'=> $product,
-                    'quantity'=> $quantity
-                ];
-            }
-        }
-        return $cart_data;
+        //         }
+        //         $cart_data[]=[
+        //             'product'=> $product,
+        //             'quantity'=> $quantity
+        //         ];
+        //     }
+        // }
+        return $cart;
         
-    }
-    private function getSession(): SessionInterface
-    {
-        return $this->requestStack->getSession();
     }
 }
