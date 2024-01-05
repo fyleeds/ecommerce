@@ -4,19 +4,17 @@ namespace App\Service;
 
 use App\Entity\CartProduct;
 use App\Entity\Product;
-use App\Entity\User;
 use App\Entity\Cart;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
 
 class CartService
 {
-    private RequestStack $requestStack;
     private EntityManagerInterface $em;
-    public function __construct(RequestStack $requestStack, EntityManagerInterface $em){
+    private SoldUserService $soldUserService;
+    public function __construct( EntityManagerInterface $em, SoldUserService $soldUserService){
 
-        $this->requestStack = $requestStack;
         $this->em = $em;
+        $this->soldUserService = $soldUserService;
     }
     public function addToCart($id,$user)
     {
@@ -30,7 +28,7 @@ class CartService
 
         $message="";
 
-        if($product_price < $user_sold){
+        if($this->soldUserService->compareSold($product_price,$user)){
         
             if (empty($cart_user)) {
                 $cart_user = new Cart();
@@ -64,7 +62,7 @@ class CartService
                     if ($product_cart->getId() == $id) {
                         $quantity = $cart_product->getQuantity() + 1;
                         $total_price = $product_price * $quantity;
-                        if ($total_price <= $user_sold){
+                        if ($this->soldUserService->compareSold($total_price,$user)){
                             $cart_product->setQuantity($quantity);
                             $cart_product->setTotalPrice($total_price);
                             $this->em->persist($cart_product);
