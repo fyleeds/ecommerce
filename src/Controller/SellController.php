@@ -3,12 +3,14 @@
 namespace App\Controller;
 
 use App\Entity\Product;
+use App\Entity\Stock;
 use App\Form\CreateProductType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+
 
 class SellController extends AbstractController
 {
@@ -23,25 +25,24 @@ class SellController extends AbstractController
         // Check if the user is logged in
         if ($user) {
             $product = new Product();
+            $stock = new Stock();
+
             $product->setAuthor($user);
             $product->setReleaseDate(new \DateTime());
+            $product->setStock($stock);
      
             $form = $this->createForm(CreateProductType::class, $product);
      
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
-                 // $form->getData() holds the submitted values
-                 // but, the original `$task` variable has also been updated
-                $product= $form->getData();
-     
-                 // // tell Doctrine you want to (eventually) save the Product (no queries yet)
+                $product = $form->getData();
+                $stock = $product->getStock(); // Get the Stock object from Product
+
+                // Persist both Product and Stock
                 $entityManager->persist($product);
-     
-                 // // actually executes the queries (i.e. the INSERT query)
+                $entityManager->persist($stock);
                 $entityManager->flush();
-     
-                 // return new Response('Saved new product with id '.$product->getId());
-     
+
                 return $this->redirectToRoute('homepage');
             }
      
@@ -49,7 +50,6 @@ class SellController extends AbstractController
                 'form' => $form ->createView(),
             ]);
  
-             // ... Do something with $userId
         }
 
         return $this->redirectToRoute('app_login');

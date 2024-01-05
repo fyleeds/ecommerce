@@ -15,6 +15,9 @@ class CreateProductType extends AbstractType
             ->add('title')
             ->add('content')
             ->add('price')
+            ->add('stock', StockType::class, [
+                'label' => false,
+            ])
             ->add('createdAt')
             ->add('attachment')
             ->add('type')
