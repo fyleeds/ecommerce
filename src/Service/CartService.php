@@ -18,62 +18,80 @@ class CartService
         $this->requestStack = $requestStack;
         $this->em = $em;
     }
-    public function addToCart($id,$user):void
+    public function addToCart($id,$user)
     {
         $user_id = $user->getId();
-        $cart_user = $this->em->getRepository(Cart::class)->findOneBy(['user'=>$user_id]);
-        if (empty($cart_user)) {
-            $cart_user = new Cart();
-            $cart_user->setUser($user);
-            $cart_user->setTotalprice(0);
-            // tell Doctrine you want to (eventually) save the Product (no queries yet)
-            $this->em->persist($cart_user);
-        
-            // actually executes the queries (i.e. the INSERT query)
-            $this->em->flush();
-        }
+        $user_sold = $user->getSold();
 
-        $cart_user_id = $cart_user->getId();
+        $cart_user = $this->em->getRepository(Cart::class)->findOneBy(['user'=>$user_id]);
 
         $product = $this->em->getRepository(Product::class)->findOneBy(['id'=>$id]);
-        $carts_product = $this->em->getRepository(CartProduct::class)->findBy(['cart' => $cart_user_id]);
+        $product_price = $product->getPrice();
 
-        if (empty($carts_product)) {
-            $carts_product = new CartProduct();
-            $carts_product->setProduct($product);
-            $carts_product->setCart( $cart_user);
-            $carts_product->setQuantity(1);
-            $carts_product->setTotalPrice($product->getPrice());
-            $this->em->persist($carts_product);
-            $this->em->flush(); // Flush outside the loop to apply all changes
+        $message="";
 
-        }else{
-            $isQuantityModified = false;
-
-            foreach ($carts_product as $cart_product) {
-                $product_cart = $cart_product->getProduct();
-                if ($product_cart->getId() == $id) {
-                    $quantity = $cart_product->getQuantity() + 1;
-                    $cart_product->setQuantity($quantity);
-                    $cart_product->setTotalPrice($product->getPrice() * $quantity );
-                    $this->em->persist($cart_product);
-                    $this->em->flush(); // Flush outside the loop to apply all changes
-                    $isQuantityModified = true;
-                    break; // Exit the loop once the product is found and updated
-                }
+        if($product_price < $user_sold){
+        
+            if (empty($cart_user)) {
+                $cart_user = new Cart();
+                $cart_user->setUser($user);
+                $cart_user->setTotalprice(0);
+                // tell Doctrine you want to (eventually) save the Product (no queries yet)
+                $this->em->persist($cart_user);
+            
+                // actually executes the queries (i.e. the INSERT query)
+                $this->em->flush();
             }
 
-            if (!$isQuantityModified) {
-                $newCartProduct = new CartProduct();
-                $newCartProduct->setProduct($product);
-                $newCartProduct->setCart($cart_user);
-                $newCartProduct->setQuantity(1);
-                $newCartProduct->setTotalPrice($product->getPrice());
-                $this->em->persist($newCartProduct);
+            $cart_user_id = $cart_user->getId();
+
+            $carts_product = $this->em->getRepository(CartProduct::class)->findBy(['cart' => $cart_user_id]);
+
+            if (empty($carts_product)) {
+                $carts_product = new CartProduct();
+                $carts_product->setProduct($product);
+                $carts_product->setCart( $cart_user);
+                $carts_product->setQuantity(1);
+                $carts_product->setTotalPrice($product->getPrice());
+                $this->em->persist($carts_product);
                 $this->em->flush(); // Flush outside the loop to apply all changes
-            }
 
+            }else{
+                $isQuantityModified = false;
+
+                foreach ($carts_product as $cart_product) {
+                    $product_cart = $cart_product->getProduct();
+                    if ($product_cart->getId() == $id) {
+                        $quantity = $cart_product->getQuantity() + 1;
+                        $total_price = $product_price * $quantity;
+                        if ($total_price <= $user_sold){
+                            $cart_product->setQuantity($quantity);
+                            $cart_product->setTotalPrice($total_price);
+                            $this->em->persist($cart_product);
+                            $this->em->flush(); // Flush outside the loop to apply all changes
+                            $isQuantityModified = true;
+                        }else{
+                            return "tu n'as pas assez d'argent pour augmenter la quantité, aucun produit supplémentaire n'a été ajouté au panier";
+                        }
+                        break; // Exit the loop once the product is found and updated
+                    }
+                }
+
+                if (!$isQuantityModified) {
+                    $newCartProduct = new CartProduct();
+                    $newCartProduct->setProduct($product);
+                    $newCartProduct->setCart($cart_user);
+                    $newCartProduct->setQuantity(1);
+                    $newCartProduct->setTotalPrice($product_price);
+                    $this->em->persist($newCartProduct);
+                    $this->em->flush(); // Flush outside the loop to apply all changes
+                }
+
+            }
+            return $message;
         }
+
+        return "tu n'as pas assez d'argent pour payer ce produit, aucun produit n'a été ajouté au panier";
 
        
 

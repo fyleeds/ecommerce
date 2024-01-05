@@ -17,7 +17,7 @@ class CartController extends AbstractController
         $user = $this->getUser();
         // Check if the user is logged in
         if ($user) {
-            // $cartService->getTotal($user_id);
+
             return $this->render('cart/index.html.twig',['cart'=>$cartService->getTotalProducts($user),'total_price'=>$cartService->getTotalPrice($user)]);
         }
         return $this->redirectToRoute('app_login');
@@ -30,7 +30,8 @@ class CartController extends AbstractController
         $user = $this->getUser();
         // Check if the user is logged in
         if ($user) {
-            $cartService->addToCart($id,$user);
+            $message = $cartService->addToCart($id,$user);
+            $this->addFlash('error', $message);
             return $this->redirectToRoute('cart_index');
         }
         return $this->redirectToRoute('app_login');
