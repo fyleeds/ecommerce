@@ -13,7 +13,7 @@ class HomeController extends AbstractController
     #[Route('/', name: 'homepage')]
     public function index(ProductRepository $productRepository,UserRepository $userRepository): Response
     {
-        $products= $productRepository->findAll();
+        $products = $productRepository->findBy([], ['createdAt' => 'DESC']);
 
         // Get the user object
         $user = $this->getUser();

@@ -24,7 +24,7 @@ class ProductController extends AbstractController
         $product= $productRepository->findOneBy($id_array);
         return $this->render('product/index.html.twig',['product'=>$product]);
     }
-    #[Route('/edit', name: 'edit_product')]
+    #[Route('/edit/{id<\d+>}', name: 'edit_product')]
     public function edit(EntityManagerInterface $entityManager,Request $request,ProductRepository $productRepository, $id): Response
     {
         $user = $this->getUser();
@@ -34,7 +34,7 @@ class ProductController extends AbstractController
 
         if ($user){
 
-            if ($user->getId() == $product->getAuthor() ||  $user->getRoles() == ['ROLE_ADMIN']) {
+            if ($user->getId() == $product->getAuthor()->getId() ||  $user->getRoles() == ['ROLE_ADMIN']) {
 
                 $form = $this->createForm(CreateProductType::class, $product);
 

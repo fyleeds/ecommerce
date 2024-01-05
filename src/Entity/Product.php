@@ -26,7 +26,7 @@ class Product
     private ?string $content = null;
 
     #[Assert\NotBlank]
-    #[ORM\Column]
+    #[ORM\Column(type:"decimal", precision:10, scale:2, nullable:true)]
     private ?float $price = null;
 
     #[Assert\NotBlank]
@@ -96,7 +96,7 @@ class Product
 
     public function setPrice(float $price): static
     {
-        $this->price = $price/100;
+        $this->price = $price;
 
         return $this;
     }

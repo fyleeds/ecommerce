@@ -35,7 +35,7 @@ class ProductCrudController extends AbstractCrudController
             MoneyField::new('price')
                 ->setCurrency('EUR')
                 ->setStoredAsCents(true)
-                ->setHelp('you need to format your price like this 20,88 with two decimals and a "," '),
+                ->setHelp('you need to format your price like this 2088,00 if your product cost 20,88€ '),
             DateField::new('createdAt'),
             DateField::new('releaseDate'),
             AssociationField::new('category')
