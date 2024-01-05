@@ -17,7 +17,7 @@ class AccountService
     public function getProductsUser($user)
     {
         $user_id = $user->getId();
-        $products_collection[]=$this->em->getRepository(Product::class)->findOneBy(['author'=>$user_id]);
+        $products_collection=$this->em->getRepository(Product::class)->findBy(['author'=>$user_id]);
         if (!empty($products_collection)) {
             return $products_collection;
         }
@@ -26,7 +26,7 @@ class AccountService
     public function getInvoicesUser($user)
     {
         $user_id = $user->getId();
-        $invoices_collection[] = $this->em->getRepository(Invoice::class)->findOneBy(['user'=>$user_id]);
+        $invoices_collection = $this->em->getRepository(Invoice::class)->findBy(['user'=>$user_id]);
         if (!empty($invoices_collection)) {
             return $invoices_collection;
         }

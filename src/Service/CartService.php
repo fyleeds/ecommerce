@@ -25,10 +25,11 @@ class CartService
 
         $product = $this->em->getRepository(Product::class)->findOneBy(['id'=>$id]);
         $product_price = $product->getPrice();
+        $product_author = $product->getAuthor()->getId();
 
         $message="";
 
-        if($this->soldUserService->compareSold($product_price,$user)){
+        if($this->soldUserService->compareSold($product_price,$user) &&  $user_id != $product_author){
         
             if (empty($cart_user)) {
                 $cart_user = new Cart();
