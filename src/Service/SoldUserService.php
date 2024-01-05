@@ -17,7 +17,7 @@ class SoldUserService
 
         $user->setSold($user_sold - $cost);
 
-        $this->em->persist($user_sold);
+        $this->em->persist($user);
         $this->em->flush();
 
         $message="";

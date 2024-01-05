@@ -18,6 +18,7 @@
             <p><strong>Character: {{ product.gameCharacter}}<strong></p>
             <a href="{{ path('cart_add',{id:product.id}) }}">Ajouter au panier</a>
             <a href="{{ path('edit_product',{id:product.id}) }}">Editer produit</a>
+            <a href="{{ path('homepage') }}">retourner page principale</a>
         </div>
     {% else %}
         <p>Aucun produit trouvé.</p>

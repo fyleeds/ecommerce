@@ -187,7 +187,7 @@ class CartService
         }
         return $cart_user;
     }
-    public function getTotalPrice($user)
+    public function calculateTotalPrice($user)
     {
         $user_id = $user->getId();
         $cart_user = $this->em->getRepository(Cart::class)->findOneBy(['user'=>$user_id]);
@@ -202,10 +202,20 @@ class CartService
                     $total += $cart_product->getTotalPrice();
                 }
                 $cart_user->setTotalprice($total);
+                $this->em->persist($cart_user);
+                $this->em->flush();
 
                 return $total;
             }
             return 0;
+        }
+        return 0;
+    }
+    public function getTotalPrice($user_id):float
+    {
+        $cart_user = $this->em->getRepository(Cart::class)->findOneBy(['user'=>$user_id]);
+        if (!empty($cart_user)) {
+            return $cart_user->getTotalprice();
         }
         return 0;
     }

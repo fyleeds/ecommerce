@@ -52,12 +52,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'author', targetEntity: Product::class)]
     private Collection $products;
 
-    #[ORM\OneToOne(mappedBy: 'user')]
+    #[ORM\OneToOne(mappedBy: 'user', cascade: ['persist'])]
     private ?Cart $cart = null;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Invoice::class)]
+    private Collection $invoices;
 
     public function __construct()
     {
         $this->products = new ArrayCollection();
+        $this->invoices = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -209,6 +213,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         $this->cart = $cart;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Invoice>
+     */
+    public function getInvoices(): Collection
+    {
+        return $this->invoices;
+    }
+
+    public function addInvoice(Invoice $invoice): static
+    {
+        if (!$this->invoices->contains($invoice)) {
+            $this->invoices->add($invoice);
+            $invoice->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeInvoice(Invoice $invoice): static
+    {
+        if ($this->invoices->removeElement($invoice)) {
+            // set the owning side to null (unless already changed)
+            if ($invoice->getUser() === $this) {
+                $invoice->setUser(null);
+            }
+        }
 
         return $this;
     }
