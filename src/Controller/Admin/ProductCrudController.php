@@ -32,7 +32,10 @@ class ProductCrudController extends AbstractCrudController
                 ->setLabel('Stock')
                 ->setHelp('Select stock for this product'),
             TextField::new('game_character'),
-            MoneyField::new('price')->setCurrency('EUR'),
+            MoneyField::new('price')
+                ->setCurrency('EUR')
+                ->setStoredAsCents(true)
+                ->setHelp('you need to format your price like this 20,88 with two decimals and a "," '),
             DateField::new('createdAt'),
             DateField::new('releaseDate'),
             AssociationField::new('category')
