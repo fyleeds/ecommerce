@@ -34,8 +34,7 @@ class ProductCrudController extends AbstractCrudController
             TextField::new('game_character'),
             MoneyField::new('price')
                 ->setCurrency('EUR')
-                ->setStoredAsCents(true)
-                ->setHelp('you need to format your price like this 2088,00 if your product cost 20,88€ '),
+                ->setStoredAsCents(true),
             DateField::new('createdAt'),
             DateField::new('releaseDate'),
             AssociationField::new('category')
