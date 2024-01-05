@@ -9,7 +9,7 @@ class PriceTransformer implements DataTransformerInterface
     public function transform($value)
     {
         // Transform the float to a string with the dot as the decimal separator
-        return $value !== null ? number_format($value, 2, '.', '') : '';
+        return $value !== null ? number_format(($value), 2, '.', '') : '';
     }
 
     public function reverseTransform($value)
@@ -20,6 +20,6 @@ class PriceTransformer implements DataTransformerInterface
         }
 
         $value = str_replace(',', '.', $value);
-        return floatval($value);
+        return floatval($value)*100;
     }
 }

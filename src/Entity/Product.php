@@ -96,7 +96,7 @@ class Product
 
     public function setPrice(float $price): static
     {
-        $this->price = $price;
+        $this->price = $price/1002 finished;
 
         return $this;
     }
