@@ -18,6 +18,11 @@
         {% endfor %}
     {% endfor %}
     <hr>
+        {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit">Enregistrer les modifications</button>
+    {{ form_end(form) }}
+    <hr>
     {# {{ dump(products) }} #}
     {% if products|length == 0 %}
     <p>Aucun produit trouvé.</p>
@@ -67,10 +72,7 @@
         {% endfor %}
     {% endif %}
 
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button type="submit">Enregistrer les modifications</button>
-    {{ form_end(form) }}
+
 
 </div>
 {% endblock %}

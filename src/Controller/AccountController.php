@@ -16,14 +16,20 @@ use Symfony\Component\HttpFoundation\Request;
 class AccountController extends AbstractController
 {
     #[Route('/account/{id<\d+>}', name: 'account_user_index')]
-    public function account_user(): Response
+    public function account_user( EntityManagerInterface $entityManager,AccountService $accountService,$id): Response
     {
         // Get the user object
-        $user = $this->getUser();
+        $user_id = $this->getUser()->getId();
+        $user_found = $accountService->getAccountUser($id);
         // Check if the user is logged in
-        if ($user) {
-            return $this->render('account/index.html.twig', [
-                'controller_name' => 'AccountController',
+        if ($user_id) {
+            if($user_id == $id){
+                return $this->redirectToRoute('my_account_index');
+            }
+            return $this->render('account/account_user_index.html.twig', [
+                'products' => $accountService->getProductsUser($user_found),
+                'user_found'=> $user_found,
+                'user_id'=> $user_id,
             ]);
         }
         return $this->redirectToRoute('app_login');
@@ -53,14 +59,14 @@ class AccountController extends AbstractController
                 }else{
                     $this->addFlash('success', "Success : Changes have been applied");
                 }
-                
+
                 $entityManager->persist($user);
                 $entityManager->flush();
 
                 return $this->redirectToRoute('my_account_index');
             }
             
-            return $this->render('account/index.html.twig', [
+            return $this->render('account/my_account_index.html.twig', [
                 'products' => $accountService->getProductsUser($user),
                 'invoices' => $accountService->getInvoicesUser($user),
                 'user_id'=> $user->getId(),

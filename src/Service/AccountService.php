@@ -5,6 +5,7 @@ namespace App\Service;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Product;
 use App\Entity\Invoice;
+use App\Entity\User;
 
 class AccountService
 {
@@ -29,6 +30,14 @@ class AccountService
         $invoices_collection = $this->em->getRepository(Invoice::class)->findBy(['user'=>$user_id]);
         if (!empty($invoices_collection)) {
             return $invoices_collection;
+        }
+        return [];
+    }
+    public function getAccountUser($user_id)
+    {
+        $user = $this->em->getRepository(User::class)->findOneBy(['id'=>$user_id]);
+        if (!empty($user)) {
+            return $user;
         }
         return [];
     }
