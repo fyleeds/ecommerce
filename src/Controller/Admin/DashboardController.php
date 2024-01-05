@@ -2,6 +2,8 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\CartProduct;
+use App\Entity\Cart;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -9,6 +11,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use App\Entity\CategoryShop;
 use App\Entity\User;
 use App\Entity\Product;
+use App\Entity\Stock;
+use App\Entity\Invoice;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -47,5 +51,9 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Category', 'fa-solid fa-gamepad', CategoryShop::class);
         yield MenuItem::linkToCrud('Produit', 'fa-solid fa-robot', Product::class);
         yield MenuItem::linkToCrud('Utilisateurs', 'fa-solid fa-user', User::class);
+        yield MenuItem::linkToCrud('Panier utilisateurs', 'fa-solid fa-cart-shopping', Cart::class);
+        yield MenuItem::linkToCrud('Panier produits', 'fa-solid fa-cart-shopping', CartProduct::class);
+        yield MenuItem::linkToCrud('Stock produits', 'fa-brands fa-product-hunt', Stock::class);
+        yield MenuItem::linkToCrud('Factures', 'fa-brands fa-product-hunt', Invoice::class);
     }
 }

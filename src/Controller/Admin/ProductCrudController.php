@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Product;
+use App\Entity\Stock;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
@@ -19,6 +20,18 @@ class ProductCrudController extends AbstractCrudController
         return Product::class;
     }
 
+    public function createEntity(string $entityFqcn)
+    {
+        $product = new Product();
+        $stock = new Stock();
+        $stock->setProduct($product);
+        $stock->setQuantity(1);
+        $product->setAuthor($this->getUser());
+        $product->setStock($stock);
+
+        return $product;
+    }
+
     
     public function configureFields(string $pageName): iterable
     {
@@ -28,9 +41,6 @@ class ProductCrudController extends AbstractCrudController
             TextField::new('attachment'),
             TextField::new('type'),
             AssociationField::new('author'),
-            AssociationField::new('stock')
-                ->setLabel('Stock')
-                ->setHelp('Select stock for this product'),
             TextField::new('game_character'),
             MoneyField::new('price')
                 ->setCurrency('EUR')

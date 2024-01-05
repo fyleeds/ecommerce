@@ -8,6 +8,11 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: CartProductRepository::class)]
 class CartProduct
 {
+    public function __toString(): string
+    {
+        // Return the ID as a string
+        return (string) $this->id;
+    }
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]

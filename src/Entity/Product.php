@@ -12,6 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 class Product
 {
+    public function __toString(): string
+    {
+        // Return the ID as a string
+        return (string) $this->id;
+    }
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -57,8 +63,14 @@ class Product
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $releaseDate = null;
 
-    #[ORM\OneToOne(mappedBy: 'product')]
+    #[ORM\OneToOne(mappedBy: 'product', cascade: ['persist'])]
     private ?Stock $stock = null;
+
+    public function __construct()
+    {
+        $this->stock = new Stock();
+        $this->stock->setQuantity(1); // Default quantity
+    }
 
     public function getId(): ?int
     {
@@ -197,6 +209,7 @@ class Product
         }
 
         $this->stock = $stock;
+        
 
         return $this;
     }

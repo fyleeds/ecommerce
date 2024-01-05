@@ -24,7 +24,7 @@ class Stock
     private ?Product $product = null;
 
     #[ORM\Column]
-    private ?int $quantity = null;
+    private ?int $quantity = 1;
 
     public function getId(): ?int
     {
@@ -39,6 +39,8 @@ class Stock
     public function setProduct(Product $product): static
     {
         $this->product = $product;
+
+        $product->setStock($this);
 
         return $this;
     }
