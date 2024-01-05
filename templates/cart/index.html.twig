@@ -8,14 +8,14 @@
 
 <div class="example-wrapper">
 
-    <a href="{{ path('removeCart') }}">Retirer tout du panier</a>
-
+    
     {# {% if app.flashes('error') %} #}
     {% for message in app.flashes('error') %}
     <div>
         {{ message }}
     </div>
     {% endfor %}
+    <hr>
     {# {% endif %} #}
 
     {% if cart|length > 0 %}
@@ -31,10 +31,13 @@
                 <a href="{{ path('cart_remove',{id:item.product.id}) }}">Retirer totalement du panier</a>
                 <a href="{{ path('cart_add',{id:item.product.id}) }}">Ajouter un autre au panier</a>
                 <a href="{{ path('cart_decrease',{id:item.product.id}) }}">Diminuer quantité</a>
-                <a href="{{ path('cart_validate_index') }}">Valider commande ! </a>
+                <hr>
                 
             </div>
         {% endfor %}
+
+        <a href="{{ path('cart_validate_index') }}">Valider commande ! </a>
+        <a href="{{ path('removeCart') }}">Retirer tout du panier</a>
         <p>Total du Panier : {{ total_price|number_format(2,',',' ') }}€</p>
     {% else %}
         <h2> Panier vide <h2>

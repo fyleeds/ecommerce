@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccountController!{% endblock %}
+{% block title %}Bonjour AccountController !{% endblock %}
 
 {% block body %}
 <style>
@@ -17,52 +17,59 @@
             </div>
         {% endfor %}
     {% endfor %}
-
+    <hr>
     {# {{ dump(products) }} #}
     {% if products|length == 0 %}
-    <p>No products found.</p>
+    <p>Aucun produit trouvé.</p>
+    <hr>
     {% elseif products|length == 1 %}
     
-        <p>There is one product:</p>
+        <p>Il y a un produit :</p>
         {% for product in products %}
             {# {{ dump(product) }} #}
             {% include 'product/index.html.twig' with {'product': product} %}
         {% endfor %}
+        <hr>
     {% else %}
     {# {{ dump(products) }} #}
-        <p>There are multiple products:</p>
+        <p>Il y a plusieurs produits :</p>
         {% for product in products %}
             {# {{ dump(product) }} #}
             {% include 'product/index.html.twig' with {'product': product} %}
+            <hr>
         {% endfor %}
     {% endif %}
 
     {% if invoices|length == 0 %}
-    <p>No invoices found.</p>
+    <p>Aucune facture trouvée.</p>
+    <hr>
     {% elseif invoices|length == 1 %}
-        <p>There is one invoice:</p>
-        {{ dump(invoices) }}
+        <p>Il y a une facture :</p>
+        <hr>
         {% for invoice in invoices %}
-            <p><strong>Date of Transaction:</strong> {{ invoice.dateTransaction|date('d/m/Y H:i') }}</p>
-            <p><strong>Total Price:</strong> {{ invoice.totalPrice }} €</p> {# Adjust currency formatting as needed #}
-            <p><strong>Address:</strong> {{ invoice.address }}</p>
-            <p><strong>Town:</strong> {{ invoice.town }}</p>
-            <p><strong>Postal Code:</strong> {{ invoice.postalCode }}</p>
+            <p><strong>Date de la transaction :</strong> {{ invoice.dateTransaction|date('d/m/Y H:i') }}</p>
+            <p><strong>Prix total :</strong> {{ invoice.totalPrice }} €</p> {# Ajuster le formatage de la monnaie si nécessaire #}
+            <p><strong>Adresse :</strong> {{ invoice.address }}</p>
+            <p><strong>Ville :</strong> {{ invoice.town }}</p>
+            <p><strong>Code postal :</strong> {{ invoice.postalCode }}</p>
         {% endfor %}
+        <hr>
     {% else %}
-        <p>There are multiple invoices:</p>
+        <p>Il y a plusieurs factures :</p>
+        <hr>
         {% for invoice in invoices %}
-            <p><strong>Date of Transaction:</strong> {{ invoice.dateTransaction|date('d/m/Y H:i') }}</p>
-            <p><strong>Total Price:</strong> {{ invoice.totalPrice|number_format(2, '.', ',') }} €</p> {# Adjust currency formatting as needed #}
-            <p><strong>Address:</strong> {{ invoice.address }}</p>
-            <p><strong>Town:</strong> {{ invoice.town }}</p>
-            <p><strong>Postal Code:</strong> {{ invoice.postalCode }}</p>
+            <p><strong>Date de la transaction :</strong> {{ invoice.dateTransaction|date('d/m/Y H:i') }}</p>
+            <p><strong>Prix total :</strong> {{ invoice.totalPrice|number_format(2, '.', ',') }} €</p> {# Ajuster le formatage de la monnaie si nécessaire #}
+            <p><strong>Adresse :</strong> {{ invoice.address }}</p>
+            <p><strong>Ville :</strong> {{ invoice.town }}</p>
+            <p><strong>Code postal :</strong> {{ invoice.postalCode }}</p>
+            <hr>
         {% endfor %}
     {% endif %}
 
     {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button type="submit">Save changes</button>
+    <button type="submit">Enregistrer les modifications</button>
     {{ form_end(form) }}
 
 </div>

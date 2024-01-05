@@ -4,15 +4,19 @@
 
 {% block body %}
     <h2>Liste des Produit Zelda</h2>
+    <hr>
     {% if userEmail %}
         <p><strong>Connecté en tant que :</strong>{{ userEmail }}</p>
+        <hr>
         <a href="{{ path('app_logout') }}">Se Deconnecter</a>
         <a href="{{ path('sell_index') }}">Vendre</a>
         <a href="{{ path('cart_index') }}">Mon Panier</a>
         <a href="{{ path('my_account_index') }}">Mon Compte</a>
+        <hr>
     {% else %}
         <a href="{{ path('app_login') }}">Se Connecter</a>
         <a href="{{ path('register_index') }}">S'inscrire</a>
+        <hr>
     {% endif %}
     {% for product in products %}
 
@@ -23,7 +27,7 @@
             <p><strong>Prix :</strong> {{ product.price|number_format(2, ',', ' ') }}€</p>
             <p><strong>Série :</strong> {{ product.category.name }}</p>
             <a href="{{ path('product_index',{id:product.id}) }}">Détails</a>
-
+            <hr>
 
         </div>
     {% else %}
