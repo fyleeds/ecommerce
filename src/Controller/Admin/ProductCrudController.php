@@ -7,8 +7,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 
 class ProductCrudController extends AbstractCrudController
@@ -24,10 +25,16 @@ class ProductCrudController extends AbstractCrudController
         return [
             TextField::new('title'),
             TextEditorField::new('content'),
-            TextEditorField::new('attachement'),
-            TextEditorField::new('subtitle'),
+            TextField::new('attachment'),
+            TextField::new('type'),
+            AssociationField::new('author'),
+            AssociationField::new('stock')
+                ->setLabel('Stock')
+                ->setHelp('Select stock for this product'),
+            TextField::new('game_character'),
             MoneyField::new('price')->setCurrency('EUR'),
             DateField::new('createdAt'),
+            DateField::new('releaseDate'),
             AssociationField::new('category')
             
         ];

@@ -16,6 +16,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[UniqueEntity(fields: ['username'], message: 'Un compte utilisateur possède déja cet username')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
+    public function __toString(): string
+    {
+        // You can change this to return any property that should represent the User
+        return $this->username;
+    }
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]

@@ -8,6 +8,12 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: StockRepository::class)]
 class Stock
 {
+    public function __toString(): string
+    {
+        // You can change this to return any property that should represent the User
+        $quantity_str = strval($this->quantity);
+        return $quantity_str;
+    }
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]

@@ -8,6 +8,7 @@ use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use App\Form\CreateProductType;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Product;
 use App\Entity\Stock;
@@ -24,7 +25,7 @@ class ProductController extends AbstractController
         return $this->render('product/index.html.twig',['product'=>$product]);
     }
     #[Route('/edit', name: 'edit_product')]
-    public function edit(ProductRepository $productRepository, $id): Response
+    public function edit(EntityManagerInterface $entityManager,Request $request,ProductRepository $productRepository, $id): Response
     {
         $user = $this->getUser();
                     
@@ -33,12 +34,28 @@ class ProductController extends AbstractController
 
         if ($user){
 
-            if ($user->getId() == $product->getAuthor() ||  $user->getRoles()){
-                return $this->render('edit/edit.html.twig', [
-                    // Pass necessary data to your template
+            if ($user->getId() == $product->getAuthor() ||  $user->getRoles() == ['ROLE_ADMIN']) {
+
+                $form = $this->createForm(CreateProductType::class, $product);
+
+                $form->handleRequest($request);
+                if ($form->isSubmitted() && $form->isValid()) {
+                    $product = $form->getData();
+                    $stock = $product->getStock(); // Get the Stock object from Product
+
+                    // Persist both Product and Stock
+                    $entityManager->persist($product);
+                    $entityManager->persist($stock);
+                    $entityManager->flush();
+
+                    return $this->redirectToRoute('product_index',$id_array);
+                }
+
+                return $this->render('product/edit.html.twig', [
+                    'form' => $form->createView(),
                 ]);
             }
-            $message = "Vous n'êtes pas l'auteur de l'article ou admin : Aucune action effectuée";
+            $message = "Vous n'êtes pas l'auteur du produit ou admin : Aucune action effectuée";
             $this->addFlash('error', $message);
             return $this->redirectToRoute('product_index',$id_array);
         }
