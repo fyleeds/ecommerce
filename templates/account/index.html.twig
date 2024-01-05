@@ -10,6 +10,14 @@
 
 <div class="products-wrapper">
 
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
     {# {{ dump(products) }} #}
     {% if products|length == 0 %}
     <p>No products found.</p>

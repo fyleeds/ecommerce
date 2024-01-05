@@ -47,17 +47,17 @@ class AccountController extends AbstractController
                 $hashedPassword = $passwordHasher->hashPassword($user, $plainPassword);
                 $user->setPassword($hashedPassword);
 
-                $new_user_sold = $user->getSold();
-                dump("new".$new_user_sold."");
-                dump("old".$old_user_sold."");
                 if (!$soldUserService->compareSold($old_user_sold,$user)){
+                    $this->addFlash('error', "You cannot set your sold down only up : Changes have been applied except for the sold");
                     $user->setSold($old_user_sold);
-                    dump("modified".$user->getSold()."");
+                }else{
+                    $this->addFlash('success', "Success : Changes have been applied");
                 }
+                
                 $entityManager->persist($user);
                 $entityManager->flush();
 
-                return $this->redirectToRoute('homepage');
+                return $this->redirectToRoute('my_account_index');
             }
             
             return $this->render('account/index.html.twig', [
