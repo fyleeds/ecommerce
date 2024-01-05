@@ -30,7 +30,7 @@ class CartProduct
     private ?Cart $cart = null;
 
     #[ORM\Column]
-    private ?float $totalPrice = null;
+    private ?int $totalPrice = null;
 
     public function getId(): ?int
     {
@@ -73,12 +73,12 @@ class CartProduct
         return $this;
     }
 
-    public function getTotalPrice(): ?float
+    public function getTotalPrice(): ?int
     {
         return $this->totalPrice;
     }
 
-    public function setTotalPrice(float $totalPrice): static
+    public function setTotalPrice(int $totalPrice): static
     {
         $this->totalPrice = $totalPrice;
 

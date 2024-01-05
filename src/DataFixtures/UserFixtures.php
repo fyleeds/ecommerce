@@ -27,7 +27,7 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
         $user->setEmail('user@example.com');
         $user->setUsername('username');
         $user->setRoles(['ROLE_USER']);
-        $user->setSold(0.0);
+        $user->setSold(100);
         $user->setPfp('path/to/profile/picture.jpg'); // Set this appropriately
 
         // Hash the password

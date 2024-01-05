@@ -211,9 +211,10 @@ class CartService
         }
         return 0;
     }
-    public function getTotalPrice($user_id):float
+    public function getTotalPrice($user_id)
     {
         $cart_user = $this->em->getRepository(Cart::class)->findOneBy(['user'=>$user_id]);
+
         if (!empty($cart_user)) {
             return $cart_user->getTotalprice();
         }

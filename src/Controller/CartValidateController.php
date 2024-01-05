@@ -34,9 +34,12 @@ class CartValidateController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $invoice = $form->getData();
 
+            $invoice->setTotalPrice($total_price);
+            dump('totalprice'.$total_price);
+            dump($invoice);
             $soldUserService->decreaseSold($total_price,$user);
             $cartService->removeCart($user);
-            // Persist both Product and Stock
+            
             $entityManager->persist($invoice);
             $entityManager->flush();
 

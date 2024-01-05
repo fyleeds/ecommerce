@@ -12,7 +12,7 @@ class StockFixtures extends Fixture implements OrderedFixtureInterface
 {
     public function getOrder()
     {
-        return 4; // Load second, after UserFixtures
+        return 4; 
     }
     public function load(ObjectManager $manager)
     {
@@ -25,9 +25,12 @@ class StockFixtures extends Fixture implements OrderedFixtureInterface
 
             $stock = new Stock();
             $stock->setProduct($product);
-            $stock->setQuantity(rand(1, 10)); // Set a random quantity between 1 and 10
+            $stock->setQuantity(rand(1, 10));
+            $product->setStock($stock);
+            // Set a random quantity between 1 and 10
 
             $manager->persist($stock);
+            $manager->persist($product);
         }
 
         // Flush to save these entities in the database

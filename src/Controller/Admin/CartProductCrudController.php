@@ -27,7 +27,8 @@ class CartProductCrudController extends AbstractCrudController
             NumberField::new('quantity'),
             MoneyField::new('totalPrice')
                 ->setCurrency('EUR')
-                ->setStoredAsCents(true),
+                ->setStoredAsCents(),
+
         ];
     }
     

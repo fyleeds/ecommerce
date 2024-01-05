@@ -37,7 +37,7 @@ class ProductFixtures extends Fixture implements OrderedFixtureInterface
             $product = new Product();
             $product->setTitle($value['name']);
             $product->setContent($faker->realText($maxNbChars = 155, $indexSize = 2));
-            $product->setPrice($faker->randomFloat(2, 10, 1000));
+            $product->setPrice($faker->randomDigitNotNull());
             // for example, prices between 10 and 1000 with 2 decimals
             $product->setAttachment($value['image']);
             $product->setCreatedAt(date_create("now"));

@@ -11,7 +11,7 @@ class SoldUserService
 
         $this->em = $em;
     }
-    public function decreaseSold(float $cost ,$user)
+    public function decreaseSold(int $cost ,$user)
     {
         $user_sold = $user->getSold();
 
@@ -22,7 +22,7 @@ class SoldUserService
 
         $message="";
     }
-    public function compareSold(float $sum_compared ,$user)
+    public function compareSold(int $sum_compared ,$user)
     {
         $user_sold = $user->getSold();
 

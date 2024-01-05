@@ -32,8 +32,8 @@ class Product
     private ?string $content = null;
 
     #[Assert\NotBlank]
-    #[ORM\Column(type:"decimal", precision:10, scale:2, nullable:true)]
-    private ?float $price = null;
+    #[ORM\Column]
+    private ?int $price = null;
 
     #[Assert\NotBlank]
     #[ORM\Column (type:"datetime")]
@@ -66,12 +66,6 @@ class Product
     #[ORM\OneToOne(mappedBy: 'product', cascade: ['persist'])]
     private ?Stock $stock = null;
 
-    public function __construct()
-    {
-        $this->stock = new Stock();
-        $this->stock->setQuantity(1); // Default quantity
-    }
-
     public function getId(): ?int
     {
         return $this->id;
@@ -101,14 +95,14 @@ class Product
         return $this;
     }
 
-    public function getPrice(): ?float
+    public function getPrice(): ?int
     {
         return $this->price;
     }
 
-    public function setPrice(float $price): static
+    public function setPrice(int $price): static
     {
-        $this->price = $price/100;
+        $this->price = $price;
 
         return $this;
     }
@@ -203,13 +197,8 @@ class Product
 
     public function setStock(Stock $stock): static
     {
-        // set the owning side of the relation if necessary
-        if ($stock->getProduct() !== $this) {
-            $stock->setProduct($this);
-        }
 
         $this->stock = $stock;
-        
 
         return $this;
     }

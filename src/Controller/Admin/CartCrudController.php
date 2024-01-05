@@ -24,7 +24,7 @@ class CartCrudController extends AbstractCrudController
             AssociationField::new('user'),
             MoneyField::new('totalprice')
                 ->setCurrency('EUR')
-                ->setStoredAsCents(true),
+                ->setStoredAsCents(),
         ];
     }
     

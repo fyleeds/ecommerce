@@ -29,7 +29,7 @@ class Cart
     private Collection $cartProducts;
 
     #[ORM\Column]
-    private ?float $totalprice = null;
+    private ?int $totalprice = null;
 
     public function __construct()
     {
@@ -83,12 +83,12 @@ class Cart
         return $this;
     }
 
-    public function getTotalprice(): ?float
+    public function getTotalprice(): ?int
     {
         return $this->totalprice;
     }
 
-    public function setTotalprice(float $totalprice): static
+    public function setTotalprice(int $totalprice): static
     {
         $this->totalprice = $totalprice;
 

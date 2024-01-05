@@ -22,7 +22,7 @@ class Invoice
     private ?\DateTimeInterface $date_transaction = null;
 
     #[ORM\Column]
-    private ?float $total_price = null;
+    private ?int $total_price = null;
 
     #[ORM\Column(length: 255)]
     private ?string $address = null;
@@ -62,14 +62,14 @@ class Invoice
         return $this;
     }
 
-    public function getTotalPrice(): ?float
+    public function getTotalPrice(): ?int
     {
         return $this->total_price;
     }
 
-    public function setTotalPrice(float $total_price): static
+    public function setTotalPrice(int $total_price): static
     {
-        $this->total_price = $total_price;
+        $this->total_price = $total_price ;
 
         return $this;
     }

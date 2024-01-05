@@ -36,7 +36,8 @@ class SellController extends AbstractController
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
                 $product = $form->getData();
-                $stock = $product->getStock(); // Get the Stock object from Product
+                
+                $stock = $stock->setProduct($product);
 
                 // Persist both Product and Stock
                 $entityManager->persist($product);
