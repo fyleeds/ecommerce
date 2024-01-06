@@ -30,9 +30,14 @@ class CartController extends AbstractController
         $user = $this->getUser();
         // Check if the user is logged in
         if ($user) {
-            $message = $cartService->addToCart($id,$user);
-            $this->addFlash('error', $message);
-            return $this->redirectToRoute('cart_index');
+            if(!empty($cartService->getProduct($id))) {
+                $message = $cartService->addToCart($id,$user);
+                $this->addFlash('error', $message);
+                return $this->redirectToRoute('cart_index');
+            }else{
+                $this->addFlash('error','Tu ne peux pas ajouter un produit inconnu : Aucun produit ajouté au panier');
+                return $this->redirectToRoute('homepage');
+            }
         }
         return $this->redirectToRoute('app_login');
     }
@@ -43,8 +48,16 @@ class CartController extends AbstractController
         $user = $this->getUser();
         // Check if the user is logged in
         if ($user) {
-            $cartService->decreaseFromCart($id,$user);
-            return $this->redirectToRoute('cart_index');
+
+            if(!empty($cartService->getProduct($id))) {
+                $cartService->decreaseFromCart($id,$user);
+                $this->addFlash('success', "Quantité du produit baissé !");
+                return $this->redirectToRoute('cart_index');
+            }else{
+                $this->addFlash('error','Tu ne peux pas retirer un produit inconnu : Aucune quantité modifié');
+                return $this->redirectToRoute('homepage');
+            }
+
         }
         return $this->redirectToRoute('app_login');
 
@@ -54,9 +67,16 @@ class CartController extends AbstractController
     {
         // Get the user object
         $user = $this->getUser();
+        
         // Check if the user is logged in
         if ($user) {
-            $cartService->removeCart($user);
+            $user_id = $user->getId();
+            if (!empty($cartService->getCart($user_id))){
+                $cartService->removeCart($user);
+                $this->addFlash('success','Panier entièrement supprimé ! ');
+                return $this->redirectToRoute('homepage');
+            }
+            $this->addFlash('error','Panier vide ne peut pas être supprimé : Aucun panier supprimé');
             return $this->redirectToRoute('homepage');
         }
         return $this->redirectToRoute('app_login');
@@ -68,8 +88,15 @@ class CartController extends AbstractController
         $user = $this->getUser();
         // Check if the user is logged in
         if ($user) {
-            $cartService->removeFromCart($id,$user);
-            return $this->redirectToRoute('cart_index');
+            if(!empty($cartService->getProduct($id))) {
+                $cartService->removeFromCart($id,$user);
+                $this->addFlash('success', "Produit retiré du panier");
+                return $this->redirectToRoute('cart_index');
+            }else{
+                $this->addFlash('error','Tu ne peux pas retirer un produit inconnu : Aucun produit retiré du panier');
+                return $this->redirectToRoute('homepage');
+            }
+
         }
         return $this->redirectToRoute('app_login');
     }

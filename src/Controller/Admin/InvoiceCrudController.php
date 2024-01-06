@@ -27,9 +27,7 @@ class InvoiceCrudController extends AbstractCrudController
             TextField::new('town'),
             DateField::new('date_transaction'),
             NumberField::new('postal_code'),
-            MoneyField::new('total_price')
-                ->setCurrency('EUR')
-                ->setStoredAsCents(),
+            NumberField::new('total_price'),
             
         ];
     }

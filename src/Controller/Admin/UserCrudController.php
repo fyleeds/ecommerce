@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -26,7 +27,7 @@ class UserCrudController extends AbstractCrudController
             TextField::new('password'),
             TextField::new('pfp'),
             ArrayField::new('roles'),
-            MoneyField::new('sold')->setCurrency('EUR'),
+            NumberField::new('sold'),
         ];
     }
     

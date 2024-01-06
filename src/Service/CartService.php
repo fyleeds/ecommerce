@@ -19,11 +19,10 @@ class CartService
     public function addToCart($id,$user)
     {
         $user_id = $user->getId();
-        $user_sold = $user->getSold();
 
         $cart_user = $this->em->getRepository(Cart::class)->findOneBy(['user'=>$user_id]);
 
-        $product = $this->em->getRepository(Product::class)->findOneBy(['id'=>$id]);
+        $product = $this->getProduct($id);
         $product_price = $product->getPrice();
         $product_author = $product->getAuthor()->getId();
 
@@ -130,16 +129,15 @@ class CartService
     {
         $user_id = $user->getId();
         $cart_user = $this->em->getRepository(Cart::class)->findOneBy(['user'=>$user_id]);
+        
         if (!empty($cart_user)) {
 
             $cart_user_id = $cart_user->getId();
 
-            $product = $this->em->getRepository(Product::class)->findOneBy(['id'=>$id]);
             $carts_product = $this->em->getRepository(CartProduct::class)->findBy(['cart' => $cart_user_id]);
 
             if (!empty($carts_product)) {
 
-                
                 foreach ($carts_product as $cart_product) {
                     $product_cart = $cart_product->getProduct();
                     if ($product_cart->getId() == $id) {
@@ -220,5 +218,32 @@ class CartService
             return $cart_user->getTotalprice();
         }
         return 0;
+    }
+    public function getCart($user_id)
+    {
+        $cart_user = $this->em->getRepository(Cart::class)->findOneBy(['user'=>$user_id]);
+
+        if (!empty($cart_user)) {
+
+            $cart_user_id = $cart_user->getId();
+            $carts_product = $this->em->getRepository(CartProduct::class)->findBy(['cart' => $cart_user_id]);
+            
+            if (!empty($carts_product)) {
+                return $carts_product;
+            }else{
+                return [];
+            }
+        }
+        return [];
+    }
+    public function getProduct($id)
+    {
+        $product = $this->em->getRepository(Product::class)->findOneBy(['id'=>$id]);
+
+        if (!empty($product)) {
+
+            return $product;
+        }
+        return [];
     }
 }

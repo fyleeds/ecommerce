@@ -63,7 +63,7 @@ class Product
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $releaseDate = null;
 
-    #[ORM\OneToOne(mappedBy: 'product', cascade: ['persist'])]
+    #[ORM\OneToOne(mappedBy: 'product', cascade: ['persist', 'remove'])]
     private ?Stock $stock = null;
 
     public function getId(): ?int

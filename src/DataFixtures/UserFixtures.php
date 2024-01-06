@@ -24,18 +24,31 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
     {
         // Create a new user instance
         $user = new User();
-        $user->setEmail('user@example.com');
-        $user->setUsername('username');
-        $user->setRoles(['ROLE_USER']);
+        $user->setEmail('admin@admin.com');
+        $user->setUsername('admin');
+        $user->setRoles(['ROLE_ADMIN']);
         $user->setSold(100);
         $user->setPfp('path/to/profile/picture.jpg'); // Set this appropriately
 
+        // Create a new user instance
+        $user2 = new User();
+        $user2->setEmail('test@test.com');
+        $user2->setUsername('test');
+        $user2->setRoles(['ROLE_USER']);
+        $user2->setSold(100);
+        $user2->setPfp('path/to/profile/picture.jpg'); // Set this appropriately
+
         // Hash the password
-        $hashedPassword = $this->passwordHasher->hashPassword($user, 'your_plain_password');
+        $hashedPassword = $this->passwordHasher->hashPassword($user, 'admin');
         $user->setPassword($hashedPassword);
+
+        // Hash the password
+        $hashedPassword = $this->passwordHasher->hashPassword($user2, 'test');
+        $user2->setPassword($hashedPassword);
 
         // Persist the user object
         $manager->persist($user);
+        $manager->persist($user2);
 
         // Flush to the database
         $manager->flush();

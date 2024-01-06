@@ -42,9 +42,7 @@ class ProductCrudController extends AbstractCrudController
             TextField::new('type'),
             AssociationField::new('author'),
             TextField::new('game_character'),
-            MoneyField::new('price')
-                ->setCurrency('EUR')
-                ->setStoredAsCents(),
+            NumberField::new('price'),
 
             DateField::new('createdAt'),
             DateField::new('releaseDate'),

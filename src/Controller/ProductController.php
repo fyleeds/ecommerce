@@ -56,9 +56,9 @@ class ProductController extends AbstractController
                     'form' => $form->createView(),
                 ]);
             }
-            $message = "Vous n'êtes pas l'auteur du produit ou admin : Aucune action effectuée";
+            $message = "Vous n'êtes pas l'auteur du produit ou admin / le produit à éditer n'a peut-être pas aussi été trouvé: Aucune action effectuée";
             $this->addFlash('error', $message);
-            return $this->redirectToRoute('product_index',$id_array);
+            return $this->redirectToRoute('homepage');
         }
     }
 

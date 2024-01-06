@@ -24,9 +24,22 @@ class DashboardController extends AbstractDashboardController
 
         // Option 1. You can make your dashboard redirect to some common page of your backend
         //
-        $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
-        return $this->redirect($adminUrlGenerator->setController(ProductCrudController::class)->generateUrl());
-
+        $user = $this->getUser();
+        if ($user){
+            // dump($user->getRoles());
+            foreach ($user->getRoles() as $role){
+                if ($role == "ROLE_ADMIN"){
+                    $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
+                    return $this->redirect($adminUrlGenerator->setController(ProductCrudController::class)->generateUrl());    
+                }
+            }
+            
+            $this->addFlash('error','Accès restreint aux admins : veuillez vous connectez en admin');
+            return $this->redirectToRoute('homepage');
+            
+        }else{
+            return $this->redirect('homepage');
+        }
         // Option 2. You can make your dashboard redirect to different pages depending on the user
         //
         // if ('jane' === $this->getUser()->getUsername()) {

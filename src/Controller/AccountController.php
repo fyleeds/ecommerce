@@ -19,18 +19,28 @@ class AccountController extends AbstractController
     public function account_user( EntityManagerInterface $entityManager,AccountService $accountService,$id): Response
     {
         // Get the user object
-        $user_id = $this->getUser()->getId();
-        $user_found = $accountService->getAccountUser($id);
+        $user = $this->getUser();
+        
         // Check if the user is logged in
-        if ($user_id) {
+        if ($user) {
+            $user_id = $user->getId();
+            
             if($user_id == $id){
                 return $this->redirectToRoute('my_account_index');
             }
-            return $this->render('account/account_user_index.html.twig', [
-                'products' => $accountService->getProductsUser($user_found),
-                'user_found'=> $user_found,
-                'user_id'=> $user_id,
-            ]);
+
+            $user_found = $accountService->getAccountUser($id);
+
+            if(!empty($user_found)){
+                return $this->render('account/account_user_index.html.twig', [
+                    'products' => $accountService->getProductsUser($user_found),
+                    'user_found'=> $user_found,
+                    'user_id'=> $user_id,
+                ]);
+            }else{
+                $this->addFlash('error', "Aucun Compte trouvé : Veuillez réessayez avec un compte existant");
+                return $this->redirectToRoute('homepage');
+            }
         }
         return $this->redirectToRoute('app_login');
     }
@@ -54,10 +64,10 @@ class AccountController extends AbstractController
                 $user->setPassword($hashedPassword);
 
                 if (!$soldUserService->compareSold($old_user_sold,$user)){
-                    $this->addFlash('error', "You cannot set your sold down only up : Changes have been applied except for the sold");
+                    $this->addFlash('error', "Tu ne peux pas baisser ton solde: Changements effectués excepté le solde");
                     $user->setSold($old_user_sold);
                 }else{
-                    $this->addFlash('success', "Success : Changes have been applied");
+                    $this->addFlash('success', "Succés : Changements effectués");
                 }
 
                 $entityManager->persist($user);
