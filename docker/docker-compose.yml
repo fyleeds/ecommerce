@@ -1,3 +1,4 @@
+
 version: '3'
 
 services:
@@ -10,16 +11,14 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: password
     volumes:
-      - ../ecommercedev:/var/lib/mysql
+      - ../ :/var/lib/mysql
     networks:
       - ecommerce-network
 
   web:
-    image: ecommerce
+    image: fyleeds/ecommerce:v2
     ports:
       - "80:80"
-    volumes:
-      - ../:/var/www
     depends_on:
       - db
     networks:
@@ -38,9 +37,7 @@ services:
     networks:
       - ecommerce-network
 
-volumes:
-  db_data:
-
 networks:
   ecommerce-network:
     driver: bridge
+
