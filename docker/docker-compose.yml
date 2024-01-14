@@ -8,8 +8,8 @@ services:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: ecommercedev
     volumes:
-      - ../db :/var/lib/mysql
-      - ../ecommercedev.sql:/docker-entrypoint-initdb.d/ecommercedev.sql
+      - ../db:/var/lib/mysql
+      - ../seed/ecommercedev.sql:/docker-entrypoint-initdb.d/ecommercedev.sql
       - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
     networks:
       - ecommerce-network
