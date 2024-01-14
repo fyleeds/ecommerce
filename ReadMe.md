@@ -92,4 +92,4 @@ docker compose down
 
 ### Conclusion
 
-Vous avez maintenant déployé avec succès l'application ecommerce avec une base de données MySQL et phpMyAdmin pour la gestion de la base de données. Pour toute modification ou mise à jour, assurez-vous de redémarrer les services pour appliquer les changements.
+Vous avez maintenant déployé avec succès l'application ecommerce avec une base de données MySQL et phpMyAdmin pour la gestion de la base de données. 
