@@ -18,22 +18,30 @@ RUN curl -sS https://getcomposer.org/installer -o composer-setup.php && \
 RUN apt update && apt install -yqq nodejs npm locales coreutils apt-utils git libicu-dev g++ libpng-dev libxml2-dev libzip-dev libonig-dev libxslt-dev;
 
 # Copy application source
-COPY .. /var/www/
+COPY . /var/www/
 
 # Configure Apache
 COPY ./docker/apache-config.conf /etc/apache2/sites-available/ecommerce.conf
 RUN a2dissite 000-default && a2ensite ecommerce
 
 # Set permissions for the Symfony log directory
-RUN mkdir -p /var/www/var/log && \
-    chown -R www-data:www-data /var/www/var && \
-    chmod -R 755 /var/www/var
-
+RUN mkdir -p /var/www/var/log 
 # Install composer dependencies and run npm build
+
+RUN cd /var/www && \
+    touch .env && \
+    echo "APP_ENV=dev" >> .env && \
+    echo "APP_SECRET=92d36690c31f1efd2bb3f444bcee3a4c" >> .env && \
+    echo "DATABASE_URL=\"mysql://root:rootpassword@db:3306/ecommercedev?serverVersion=5.7&charset=utf8mb4\"" >> .env
+
+
 RUN cd /var/www && \
     composer install && \
     npm install --force && \
-    npm run build
+    npm run build 
+
+RUN chown -R www-data:www-data /var/www/var && \
+    chmod -R 755 /var/www/var
 
 # Set the working directory
 WORKDIR /var/www/

@@ -15,11 +15,9 @@ services:
       - ecommerce-network
 
   web:
-    image: ecommerce
+    image: fyleeds/ecommerce:v2
     ports:
       - "80:80"
-    volumes:
-      - ../:/var/www
     depends_on:
       - db
     networks:

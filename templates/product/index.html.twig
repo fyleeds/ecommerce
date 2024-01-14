@@ -17,6 +17,7 @@
             <p><strong>Type: {{ product.type }}<strong></p>
             <p><strong>Character: {{ product.gameCharacter}}<strong></p>
 
+
             {% if product.author.id == user_id %}
             <a href="{{ path('edit_product',{id:product.id}) }}">Editer produit</a>
             <a href="{{ path('homepage') }}">retourner page principale</a>
@@ -27,6 +28,7 @@
             <a href="{{ path('homepage') }}">Retourner page principale</a>
             <hr>
             {% endif %}
+            
             
         </div>
     {% else %}
