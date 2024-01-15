@@ -331,4 +331,8 @@ fabric.properties
 /web/css/
 /web/js/
 
+### bdd ###
+
+ecommercedev/
+
 # End of https://www.toptal.com/developers/gitignore/api/symfony,phpstorm,phpunit,phpcodesniffer,node
