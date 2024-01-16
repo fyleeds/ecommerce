@@ -11,8 +11,10 @@
 <header class="header">
   <div class="logo-section">
     <!-- Remplacez 'logo.png' par le chemin de votre image de logo réelle -->
-    <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo">
-    <span>Amiishop</span>
+    <a href="{{ path('homepage') }}">
+      <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo">
+    </a>
+    <span>Amiishop</span>  
   </div>
   <div class="search-section">
     <input type="search" placeholder="Rechercher">
@@ -20,11 +22,11 @@
   </div>
   <div class="user-section">
     <!-- Ici, ajoutez vos icônes utilisateur et panier, vous pouvez utiliser des images ou des icônes de polices -->
-    <a href="url-de-la-page-de-destination.html">
+    <a href="{{ path('cart_index') }}">
       <!-- Insérez le chemin de votre image à la place de "chemin/vers/votre/image.jpg" -->
       <img src="{{ asset('img/sac.png') }}" alt="Votre image" class="utilisateur"/>
     </a>
-    <a href="url-de-la-page-de-destination.html">
+    <a href="{{ path('my_account_index') }}">
       <!-- Insérez le chemin de votre image à la place de "chemin/vers/votre/image.jpg" -->
       <img src="{{ asset('img/utilisateur.png') }}" alt="Votre image" class="sac"/>
     </a>
