@@ -24,6 +24,14 @@
       "css": [
         "/assets/login.css"
       ]
+    },
+    "home": {
+      "js": [
+        "/assets/runtime.js"
+      ],
+      "css": [
+        "/assets/home.css"
+      ]
     }
   }
 }

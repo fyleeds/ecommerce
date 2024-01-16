@@ -23,6 +23,8 @@ Encore
     .addEntry('app', './assets/app.js')
     .addStyleEntry('register', './assets/scss/register.scss') // Nouveau point d'entrée pour le CSS spécifique à la page d'inscription
     .addStyleEntry('login', './assets/scss/login.scss')
+    .addStyleEntry('home', './assets/scss/login.scss')
+    
     // .addEntry('admin','./assets/admin.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.

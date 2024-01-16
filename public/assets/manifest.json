@@ -3,5 +3,6 @@
   "assets/app.js": "/assets/app.js",
   "assets/register.css": "/assets/register.css",
   "assets/login.css": "/assets/login.css",
+  "assets/home.css": "/assets/home.css",
   "assets/runtime.js": "/assets/runtime.js"
 }
