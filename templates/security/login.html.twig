@@ -27,7 +27,7 @@
       <span>Amiishop</span>  
     </div>
     <div class="search-section">
-      <input type="search" placeholder="Rechercher">
+      <input type="search" placeholder="Search">
       <button type="submit">🔍</button>
     </div>
     <div class="user-section">
@@ -49,11 +49,9 @@
       <h2 class="login-title">Amiishop</h2>
       <!-- Ajoutez ici le formulaire de connexion -->
       <form>
-        <label for="inputEmail">Email</label>
-        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-        <label for="inputPassword">Password</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-        <input type="hidden" name="_csrf_token"
+        <input class="case form-control" type="email" value="{{ last_username }}" name="email" id="inputEmail" placeholder="Email" autocomplete="email" required autofocus>
+        <input class="case form-control" type="password" name="password" id="inputPassword" placeholder="Password" autocomplete="current-password" required>
+        <input class="case" type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}">
         <button class="but" type="submit">Login</button>
       </form>
@@ -64,10 +62,10 @@
   </div>
 </div>
 </div>
-
-<a href="{{ path('register_index') }}">Clickez ici si vous n'avez pas de compte</a>
-    <a href="{{ path('homepage') }}">Clickez ici pour retourner à la page principale</a>
-
+  <div class="lastbut">
+    <a href="{{ path('register_index') }}">Click here if you don't have an account</a>
+    <a href="{{ path('homepage') }}">Click here to return to the main page</a>
+  </div>
     {# <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
