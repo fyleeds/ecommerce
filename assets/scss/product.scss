@@ -11,10 +11,18 @@ body {
     background-color: #f8f8f8;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+
+  .logo-section {
+    display: flex;
+    align-items: center; /* Cela aligne verticalement l'image et le texte */
+  }
   
   .logo-section img {
     height: 40px; /* Ajustez la taille selon votre logo */
     margin-right: 10px;
+    // display: flex;
+    // align-items: center; // Cela aligne verticalement l'image et le texte au centre
+    // justify-content: center; 
   }
   
   .search-section {

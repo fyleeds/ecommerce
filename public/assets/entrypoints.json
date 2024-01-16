@@ -64,6 +64,14 @@
       "css": [
         "/assets/sell.css"
       ]
+    },
+    "product": {
+      "js": [
+        "/assets/runtime.js"
+      ],
+      "css": [
+        "/assets/product.css"
+      ]
     }
   }
 }
