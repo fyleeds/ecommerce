@@ -32,6 +32,38 @@
       "css": [
         "/assets/home.css"
       ]
+    },
+    "shoppingcart": {
+      "js": [
+        "/assets/runtime.js"
+      ],
+      "css": [
+        "/assets/shoppingcart.css"
+      ]
+    },
+    "cartvalidate": {
+      "js": [
+        "/assets/runtime.js"
+      ],
+      "css": [
+        "/assets/cartvalidate.css"
+      ]
+    },
+    "account": {
+      "js": [
+        "/assets/runtime.js"
+      ],
+      "css": [
+        "/assets/account.css"
+      ]
+    },
+    "sell": {
+      "js": [
+        "/assets/runtime.js"
+      ],
+      "css": [
+        "/assets/sell.css"
+      ]
     }
   }
 }

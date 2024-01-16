@@ -1,4 +1,7 @@
 {# templates/product/edit.html.twig #}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('cartvalidate') }}
+{% endblock %}
 
 {{ form_start(form) }}
     {{ form_widget(form) }}

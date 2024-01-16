@@ -9,12 +9,14 @@ body {
     align-items: center;
     padding: 10px 20px;
     background-color: #f8f8f8;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
   .logo-section img {
     height: 40px; /* Ajustez la taille selon votre logo */
     margin-right: 10px;
+    // display: flex;
+    // align-items: center; 
   }
   
   .search-section {
@@ -26,7 +28,7 @@ body {
     align-items: center;
   }
   
-  .search-section input[type="search"] {
+  .search-section input[type=search] {
     border: none;
     padding: 5px 10px;
     outline: none;

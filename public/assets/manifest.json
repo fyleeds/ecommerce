@@ -4,5 +4,9 @@
   "assets/register.css": "/assets/register.css",
   "assets/login.css": "/assets/login.css",
   "assets/home.css": "/assets/home.css",
+  "assets/shoppingcart.css": "/assets/shoppingcart.css",
+  "assets/cartvalidate.css": "/assets/cartvalidate.css",
+  "assets/account.css": "/assets/account.css",
+  "assets/sell.css": "/assets/sell.css",
   "assets/runtime.js": "/assets/runtime.js"
 }

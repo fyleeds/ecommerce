@@ -23,8 +23,12 @@ Encore
     .addEntry('app', './assets/app.js')
     .addStyleEntry('register', './assets/scss/register.scss') // Nouveau point d'entrée pour le CSS spécifique à la page d'inscription
     .addStyleEntry('login', './assets/scss/login.scss')
-    .addStyleEntry('home', './assets/scss/login.scss')
-    
+    .addStyleEntry('home', './assets/scss/home.scss')
+    .addStyleEntry('shoppingcart', './assets/scss/shoppingcart.scss')
+    .addStyleEntry('cartvalidate', './assets/scss/cartvalidate.scss')
+    .addStyleEntry('account', './assets/scss/account.scss')
+    .addStyleEntry('sell', './assets/scss/sell.scss')
+    .addStyleEntry('product', './assets/scss/product.scss')
     // .addEntry('admin','./assets/admin.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.

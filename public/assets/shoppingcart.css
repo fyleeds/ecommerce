@@ -1,0 +1,69 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[1].use[3]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[4]!./assets/scss/shoppingcart.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-section img {
+  height: 40px; /* Ajustez la taille selon votre logo */
+  margin-right: 10px;
+}
+
+.search-section {
+  display: flex;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  overflow: hidden;
+  /* margin-left: 65%; */
+  align-items: center;
+}
+
+.search-section input[type=search] {
+  border: none;
+  padding: 5px 10px;
+  outline: none;
+  /* border-radius: 5%; */
+}
+
+.search-section button {
+  background-color: #e7e7e7;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.user-section {
+  display: flex;
+  align-items: center; /* Cela va centrer les icônes verticalement dans le conteneur */
+  justify-content: center; /* Cela va centrer les icônes horizontalement dans le conteneur */
+}
+
+.user-section a {
+  text-decoration: none;
+  font-size: 24px;
+  margin-left: 15px;
+}
+
+.utilisateur {
+  margin-right: 40px;
+  width: 44%;
+}
+
+.sac {
+  margin-right: 40px;
+  width: 35%;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2hvcHBpbmdjYXJ0LmNzcyIsIm1hcHBpbmdzIjoiOzs7QUFBQSxnQkFBZ0I7QUFBaEI7RUFDSTtFQUNBO0FBRUo7O0FBQ0U7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7QUFFSjs7QUFDRTtFQUNFO0VBQ0E7QUFFSjs7QUFDRTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtBQUVKOztBQUNFO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7QUFFSjs7QUFDRTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0FBRUo7O0FBQ0U7RUFDRTtFQUNBO0VBQ0E7QUFFSjs7QUFDRTtFQUNFO0VBQ0E7RUFDQTtBQUVKOztBQUNFO0VBQ0U7RUFDQTtBQUVKOztBQUNFO0VBQ0U7RUFDQTtBQUVKLEMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hc3NldHMvc2Nzcy9zaG9wcGluZ2NhcnQuc2NzcyJdLCJzb3VyY2VzQ29udGVudCI6WyJib2R5IHtcbiAgICBtYXJnaW46IDA7XG4gICAgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmO1xuICB9XG4gIFxuICAuaGVhZGVyIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIHBhZGRpbmc6IDEwcHggMjBweDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjhmOGY4O1xuICAgIGJveC1zaGFkb3c6IDAgMnB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMSk7XG4gIH1cbiAgXG4gIC5sb2dvLXNlY3Rpb24gaW1nIHtcbiAgICBoZWlnaHQ6IDQwcHg7IC8qIEFqdXN0ZXogbGEgdGFpbGxlIHNlbG9uIHZvdHJlIGxvZ28gKi9cbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG4gIH1cbiAgXG4gIC5zZWFyY2gtc2VjdGlvbiB7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2NjY2NjO1xuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICAvKiBtYXJnaW4tbGVmdDogNjUlOyAqL1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIH1cbiAgXG4gIC5zZWFyY2gtc2VjdGlvbiBpbnB1dFt0eXBlPXNlYXJjaF0ge1xuICAgIGJvcmRlcjogbm9uZTtcbiAgICBwYWRkaW5nOiA1cHggMTBweDtcbiAgICBvdXRsaW5lOiBub25lO1xuICAgIC8qIGJvcmRlci1yYWRpdXM6IDUlOyAqL1xuICB9XG4gIFxuICAuc2VhcmNoLXNlY3Rpb24gYnV0dG9uIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTdlN2U3O1xuICAgIGJvcmRlcjogbm9uZTtcbiAgICBwYWRkaW5nOiA1cHggMTVweDtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gIH1cbiAgXG4gIC51c2VyLXNlY3Rpb24ge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjsgLyogQ2VsYSB2YSBjZW50cmVyIGxlcyBpY8O0bmVzIHZlcnRpY2FsZW1lbnQgZGFucyBsZSBjb250ZW5ldXIgKi9cbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsgLyogQ2VsYSB2YSBjZW50cmVyIGxlcyBpY8O0bmVzIGhvcml6b250YWxlbWVudCBkYW5zIGxlIGNvbnRlbmV1ciAqL1xuICB9XG4gIFxuICAudXNlci1zZWN0aW9uIGEge1xuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICBmb250LXNpemU6IDI0cHg7XG4gICAgbWFyZ2luLWxlZnQ6IDE1cHg7XG4gIH1cbiAgXG4gIC51dGlsaXNhdGV1ciB7XG4gICAgbWFyZ2luLXJpZ2h0OiA0MHB4O1xuICAgIHdpZHRoOiA0NCU7XG4gIH1cbiAgXG4gIC5zYWMge1xuICAgIG1hcmdpbi1yaWdodDogNDBweDtcbiAgICB3aWR0aDogMzUlO1xuICB9Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9*/
