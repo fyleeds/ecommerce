@@ -2,6 +2,10 @@
 
 {% block title %}Log in!{% endblock %}
 
+{% block stylesheets %}
+    {{ encore_entry_link_tags('login') }}
+{% endblock %}
+
 {% block body %}
 <form method="post">
     {% if error %}
@@ -13,6 +17,29 @@
             You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
         </div>
     {% endif %}
+
+    <header class="header">
+  <div class="logo-section">
+    <!-- Remplacez 'logo.png' par le chemin de votre image de logo réelle -->
+    <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo">
+    <span>Amiishop</span>
+  </div>
+  <div class="search-section">
+    <input type="search" placeholder="Rechercher">
+    <button type="submit">🔍</button>
+  </div>
+  <div class="user-section">
+    <!-- Ici, ajoutez vos icônes utilisateur et panier, vous pouvez utiliser des images ou des icônes de polices -->
+    <a href="url-de-la-page-de-destination.html">
+      <!-- Insérez le chemin de votre image à la place de "chemin/vers/votre/image.jpg" -->
+      <img src="{{ asset('img/sac.png') }}" alt="Votre image" class="utilisateur"/>
+    </a>
+    <a href="url-de-la-page-de-destination.html">
+      <!-- Insérez le chemin de votre image à la place de "chemin/vers/votre/image.jpg" -->
+      <img src="{{ asset('img/utilisateur.png') }}" alt="Votre image" class="sac"/>
+    </a>
+  </div>
+</header>
 
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <label for="inputEmail">Email</label>

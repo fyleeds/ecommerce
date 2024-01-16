@@ -21,9 +21,15 @@ class ProductController extends AbstractController
     public function index(ProductRepository $productRepository, $id): Response
     {
         $id_array = ['id'=>$id];
-        $user_id = $this->getUser()->getId();
+        $user = $this->getUser();
+        if ($user){
+            $user_id = $user->getId();
+        }else {
+            $user_id = null;
+        }
         $product= $productRepository->findOneBy($id_array);
         return $this->render('product/index.html.twig',['product'=>$product,'user_id'=>$user_id]);
+       
     }
     #[Route('/edit/{id<\d+>}', name: 'edit_product')]
     public function edit(EntityManagerInterface $entityManager,Request $request,ProductRepository $productRepository, $id): Response

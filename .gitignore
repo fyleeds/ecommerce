@@ -3,6 +3,7 @@
 
 ### Node ###
 # Logs
+ecommercedev/
 logs
 *.log
 npm-debug.log*
