@@ -20,11 +20,15 @@
     <!-- Ici, ajoutez vos icônes utilisateur et panier, vous pouvez utiliser des images ou des icônes de polices -->
     <a href="url-de-la-page-de-destination.html">
       <!-- Insérez le chemin de votre image à la place de "chemin/vers/votre/image.jpg" -->
+    <a href="{{ path('cart_add',{id:product.id}) }}"> 
       <img src="{{ asset('img/sac.png') }}" alt="Votre image" class="utilisateur"/>
+    </a>
     </a>
     <a href="url-de-la-page-de-destination.html">
       <!-- Insérez le chemin de votre image à la place de "chemin/vers/votre/image.jpg" -->
+     <a href="{{ path('my_account_index') }}">
       <img src="{{ asset('img/utilisateur.png') }}" alt="Votre image" class="sac"/>
+      </a>
     </a>
   </div>
 </header>
