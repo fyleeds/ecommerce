@@ -28,7 +28,7 @@ class ProductController extends AbstractController
             $user_id = null;
         }
         $product= $productRepository->findOneBy($id_array);
-        return $this->render('product/index.html.twig',['product'=>$product,'user_id'=>$user_id]);
+        return $this->render('product/index.html.twig',['product'=>$product,'user_id'=>$user_id, 'userEmail' => $user]);
        
     }
     #[Route('/edit/{id<\d+>}', name: 'edit_product')]
@@ -60,6 +60,7 @@ class ProductController extends AbstractController
 
                 return $this->render('product/edit.html.twig', [
                     'form' => $form->createView(),
+                    'userEmail' => $user
                 ]);
             }
             $message = "Vous n'êtes pas l'auteur du produit ou admin / le produit à éditer n'a peut-être pas aussi été trouvé: Aucune action effectuée";
