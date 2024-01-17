@@ -15,8 +15,8 @@
     {% endfor %}
     <div class="cases">
         {% for product in products %}
-            <a href="{{ path('product_show', {id: product.id}) }}">
-                <div class="case">
+            <div class="case">
+                <a href="{{ path('product_index',{id:product.id}) }}">
                     <div class="up">
                         <img src="{{ product.attachment }}" alt="{{ product.title }}" title="{{ product.title }}">
                     </div>
@@ -25,8 +25,8 @@
                         <p class="theme">{{ product.category.name }}</p>
                         <p class="prix">{{ product.price|number_format(2, ',', ' ') }} €</p>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>            
         {% else %}
             <p>Aucun produit trouvé.</p>
         {% endfor %}
