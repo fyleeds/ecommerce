@@ -37,25 +37,17 @@
       <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo" class="login-logo">
       <h2 class="login-title">Amiishop</h2>
       <!-- Ajoutez ici le formulaire de connexion -->
-      <form>
-        {{ form_start(registrationForm) }}
-          {{ form_errors(registrationForm) }}
+        {{ form_errors(registrationForm) }}
 
-          {{ form_row(registrationForm.username, {
-              'attr': {'class': 'form-control'}
-          }) }}
-          {{ form_row(registrationForm.email, {
-              'attr': {'class': 'form-control'}
-          }) }}
+        {{ form_start(registrationForm, {'method' : 'POST'}) }}
+          {{ form_row(registrationForm.username) }}
+          {{ form_row(registrationForm.email) }}
           {{ form_row(registrationForm.plainPassword, {
-              'label': 'Password',
-              'attr': {'class': 'form-control'}
+            label: 'Password'
           }) }}
-          <div class="form-agree-terms">
-        {{ form_row(registrationForm.agreeTerms) }}
-        </div>
-        <button class="but" type="submit">Register</button>
-      </form>
+          {{ form_row(registrationForm.agreeTerms) }}
+          <button class="btn" type="submit">Register</button>
+        {{ form_end(registrationForm) }}
     </div>
   <div class="illustration-section">
     <!-- Ajoutez ici votre illustration -->
@@ -75,7 +67,7 @@
         {{ form_row(registrationForm.agreeTerms) }} #}
 
         {# <button type="submit" class="btn">Register</button> #}
-    {{ form_end(registrationForm) }}
+    {# {{ form_end(registrationForm) }} #}
   <div class="lastbut">
     <a href="{{ path('app_login') }}">Clickez ici si vous avez un compte...</a>
     <a href="{{ path('homepage') }}">Clickez ici pour retourner à la page principale</a>
