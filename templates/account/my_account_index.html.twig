@@ -48,11 +48,13 @@
     <hr>
     <a href="{{ path('homepage') }}">Retourner page principale</a>
     <hr>
-    <div class="login-section">
-        {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button type="submit">Enregistrer les modifications</button>
-    {{ form_end(form) }}
+    <div class="main-content">
+        <div class="login-section">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit">Enregistrer les modifications</button>
+            {{ form_end(form) }}
+        </div>
     </div>
     <hr>
     {# {{ dump(products) }} #}
