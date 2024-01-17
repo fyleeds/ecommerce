@@ -37,24 +37,27 @@
       <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo" class="login-logo">
       <h2 class="login-title">Amiishop</h2>
       <!-- Ajoutez ici le formulaire de connexion -->
-        {{ form_start(registrationForm) }}
+      {{ form_start(registrationForm) }}
     {{ form_errors(registrationForm) }}
 
     {{ form_row(registrationForm.username, {
-        'attr': {'class': 'form-control'}
+        'label': false,
+        'attr': {'class': 'form-control', 'placeholder': 'Username'}
     }) }}
     {{ form_row(registrationForm.email, {
-        'attr': {'class': 'form-control'}
+        'label': false,
+        'attr': {'class': 'form-control', 'placeholder': 'Email'}
     }) }}
     {{ form_row(registrationForm.plainPassword, {
-        'label': 'Password',
-        'attr': {'class': 'form-control'}
+        'label': false,
+        'attr': {'class': 'form-control', 'placeholder': 'Password'}
     }) }}
     <div class="form-agree-terms">
         {{ form_row(registrationForm.agreeTerms) }}
     </div>
     <button type="submit" class="but">Register</button>
 {{ form_end(registrationForm) }}
+
 
     </div>
   <div class="illustration-section">

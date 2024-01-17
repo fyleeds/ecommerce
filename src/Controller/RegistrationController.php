@@ -33,7 +33,6 @@ class RegistrationController extends AbstractController
         $user = new User();
         $user->setSold(0);
         $form = $this->createForm(RegistrationFormType::class, $user);
-        dump($request->request->all());
         $form->handleRequest($request);
 
 
@@ -45,9 +44,6 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-            $status = "form valid";
-            //dump($status);
-            //dump($user);
 
             $entityManager->persist($user);
             $entityManager->flush();
@@ -60,13 +56,6 @@ class RegistrationController extends AbstractController
 
 
             return $this->redirectToRoute('homepage');
-        }else{
-            $status =" user not connected";
-            //dump($status);
-            foreach ($form->getErrors(true) as $error) {
-                $dump($error->getMessage());
-            }
-            //dump($form->getData());
         }
 
         return $this->render('registration/register.html.twig', [
