@@ -9,8 +9,6 @@
 
 {% block body %}
 
-<a href="{{ path('homepage') }}">Clickez ici pour retourner à la page principale</a>
-
 <div class="example-wrapper">
 
     
@@ -20,32 +18,37 @@
         {{ message }}
     </div>
     {% endfor %}
-    <hr>
     {# {% endif %} #}
 
     {% if cart|length > 0 %}
-
-        {% for item in cart %}
-            <div class="product">
-                <h2>{{ item.product.title }}</h2>
-                <img src="{{ item.product.attachment }}" alt="{{ item.product.title }}">
-                <p>Price à l'unité: {{ item.product.price|number_format(2,',',' ') }}€</p>
-                <p>Quantity: {{ item.quantity }}</p>
-                <p>Total: {{ (item.totalPrice)|number_format(2,',',' ') }}€</p>
-                <p>Created At: {{ item.product.createdAt|date('Y-m-d H:i:s') }} </p>
-                <a href="{{ path('cart_remove',{id:item.product.id}) }}">Retirer totalement du panier</a>
-                <a href="{{ path('cart_add',{id:item.product.id}) }}">Ajouter un autre au panier</a>
-                <a href="{{ path('cart_decrease',{id:item.product.id}) }}">Diminuer quantité</a>
-                <hr>
-                
-            </div>
-        {% endfor %}
-
-        <a href="{{ path('cart_validate_index') }}">Valider commande ! </a>
-        <a href="{{ path('removeCart') }}">Retirer tout du panier</a>
-        <p>Total du Panier : {{ total_price|number_format(2,',',' ') }}€</p>
+        <div class="items">
+            {% for item in cart %}
+                <div class="item">
+                    <div class="infocontainer">
+                        <p>{{ item.product.title }}</p>
+                        <p>Price à l'unité: {{ item.product.price|number_format(2,',',' ') }}€</p>
+                        <p>Quantity: {{ item.quantity }}</p>
+                        <p>Total: {{ (item.totalPrice)|number_format(2,',',' ') }}€</p>
+                        <p>Created At: {{ item.product.createdAt|date('Y-m-d H:i:s') }} </p>
+                        <p>
+                            <a href="{{ path('cart_remove',{id:item.product.id}) }}">Retirer totalement du panier / </a>
+                            <a href="{{ path('cart_add',{id:item.product.id}) }}">Ajouter un autre au panier / </a>
+                            <a href="{{ path('cart_decrease',{id:item.product.id}) }}">Diminuer quantité</a>
+                        </p>
+                    </div>
+                    <div class="imagecontainer">
+                        <img src="{{ item.product.attachment }}" alt="{{ item.product.title }}">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="action">
+            <a href="{{ path('cart_validate_index') }}">Valider commande ! </a>
+            <a href="{{ path('removeCart') }}">Retirer tout du panier</a>
+            <p>Total du Panier : {{ total_price|number_format(2,',',' ') }}€</p>
+        </div>
     {% else %}
-        <h2> Panier vide <h2>
+        <h2 class="paniervide"> Panier vide <h2>
     {% endif %}
 
 
