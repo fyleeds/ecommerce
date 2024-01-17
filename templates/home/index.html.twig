@@ -8,40 +8,35 @@
 {% endblock %}
 
 {% block body %}
-    <h2>Amiibo Zelda Shop</h2>
-    <hr>
     {% for message in app.flashes('error') %}
     <div>
         {{ message }}
     </div>
     {% endfor %}
-    <hr>
-    {% if userEmail %}
-        <p><strong>Connecté en tant que :</strong>{{ userEmail }}</p>
+    <div class="cases">
+        {% for product in products %}
+            <a href="{{ path('product_show', {id: product.id}) }}">
+                <div class="case">
+                    <div class="up">
+                        <img src="{{ product.attachment }}" alt="{{ product.title }}" title="{{ product.title }}">
+                    </div>
+                    <div class="down">
+                        <p class="nom">{{ product.title }}</p>
+                        <p class="theme">{{ product.category.name }}</p>
+                        <p class="prix">{{ product.price|number_format(2, ',', ' ') }} €</p>
+                    </div>
+                </div>
+            </a>
+        {% else %}
+            <p>Aucun produit trouvé.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{# <p><strong>Connecté en tant que :</strong>{{ userEmail }}</p>
         <hr>
         <a href="{{ path('app_logout') }}">Se Deconnecter</a>
         <a href="{{ path('sell_index') }}">Vendre</a>
         <a href="{{ path('cart_index') }}">Mon Panier</a>
         <a href="{{ path('my_account_index') }}">Mon Compte</a>
-        <hr>
-    {% else %}
-        <a href="{{ path('app_login') }}">Se Connecter</a>
-        <a href="{{ path('register_index') }}">S'inscrire</a>
-        <hr>
-    {% endif %}
-    {% for product in products %}
-
-        <div class="product">
-
-            <h3>{{ product.title }}</h3>
-            <img src="{{ product.attachment }}" alt="{{ product.title }}">
-            <p><strong>Prix :</strong> {{ product.price|number_format(2, ',', ' ') }}€</p>
-            <p><strong>Série :</strong> {{ product.category.name }}</p>
-            <a href="{{ path('product_index',{id:product.id}) }}">Détails</a>
-            <hr>
-
-        </div>
-    {% else %}
-        <p>Aucun produit trouvé.</p>
-    {% endfor %}
-{% endblock %}
+        <hr> #}
