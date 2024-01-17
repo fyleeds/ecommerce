@@ -22,12 +22,20 @@
         <span>Amiishop</span>  
     </div>
     <div class="user-section">
+    {% if userEmail %}
         <a href="{{ path('my_account_index') }}">
             <img src="{{ asset('img/utilisateur.png') }}" alt="user-icon" class="utilisateur"/>
         </a>
         <a href="{{ path('cart_index') }}">
             <img src="{{ asset('img/sac.png') }}" alt="sac-icon" class="sac"/>
         </a>
+    {% else %}
+        <a href="{{ path('app_login') }}">
+            <img src="{{ asset('img/utilisateur.png') }}" alt="user-icon" class="utilisateur"/>
+        </a>
+        <a href="{{ path('register_') }}">
+        </a>
+    {% endif %}
     </div>
 
 </header>

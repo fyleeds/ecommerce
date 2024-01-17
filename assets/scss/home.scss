@@ -1,68 +1,68 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
+// body {
+//     margin: 0;
+//     font-family: Arial, sans-serif;
+//   }
   
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f8f8;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+//   .header {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 10px 20px;
+//     background-color: #f8f8f8;
+//     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+//   }
 
-  .logo-section {
-    display: flex;
-    align-items: center; /* Cela aligne verticalement l'image et le texte */
-  }
+//   .logo-section {
+//     display: flex;
+//     align-items: center; /* Cela aligne verticalement l'image et le texte */
+//   }
   
-  .logo-section img {
-    height: 40px; /* Ajustez la taille selon votre logo */
-    margin-right: 10px;
-  }
+//   .logo-section img {
+//     height: 40px; /* Ajustez la taille selon votre logo */
+//     margin-right: 10px;
+//   }
   
-  .search-section {
-    display: flex;
-    border: 1px solid #cccccc;
-    border-radius: 20px;
-    overflow: hidden;
-    /* margin-left: 65%; */
-    align-items: center;
-  }
+//   .search-section {
+//     display: flex;
+//     border: 1px solid #cccccc;
+//     border-radius: 20px;
+//     overflow: hidden;
+//     /* margin-left: 65%; */
+//     align-items: center;
+//   }
   
-  .search-section input[type=search] {
-    border: none;
-    padding: 5px 10px;
-    outline: none;
-    /* border-radius: 5%; */
-  }
+//   .search-section input[type=search] {
+//     border: none;
+//     padding: 5px 10px;
+//     outline: none;
+//     /* border-radius: 5%; */
+//   }
   
-  .search-section button {
-    background-color: #e7e7e7;
-    border: none;
-    padding: 5px 15px;
-    cursor: pointer;
-  }
+//   .search-section button {
+//     background-color: #e7e7e7;
+//     border: none;
+//     padding: 5px 15px;
+//     cursor: pointer;
+//   }
   
-  .user-section {
-    display: flex;
-    align-items: center; /* Cela va centrer les icônes verticalement dans le conteneur */
-    justify-content: center; /* Cela va centrer les icônes horizontalement dans le conteneur */
-  }
+//   .user-section {
+//     display: flex;
+//     align-items: center; /* Cela va centrer les icônes verticalement dans le conteneur */
+//     justify-content: center; /* Cela va centrer les icônes horizontalement dans le conteneur */
+//   }
   
-  .user-section a {
-    text-decoration: none;
-    font-size: 24px;
-    margin-left: 15px;
-  }
+//   .user-section a {
+//     text-decoration: none;
+//     font-size: 24px;
+//     margin-left: 15px;
+//   }
   
-  .utilisateur {
-    margin-right: 40px;
-    width: 44%;
-  }
+//   .utilisateur {
+//     margin-right: 40px;
+//     width: 44%;
+//   }
   
-  .sac {
-    margin-right: 40px;
-    width: 35%;
-  }
+//   .sac {
+//     margin-right: 40px;
+//     width: 35%;
+//   }
