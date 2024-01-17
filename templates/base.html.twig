@@ -15,23 +15,21 @@
 </head>
 <body>
 <header class="header">
-  <div class="logo-section">
-    <a href="{{ path('homepage') }}">
-      <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo">
-    </a>
-    <span>Amiishop</span>  
-  </div>
-  <div class="user-section">
-    <!-- Ici, ajoutez vos icônes utilisateur et panier, vous pouvez utiliser des images ou des icônes de polices -->
-    <a href="{{ path('cart_index') }}">
-      <!-- Insérez le chemin de votre image à la place de "chemin/vers/votre/image.jpg" -->
-      <img src="{{ asset('img/sac.png') }}" alt="Votre image" class="utilisateur"/>
-    </a>
-    <a href="{{ path('my_account_index') }}">
-      <!-- Insérez le chemin de votre image à la place de "chemin/vers/votre/image.jpg" -->
-      <img src="{{ asset('img/utilisateur.png') }}" alt="Votre image" class="sac"/>
-    </a>
-  </div>
+    <div class="logo-section">
+        <a href="{{ path('homepage') }}">
+            <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo">
+        </a>
+        <span>Amiishop</span>  
+    </div>
+    <div class="user-section">
+        <a href="{{ path('my_account_index') }}">
+            <img src="{{ asset('img/utilisateur.png') }}" alt="user-icon" class="utilisateur"/>
+        </a>
+        <a href="{{ path('cart_index') }}">
+            <img src="{{ asset('img/sac.png') }}" alt="sac-icon" class="sac"/>
+        </a>
+    </div>
+
 </header>
 {% block body %}{% endblock %}
 </body>
