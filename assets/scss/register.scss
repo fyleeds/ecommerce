@@ -1,172 +1,108 @@
-// body {
-//     margin: 0;
-//     font-family: Arial, sans-serif;
-//   }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
   
-//   .header {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     padding: 10px 20px;
-//     background-color: #f8f8f8;
-//     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-//   }
-  
-//   .logo-section {
-//     display: flex;
-//     align-items: center; /* Cela aligne verticalement l'image et le texte */
-//   }
-  
-//   .logo-section img {
-//     height: 40px; /* Ajustez la taille selon votre logo */
-//     margin-right: 10px;
-//   }
-  
-//   .search-section {
-//     display: flex;
-//     border: 1px solid #cccccc;
-//     border-radius: 20px;
-//     overflow: hidden;
-//     /* margin-left: 65%; */
-//     align-items: center;
-//   }
-  
-//   .search-section input[type="search"] {
-//     border: none;
-//     padding: 5px 10px;
-//     outline: none;
-//     /* border-radius: 5%; */
-//   }
-  
-//   .search-section button {
-//     background-color: #e7e7e7;
-//     border: none;
-//     padding: 5px 15px;
-//     cursor: pointer;
-//   }
-  
-//   .user-section {
-//     display: flex;
-//     align-items: center; /* Cela va centrer les icônes verticalement dans le conteneur */
-//     justify-content: center; /* Cela va centrer les icônes horizontalement dans le conteneur */
-//   }
-  
-//   .user-section a {
-//     text-decoration: none;
-//     font-size: 24px;
-//     margin-left: 15px;
-//   }
-  
-//   .utilisateur {
-//     margin-right: 40px;
-//     width: 44%;
-//   }
-  
-//   .sac {
-//     margin-right: 40px;
-//     width: 35%;
-//   }
+  .main-content {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de se replier sur de petits écrans */
+    max-width: 1200px; /* ou la largeur maximale souhaitée */
+    margin: auto; /* Centre horizontalement si l'écran est plus large */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #B6CDE8;
+    margin-top: 4%;
+    border-radius: 10px;
+    }
+    
+    .login-section {
+    flex: none; /* Empêche la section de grandir pour remplir l'espace flexible */
+    padding: 50px; /* ou ajustez selon l'espacement souhaité */
+    /* background-color: #007bff; */
+    border-radius: 20px; /* Optionnel : coins arrondis */
+    margin-top: 20px; /* Centre verticalement et horizontalement */
+    
+    
+    }
+    
+    .illustration-section {
+    flex: 1; /* Prend le reste de l'espace disponible */
+    text-align: center; /* Centre l'image si la section est plus large */
+    padding: 50px; /* Maintient la cohérence avec la section de connexion */
+    }
+    
+    .illustration-section img {
+    max-width: 100%;
+    height: auto;
+    }
+    
+    .login-logo {
+    display: block; /* S'assure que le logo prend sa propre ligne */
+    margin: 0 auto 30px; /* Centre le logo et ajoute de la marge en dessous */
+    max-width: 80px; /* Ou la taille souhaitée pour votre logo */
+    height: auto; /* Garde le ratio d'aspect du logo */
+    /* margin-left: 42%; */
+    }
+    
+    .logo2 {
+    border-radius: 20px;
+    width: 95%;
+    /* width: auto; */
+    height: auto;
+    }
+    
+    .login-title {
+    text-align: center; /* Centre le texte horizontalement */
+    margin: 50px auto; /* Ajoute de l'espace au-dessus et en dessous du titre */
+    margin-top: -35px;
+    /* margin-left: 25%; */
+    }
 
-//   .main-content {
-//     display: flex;
-//     flex-wrap: wrap; /* Permet aux éléments de se replier sur de petits écrans */
-//     max-width: 1200px; /* ou la largeur maximale souhaitée */
-//     margin: auto; /* Centre horizontalement si l'écran est plus large */
-//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-//     background-color: #B6CDE8;
-//     margin-top: 4%;
-//     border-radius: 10px;
-//     }
-    
-//     .login-section {
-//     flex: none; /* Empêche la section de grandir pour remplir l'espace flexible */
-//     padding: 50px; /* ou ajustez selon l'espacement souhaité */
-//     /* background-color: #007bff; */
-//     border-radius: 20px; /* Optionnel : coins arrondis */
-//     margin-top: 20px; /* Centre verticalement et horizontalement */
-    
-    
-//     }
-    
-//     .illustration-section {
-//     flex: 1; /* Prend le reste de l'espace disponible */
-//     text-align: center; /* Centre l'image si la section est plus large */
-//     padding: 50px; /* Maintient la cohérence avec la section de connexion */
-//     }
-    
-//     .illustration-section img {
-//     max-width: 100%;
-//     height: auto;
-//     }
-    
-//     .login-logo {
-//     display: block; /* S'assure que le logo prend sa propre ligne */
-//     margin: 0 auto 30px; /* Centre le logo et ajoute de la marge en dessous */
-//     max-width: 80px; /* Ou la taille souhaitée pour votre logo */
-//     height: auto; /* Garde le ratio d'aspect du logo */
-//     /* margin-left: 42%; */
-//     }
-    
-//     .logo2 {
-//     border-radius: 20px;
-//     width: 95%;
-//     /* width: auto; */
-//     height: auto;
-//     }
-    
-//     .login-title {
-//     text-align: center; /* Centre le texte horizontalement */
-//     margin: 50px auto; /* Ajoute de l'espace au-dessus et en dessous du titre */
-//     margin-top: -35px;
-//     /* margin-left: 25%; */
-//     }
-
-//     // form button {
-//     //   background-color: #D9D9D9;
-//     //   border: none;
-//     //   cursor: pointer;
-//     //   border-radius: 50px;
-//     //   margin-top: 30%;
-//     //   width: 80%;
-//     //   margin-left: 10%;
-//     //   }
+    // form button {
+    //   background-color: #D9D9D9;
+    //   border: none;
+    //   cursor: pointer;
+    //   border-radius: 50px;
+    //   margin-top: 30%;
+    //   width: 80%;
+    //   margin-left: 10%;
+    //   }
 
     
-//     .but {
-//       background-color: #D9D9D9;
-//       border: none;
-//       cursor: pointer;
-//       border-radius: 50px;
-//       margin-top: 10%;
-//       height: 6%;
-//       width: 50%;
-//       margin-left: 25%;
-//       }
+    .but {
+      background-color: #D9D9D9;
+      border: none;
+      cursor: pointer;
+      border-radius: 50px;
+      margin-top: 10%;
+      height: 6%;
+      width: 50%;
+      margin-left: 25%;
+      }
 
-//     .lastbut {
-//       display: flex;
-//       text-align: center;
-//       justify-content: space-evenly;
-//       margin-top: 4%
-//     }
+    .lastbut {
+      display: flex;
+      text-align: center;
+      justify-content: space-evenly;
+      margin-top: 4%
+    }
 
-//     /* Styles globaux pour les éléments de formulaire */
-//     .form-control {
-//       width: 100%; /* Exemple pour la largeur */
-//       padding: 10px; /* Exemple pour le padding */
-//       margin-bottom: 15px; /* Espacement entre les champs */
-//       border: 1px solid #ccc;
-//       border-radius: 8px;
-//     }
+    /* Styles globaux pour les éléments de formulaire */
+    .form-control {
+      width: 100%; /* Exemple pour la largeur */
+      padding: 10px; /* Exemple pour le padding */
+      margin-bottom: 15px; /* Espacement entre les champs */
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
 
-//     /* Styles spécifiques pour les erreurs de formulaire */
-//     .form-error {
-//       color: red;
-//       margin-bottom: 10px;
-//     }
+    /* Styles spécifiques pour les erreurs de formulaire */
+    .form-error {
+      color: red;
+      margin-bottom: 10px;
+    }
 
-//     /* Styles spécifiques pour les termes et conditions */
-//     .form-agree-terms {
-//       margin-top: 20px; /* Espacement avant le bouton d'envoi */
-//     }
+    /* Styles spécifiques pour les termes et conditions */
+    .form-agree-terms {
+      margin-top: 20px; /* Espacement avant le bouton d'envoi */
+    }
 

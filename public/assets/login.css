@@ -1,4 +1,89 @@
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[1].use[3]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[4]!./assets/scss/login.scss ***!
   \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
+.main-content {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de se replier sur de petits écrans */
+  max-width: 1200px; /* ou la largeur maximale souhaitée */
+  margin: auto; /* Centre horizontalement si l'écran est plus large */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #B6CDE8;
+  margin-top: 4%;
+  border-radius: 10px;
+}
+
+.login-section {
+  flex: none; /* Empêche la section de grandir pour remplir l'espace flexible */
+  padding: 50px; /* ou ajustez selon l'espacement souhaité */
+  /* background-color: #007bff; */
+  border-radius: 20px; /* Optionnel : coins arrondis */
+  margin-top: 20px; /* Centre verticalement et horizontalement */
+}
+
+.illustration-section {
+  flex: 1; /* Prend le reste de l'espace disponible */
+  text-align: center; /* Centre l'image si la section est plus large */
+  padding: 50px; /* Maintient la cohérence avec la section de connexion */
+}
+
+.illustration-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+.login-logo {
+  display: block; /* S'assure que le logo prend sa propre ligne */
+  margin: 0 auto 30px; /* Centre le logo et ajoute de la marge en dessous */
+  max-width: 80px; /* Ou la taille souhaitée pour votre logo */
+  height: auto; /* Garde le ratio d'aspect du logo */
+  /* margin-left: 42%; */
+}
+
+.logo2 {
+  border-radius: 20px;
+  width: 95%;
+  /* width: auto; */
+  height: auto;
+}
+
+.login-title {
+  text-align: center; /* Centre le texte horizontalement */
+  margin: 50px auto; /* Ajoute de l'espace au-dessus et en dessous du titre */
+  margin-top: -35px;
+  /* margin-left: 25%; */
+}
+
+.but {
+  background-color: #D9D9D9;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-top: 10%;
+  height: 6%;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.case {
+  display: flex;
+  flex-direction: column;
+  margin: 35px;
+  border-radius: 8px;
+  height: 25px;
+  width: 250px;
+}
+
+.lastbut {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  margin-top: 4%;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibG9naW4uY3NzIiwibWFwcGluZ3MiOiI7OztBQUFBLGdCQUFnQjtBQUFoQjtFQUNJO0VBQ0E7QUFFSjs7QUFDRTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7QUFFSjs7QUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7QUFFSjs7QUFHSTtFQUNBO0VBQ0E7RUFDQTtBQUFKOztBQUdJO0VBQ0E7RUFDQTtBQUFKOztBQUdJO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtBQUFKOztBQUdJO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7QUFBSjs7QUFHSTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0FBQUo7O0FBR0k7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0FBQU47O0FBR007RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7QUFBUjs7QUFHTTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0FBQVIsQyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL2Fzc2V0cy9zY3NzL2xvZ2luLnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiYm9keSB7XG4gICAgbWFyZ2luOiAwO1xuICAgIGZvbnQtZmFtaWx5OiBBcmlhbCwgc2Fucy1zZXJpZjtcbiAgfVxuXG4gIC5tYWluLWNvbnRlbnQge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC13cmFwOiB3cmFwOyAvKiBQZXJtZXQgYXV4IMOpbMOpbWVudHMgZGUgc2UgcmVwbGllciBzdXIgZGUgcGV0aXRzIMOpY3JhbnMgKi9cbiAgICBtYXgtd2lkdGg6IDEyMDBweDsgLyogb3UgbGEgbGFyZ2V1ciBtYXhpbWFsZSBzb3VoYWl0w6llICovXG4gICAgbWFyZ2luOiBhdXRvOyAvKiBDZW50cmUgaG9yaXpvbnRhbGVtZW50IHNpIGwnw6ljcmFuIGVzdCBwbHVzIGxhcmdlICovXG4gICAgYm94LXNoYWRvdzogMCA0cHggOHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjQjZDREU4O1xuICAgIG1hcmdpbi10b3A6IDQlO1xuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gICAgfVxuICAgIFxuICAgIC5sb2dpbi1zZWN0aW9uIHtcbiAgICBmbGV4OiBub25lOyAvKiBFbXDDqmNoZSBsYSBzZWN0aW9uIGRlIGdyYW5kaXIgcG91ciByZW1wbGlyIGwnZXNwYWNlIGZsZXhpYmxlICovXG4gICAgcGFkZGluZzogNTBweDsgLyogb3UgYWp1c3RleiBzZWxvbiBsJ2VzcGFjZW1lbnQgc291aGFpdMOpICovXG4gICAgLyogYmFja2dyb3VuZC1jb2xvcjogIzAwN2JmZjsgKi9cbiAgICBib3JkZXItcmFkaXVzOiAyMHB4OyAvKiBPcHRpb25uZWwgOiBjb2lucyBhcnJvbmRpcyAqL1xuICAgIG1hcmdpbi10b3A6IDIwcHg7IC8qIENlbnRyZSB2ZXJ0aWNhbGVtZW50IGV0IGhvcml6b250YWxlbWVudCAqL1xuICAgIFxuICAgIFxuICAgIH1cbiAgICBcbiAgICAuaWxsdXN0cmF0aW9uLXNlY3Rpb24ge1xuICAgIGZsZXg6IDE7IC8qIFByZW5kIGxlIHJlc3RlIGRlIGwnZXNwYWNlIGRpc3BvbmlibGUgKi9cbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7IC8qIENlbnRyZSBsJ2ltYWdlIHNpIGxhIHNlY3Rpb24gZXN0IHBsdXMgbGFyZ2UgKi9cbiAgICBwYWRkaW5nOiA1MHB4OyAvKiBNYWludGllbnQgbGEgY29ow6lyZW5jZSBhdmVjIGxhIHNlY3Rpb24gZGUgY29ubmV4aW9uICovXG4gICAgfVxuICAgIFxuICAgIC5pbGx1c3RyYXRpb24tc2VjdGlvbiBpbWcge1xuICAgIG1heC13aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IGF1dG87XG4gICAgfVxuICAgIFxuICAgIC5sb2dpbi1sb2dvIHtcbiAgICBkaXNwbGF5OiBibG9jazsgLyogUydhc3N1cmUgcXVlIGxlIGxvZ28gcHJlbmQgc2EgcHJvcHJlIGxpZ25lICovXG4gICAgbWFyZ2luOiAwIGF1dG8gMzBweDsgLyogQ2VudHJlIGxlIGxvZ28gZXQgYWpvdXRlIGRlIGxhIG1hcmdlIGVuIGRlc3NvdXMgKi9cbiAgICBtYXgtd2lkdGg6IDgwcHg7IC8qIE91IGxhIHRhaWxsZSBzb3VoYWl0w6llIHBvdXIgdm90cmUgbG9nbyAqL1xuICAgIGhlaWdodDogYXV0bzsgLyogR2FyZGUgbGUgcmF0aW8gZCdhc3BlY3QgZHUgbG9nbyAqL1xuICAgIC8qIG1hcmdpbi1sZWZ0OiA0MiU7ICovXG4gICAgfVxuICAgIFxuICAgIC5sb2dvMiB7XG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcbiAgICB3aWR0aDogOTUlO1xuICAgIC8qIHdpZHRoOiBhdXRvOyAqL1xuICAgIGhlaWdodDogYXV0bztcbiAgICB9XG4gICAgXG4gICAgLmxvZ2luLXRpdGxlIHtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7IC8qIENlbnRyZSBsZSB0ZXh0ZSBob3Jpem9udGFsZW1lbnQgKi9cbiAgICBtYXJnaW46IDUwcHggYXV0bzsgLyogQWpvdXRlIGRlIGwnZXNwYWNlIGF1LWRlc3N1cyBldCBlbiBkZXNzb3VzIGR1IHRpdHJlICovXG4gICAgbWFyZ2luLXRvcDogLTM1cHg7XG4gICAgLyogbWFyZ2luLWxlZnQ6IDI1JTsgKi9cbiAgICB9XG5cbiAgICAuYnV0IHtcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICNEOUQ5RDk7XG4gICAgICBib3JkZXI6IG5vbmU7XG4gICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICBib3JkZXItcmFkaXVzOiA1MHB4O1xuICAgICAgbWFyZ2luLXRvcDogMTAlO1xuICAgICAgaGVpZ2h0OiA2JTtcbiAgICAgIHdpZHRoOiA1MCU7XG4gICAgICBtYXJnaW4tbGVmdDogMjUlO1xuICAgICAgfVxuXG4gICAgICAuY2FzZSB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgIG1hcmdpbjogMzVweDtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogOHB4O1xuICAgICAgICBoZWlnaHQ6IDI1cHg7XG4gICAgICAgIHdpZHRoOiAyNTBweDtcbiAgICAgICAgfVxuXG4gICAgICAubGFzdGJ1dCB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1ldmVubHk7XG4gICAgICAgIG1hcmdpbi10b3A6IDQlXG4gICAgICB9XG4gICAgICAgIFxuICAgICAgLy8gICBmb3JtIGxhYmVsLCBmb3JtIGlucHV0LCBmb3JtIGJ1dHRvbiB7XG4gICAgICAvLyAgIG1hcmdpbjogNXB4IDA7XG4gICAgICAvLyAgIH1cbiAgICAgICAgXG4gICAgICAvLyBmb3JtIGlucHV0LCBmb3JtIGJ1dHRvbiB7XG4gICAgICAvLyAgIHBhZGRpbmc6IDVweDtcbiAgICAgIC8vICAgYm9yZGVyOiAxcHggc29saWQgI2NjY2NjYztcbiAgICAgIC8vICAgYm9yZGVyLXJhZGl1czogN3B4O1xuICAgICAgLy8gICAvLyBtYXJnaW4tdG9wOiAxMCU7XG4gICAgICAvLyAgIHdpZHRoOiA5NSU7XG4gICAgICAvLyAgIH1cblxuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9*/
