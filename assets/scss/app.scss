@@ -77,11 +77,26 @@ body {
   width: 100%;
   height: 250px;
   background-color: #f8f8f8;
+  display: flex;
+  justify-content: left;
+  align-items: center;
  }
 
  .logofooter{
-  margin-top: 50px;
   width: 200px;
-  height: auto;
+  height: 200px;
   background-color: #f8f8f8;
+  margin-left: 7.5%;
+ }
+
+ .textfooter{
+  font-size: 80px;
+ }
+
+ .bar{
+  margin-left: 7%;
+  height: 200px;
+  width: 1px;
+  background-color: black;
+
  }
