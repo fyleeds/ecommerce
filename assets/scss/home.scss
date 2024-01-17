@@ -1,6 +1,4 @@
-body{
-  justify-items: center;
-}
+
 
 .cases
 {
@@ -8,6 +6,7 @@ body{
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
+    margin-left: 3%;
 }
 
 .case
@@ -82,3 +81,23 @@ body{
     right: 10px;
     text-align: right;
 }
+
+.baniere{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-bottom: 20px;
+    height: 200px;
+    width: 90%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.baniere img{
+    width: 100%;
+    margin-top: 100px;
+    border-radius: 30px;
+}
+
