@@ -44,7 +44,8 @@
         <p>Il y a un produit :</p>
         {% for product in products %}
             {# {{ dump(product) }} #}
-            {% include 'product/index.html.twig' with {'product': product,'user_id':user_id} %}
+            {% include 'product/index.html.twig' with {'product': product, 'user_id': user_id} only %}
+            
         {% endfor %}
         <hr>
     {% else %}
@@ -52,7 +53,7 @@
         <p>Il y a plusieurs produits :</p>
         {% for product in products %}
             {# {{ dump(product) }} #}
-            {% include 'product/index.html.twig' with {'product': product} %}
+            {% include 'product/index.html.twig' with {'product': product} only %}
         {% endfor %}
     {% endif %}
 
