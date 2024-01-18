@@ -45,10 +45,11 @@
             </div>
         {% endfor %}
     {% endfor %}
-    <hr>
+    {# <hr>
     <a href="{{ path('homepage') }}">Retourner page principale</a>
-    <hr>
+    <hr> #}
     <div class="main-content">
+         <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo" class="login-logo">
         <div class="login-section">
             {{ form_start(form) }}
 

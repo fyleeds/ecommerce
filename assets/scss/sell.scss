@@ -69,6 +69,7 @@ body {
 
   .main-content {
     display: flex;
+    flex-direction: row-reverse;
     flex-wrap: wrap; /* Permet aux éléments de se replier sur de petits écrans */
     max-width: 1200px; /* ou la largeur maximale souhaitée */
     margin: auto; /* Centre horizontalement si l'écran est plus large */
@@ -84,8 +85,8 @@ body {
     /* background-color: #007bff; */
     border-radius: 20px; /* Optionnel : coins arrondis */
     margin-top: 20px; /* Centre verticalement et horizontalement */
-    
-    
+    margin-left: 3%;
+    // background-color: aqua;
     }
 
     .form-control {
@@ -94,6 +95,7 @@ body {
       margin-bottom: 4px; /* Espacement entre les champs */
       border: 1px solid #ccc;
       border-radius: 8px;
+      margin-left: -2%;
     }
 
     .but {
@@ -106,3 +108,14 @@ body {
       width: 50%;
       margin-left: 25%;
       }
+
+    .login-logo {
+        display: block; /* Affiche le logo sur sa propre ligne */
+        margin: 0 auto; /* Centre le logo horizontalement */
+        width: 500px; /* Taille fixe du logo */
+        height: 500px; /* Hauteur fixe pour forcer le logo à rester dans un cadre carré */
+        object-fit: contain; /* Assure que tout le logo est visible */
+        object-position: center; /* Centre le logo dans son cadre */  
+        margin-top: 9%;
+        // margin-left: 8%;  
+     }

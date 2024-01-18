@@ -53,11 +53,14 @@
                 <a href="{{ path('edit_product', {id: product.id}) }}" class="btn">Editer produit</a>
                 <a href="{{ path('homepage') }}" class="btn">Retourner à la page principale</a>
             {% else %}
-                <hr>
+                {# <hr> #}
+              <div class="infos">
                 <a href="{{ path('account_user_index', {id: product.author.id}) }}" class="btn">Info auteur</a>
                 <a href="{{ path('cart_add', {id: product.id}) }}" class="btn">Ajouter au panier</a>
                 <a href="{{ path('homepage') }}" class="btn">Retourner à la page principale</a>
-                <hr>
+              </div>
+                {# <hr> #}
+
             {% endif %}
         </div>
     </div>
