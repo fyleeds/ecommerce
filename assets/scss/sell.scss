@@ -60,12 +60,19 @@ body {
   .utilisateur {
     margin-right: 40px;
     width: 44%;
+    transition: transform 0.3s ease;
   }
   
   .sac {
     margin-right: 40px;
     width: 35%;
+    transition: transform 0.3s ease;
   }
+
+  .utilisateur:hover,
+.sac:hover {
+    transform: scale(1.1); /* Agrandit l'image de 10% */
+}
 
   .main-content {
     display: flex;
