@@ -23,14 +23,10 @@
     </div>
     <div class="user-section">
     {% if userEmail %}
-        <a href="{{ path('my_account_index') }}">
-            <img src="{{ asset('img/utilisateur.png') }}" alt="user-icon" class="utilisateur"/>
-        </a>
-        <a href="{{ path('cart_index') }}">
-            <img src="{{ asset('img/sac.png') }}" alt="sac-icon" class="sac"/>
-        </a>
+        <a href="{{ path('my_account_index') }}">A</a>
+        <a href="{{ path('cart_index') }}">C</a>
+        <a href="{{ path('sell_index') }}">S</a>
         <a href="{{ path('app_logout') }}">D</a>
-        <a href="{{ path('app_sell') }}">S</a>
     {% else %}
         <a href="{{ path('app_login') }}">Se Connecter</a>
         <a href="{{ path('register_index') }}">S'inscrire</a>
