@@ -1,69 +1,48 @@
-// body {
-//     margin: 0;
-//     font-family: Arial, sans-serif;
-//   }
+.main-content {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap; /* Permet aux éléments de se replier sur de petits écrans */
+    max-width: 1200px; /* ou la largeur maximale souhaitée */
+    margin: auto; /* Centre horizontalement si l'écran est plus large */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #B6CDE8;
+    margin-top: 2%;
+    border-radius: 10px;
+    }  
+
   
-//   .header {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     padding: 10px 20px;
-//     background-color: #f8f8f8;
-//     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-//   }
-  
-//   .logo-section {
-//     display: flex;
-//     align-items: center; /* Cela aligne verticalement l'image et le texte */
-//   }
-//   .logo-section img {
-//     height: 40px; /* Ajustez la taille selon votre logo */
-//     margin-right: 10px;
-// //     // display: flex;
-// //     // align-items: center; 
-//   }
-  
-//   .search-section {
-//     display: flex;
-//     border: 1px solid #cccccc;
-//     border-radius: 20px;
-//     overflow: hidden;
-//     /* margin-left: 65%; */
-//     align-items: center;
-//   }
-  
-//   .search-section input[type=search] {
-//     border: none;
-//     padding: 5px 10px;
-//     outline: none;
-//     /* border-radius: 5%; */
-//   }
-  
-//   .search-section button {
-//     background-color: #e7e7e7;
-//     border: none;
-//     padding: 5px 15px;
-//     cursor: pointer;
-//   }
-  
-//   .user-section {
-//     display: flex;
-//     align-items: center; /* Cela va centrer les icônes verticalement dans le conteneur */
-//     justify-content: center; /* Cela va centrer les icônes horizontalement dans le conteneur */
-//   }
-  
-//   .user-section a {
-//     text-decoration: none;
-//     font-size: 24px;
-//     margin-left: 15px;
-//   }
-  
-//   .utilisateur {
-//     margin-right: 40px;
-//     width: 44%;
-//   }
-  
-//   .sac {
-//     margin-right: 40px;
-//     width: 35%;
-//   }
+    .login-section {
+      flex: none; /* Empêche la section de grandir pour remplir l'espace flexible */
+      padding: 50px; /* ou ajustez selon l'espacement souhaité */
+      /* background-color: #007bff; */
+      border-radius: 20px; /* Optionnel : coins arrondis */
+      margin-top: 20px; /* Centre verticalement et horizontalement */
+      }
+
+    .form-control {
+      width: 100%; /* Exemple pour la largeur */
+      padding: 10px; /* Exemple pour le padding */
+      margin-bottom: 10px; /* Espacement entre les champs */
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .but {
+      background-color: #D9D9D9;
+      border: none;
+      cursor: pointer;
+      border-radius: 50px;
+      margin-top: 20%;
+      height: 30px;
+      width: 50%;
+      margin-left: 25%;
+      }
+    
+      .login-logo {
+        display: block; /* Affiche le logo sur sa propre ligne */
+        margin: 0 auto; /* Centre le logo horizontalement */
+        width: 500px; /* Taille fixe du logo */
+        height: 500px; /* Hauteur fixe pour forcer le logo à rester dans un cadre carré */
+        object-fit: contain; /* Assure que tout le logo est visible */
+        object-position: center; /* Centre le logo dans son cadre */   
+     }

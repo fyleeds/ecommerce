@@ -1,4 +1,55 @@
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[1].use[3]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[4]!./assets/scss/account.scss ***!
   \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+.main-content {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap; /* Permet aux éléments de se replier sur de petits écrans */
+  max-width: 1200px; /* ou la largeur maximale souhaitée */
+  margin: auto; /* Centre horizontalement si l'écran est plus large */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #B6CDE8;
+  margin-top: 2%;
+  border-radius: 10px;
+}
 
+.login-section {
+  flex: none; /* Empêche la section de grandir pour remplir l'espace flexible */
+  padding: 50px; /* ou ajustez selon l'espacement souhaité */
+  /* background-color: #007bff; */
+  border-radius: 20px; /* Optionnel : coins arrondis */
+  margin-top: 20px; /* Centre verticalement et horizontalement */
+}
+
+.form-control {
+  width: 100%; /* Exemple pour la largeur */
+  padding: 10px; /* Exemple pour le padding */
+  margin-bottom: 10px; /* Espacement entre les champs */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.but {
+  background-color: #D9D9D9;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-top: 20%;
+  height: 30px;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.login-logo {
+  display: block; /* Affiche le logo sur sa propre ligne */
+  margin: 0 auto; /* Centre le logo horizontalement */
+  width: 500px; /* Taille fixe du logo */
+  height: 500px; /* Hauteur fixe pour forcer le logo à rester dans un cadre carré */
+  -o-object-fit: contain;
+     object-fit: contain; /* Assure que tout le logo est visible */
+  -o-object-position: center;
+     object-position: center; /* Centre le logo dans son cadre */
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYWNjb3VudC5jc3MiLCJtYXBwaW5ncyI6Ijs7O0FBQUEsZ0JBQWdCO0FBQWhCO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0FBRUo7O0FBRUk7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0FBQ047O0FBRUk7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0FBQ047O0FBRUk7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0FBQ047O0FBRU07RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0tBQUE7RUFDQTtLQUFBO0FBQ1IsQyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL2Fzc2V0cy9zY3NzL2FjY291bnQuc2NzcyJdLCJzb3VyY2VzQ29udGVudCI6WyIubWFpbi1jb250ZW50IHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGZsZXgtZGlyZWN0aW9uOiByb3ctcmV2ZXJzZTtcbiAgICBmbGV4LXdyYXA6IHdyYXA7IC8qIFBlcm1ldCBhdXggw6lsw6ltZW50cyBkZSBzZSByZXBsaWVyIHN1ciBkZSBwZXRpdHMgw6ljcmFucyAqL1xuICAgIG1heC13aWR0aDogMTIwMHB4OyAvKiBvdSBsYSBsYXJnZXVyIG1heGltYWxlIHNvdWhhaXTDqWUgKi9cbiAgICBtYXJnaW46IGF1dG87IC8qIENlbnRyZSBob3Jpem9udGFsZW1lbnQgc2kgbCfDqWNyYW4gZXN0IHBsdXMgbGFyZ2UgKi9cbiAgICBib3gtc2hhZG93OiAwIDRweCA4cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNCNkNERTg7XG4gICAgbWFyZ2luLXRvcDogMiU7XG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcbiAgICB9ICBcblxuICBcbiAgICAubG9naW4tc2VjdGlvbiB7XG4gICAgICBmbGV4OiBub25lOyAvKiBFbXDDqmNoZSBsYSBzZWN0aW9uIGRlIGdyYW5kaXIgcG91ciByZW1wbGlyIGwnZXNwYWNlIGZsZXhpYmxlICovXG4gICAgICBwYWRkaW5nOiA1MHB4OyAvKiBvdSBhanVzdGV6IHNlbG9uIGwnZXNwYWNlbWVudCBzb3VoYWl0w6kgKi9cbiAgICAgIC8qIGJhY2tncm91bmQtY29sb3I6ICMwMDdiZmY7ICovXG4gICAgICBib3JkZXItcmFkaXVzOiAyMHB4OyAvKiBPcHRpb25uZWwgOiBjb2lucyBhcnJvbmRpcyAqL1xuICAgICAgbWFyZ2luLXRvcDogMjBweDsgLyogQ2VudHJlIHZlcnRpY2FsZW1lbnQgZXQgaG9yaXpvbnRhbGVtZW50ICovXG4gICAgICB9XG5cbiAgICAuZm9ybS1jb250cm9sIHtcbiAgICAgIHdpZHRoOiAxMDAlOyAvKiBFeGVtcGxlIHBvdXIgbGEgbGFyZ2V1ciAqL1xuICAgICAgcGFkZGluZzogMTBweDsgLyogRXhlbXBsZSBwb3VyIGxlIHBhZGRpbmcgKi9cbiAgICAgIG1hcmdpbi1ib3R0b206IDEwcHg7IC8qIEVzcGFjZW1lbnQgZW50cmUgbGVzIGNoYW1wcyAqL1xuICAgICAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcbiAgICAgIGJvcmRlci1yYWRpdXM6IDhweDtcbiAgICB9XG5cbiAgICAuYnV0IHtcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICNEOUQ5RDk7XG4gICAgICBib3JkZXI6IG5vbmU7XG4gICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICBib3JkZXItcmFkaXVzOiA1MHB4O1xuICAgICAgbWFyZ2luLXRvcDogMjAlO1xuICAgICAgaGVpZ2h0OiAzMHB4O1xuICAgICAgd2lkdGg6IDUwJTtcbiAgICAgIG1hcmdpbi1sZWZ0OiAyNSU7XG4gICAgICB9XG4gICAgXG4gICAgICAubG9naW4tbG9nbyB7XG4gICAgICAgIGRpc3BsYXk6IGJsb2NrOyAvKiBBZmZpY2hlIGxlIGxvZ28gc3VyIHNhIHByb3ByZSBsaWduZSAqL1xuICAgICAgICBtYXJnaW46IDAgYXV0bzsgLyogQ2VudHJlIGxlIGxvZ28gaG9yaXpvbnRhbGVtZW50ICovXG4gICAgICAgIHdpZHRoOiA1MDBweDsgLyogVGFpbGxlIGZpeGUgZHUgbG9nbyAqL1xuICAgICAgICBoZWlnaHQ6IDUwMHB4OyAvKiBIYXV0ZXVyIGZpeGUgcG91ciBmb3JjZXIgbGUgbG9nbyDDoCByZXN0ZXIgZGFucyB1biBjYWRyZSBjYXJyw6kgKi9cbiAgICAgICAgb2JqZWN0LWZpdDogY29udGFpbjsgLyogQXNzdXJlIHF1ZSB0b3V0IGxlIGxvZ28gZXN0IHZpc2libGUgKi9cbiAgICAgICAgb2JqZWN0LXBvc2l0aW9uOiBjZW50ZXI7IC8qIENlbnRyZSBsZSBsb2dvIGRhbnMgc29uIGNhZHJlICovICAgXG4gICAgIH0iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=*/

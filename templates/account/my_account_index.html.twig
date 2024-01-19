@@ -22,13 +22,41 @@
             </div>
         {% endfor %}
     {% endfor %}
-    <hr>
+    {# <hr>
     <a href="{{ path('homepage') }}">Retourner page principale</a>
-    <hr>
-        {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button type="submit">Enregistrer les modifications</button>
-    {{ form_end(form) }}
+    <hr> #}
+    <div class="main-content">
+         <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo" class="login-logo">
+        <div class="login-section">
+            {{ form_start(form) }}
+
+            <div class="form-group">
+                {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(form.plainPassword, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(form.username, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.sold, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(form.pfp, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+<!-- Répétez pour les autres champs du formulaire -->
+
+<button class="but" type="submit">Save changes</button>
+
+{{ form_end(form) }}
+
+        </div>
+    </div>
     <hr>
     {# {{ dump(products) }} #}
     {% if products|length == 0 %}
