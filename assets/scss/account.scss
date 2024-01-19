@@ -108,13 +108,11 @@ body {
       margin-left: 25%;
       }
     
-      .login-logo {
-        display: block; /* Affiche le logo sur sa propre ligne */
-        margin: 0 auto; /* Centre le logo horizontalement */
-        width: 500px; /* Taille fixe du logo */
-        height: 500px; /* Hauteur fixe pour forcer le logo à rester dans un cadre carré */
-        object-fit: contain; /* Assure que tout le logo est visible */
-        object-position: center; /* Centre le logo dans son cadre */  
-        // margin-top: 0%;
-        // margin-left: 12%;  
-     }
+        .login-logo {
+          display: block; /* Affiche le logo sur sa propre ligne */
+          margin: 0 auto; /* Centre le logo horizontalement */
+          width: 500px; /* Taille fixe du logo */
+          height: 500px; /* Hauteur fixe pour forcer le logo à rester dans un cadre carré */
+          object-fit: contain; /* Assure que tout le logo est visible */
+          object-position: center; /* Centre le logo dans son cadre */   
+      }

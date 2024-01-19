@@ -70,9 +70,9 @@ body {
   .main-content {
     display: flex;
     flex-direction: row-reverse;
-    flex-wrap: wrap; /* Permet aux éléments de se replier sur de petits écrans */
-    max-width: 1200px; /* ou la largeur maximale souhaitée */
-    margin: auto; /* Centre horizontalement si l'écran est plus large */
+    flex-wrap: wrap; 
+    max-width: 1200px; 
+    margin: auto; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #B6CDE8;
     margin-top: 1%;
@@ -80,11 +80,11 @@ body {
     }
     
     .login-section {
-    flex: none; /* Empêche la section de grandir pour remplir l'espace flexible */
-    padding: 50px; /* ou ajustez selon l'espacement souhaité */
+    flex: none; 
+    padding: 50px; 
     /* background-color: #007bff; */
-    border-radius: 20px; /* Optionnel : coins arrondis */
-    margin-top: 20px; /* Centre verticalement et horizontalement */
+    border-radius: 20px; 
+    margin-top: 20px; 
     margin-left: 3%;
     // background-color: aqua;
     }
@@ -96,7 +96,13 @@ body {
       border: 1px solid #ccc;
       border-radius: 8px;
       margin-left: -2%;
+      // resize: none;
     }
+
+    textarea {
+      resize: none;
+  }
+  
 
     .but {
       background-color: #D9D9D9;
@@ -119,3 +125,26 @@ body {
         margin-top: 9%;
         // margin-left: 8%;  
      }
+
+     .date-time-container {
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .date-container {
+      display: flex;
+      justify-content: space-between; /* Sépare les sélecteurs de date uniformément */
+  }
+  
+  .date-element {
+      flex-grow: 1; /* Les sélecteurs de date prennent une part égale de l'espace disponible */
+      margin-right: 5px; /* Espacement entre les sélecteurs de date */
+  }
+  
+  .date-element:last-child {
+      margin-right: 0; /* Enlève l'espacement sur le dernier élément pour éviter un décalage */
+  }
+  
+  // .time-container { 
+  //     margin-top: 10px; /* Espacement entre les sélecteurs de date et de temps */
+  // }
