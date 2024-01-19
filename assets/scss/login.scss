@@ -130,7 +130,15 @@ body {
       height: 6%;
       width: 50%;
       margin-left: 25%;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
       }
+
+      .but:hover {
+        background-color: #B0B0B0; /* Couleur de fond plus foncée au survol */
+        color: #fff; /* Changement de la couleur du texte */
+        transform: scale(1.05); /* Agrandit légèrement le bouton */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Ombre portée plus prononcée */
+    }
 
       .case {
         display: flex;
