@@ -8,8 +8,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\ProductRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
+#[Vich\Uploadable]
 class Product
 {
     public function __toString(): string
@@ -39,9 +42,12 @@ class Product
     #[ORM\Column (type:"datetime")]
     private ?\DateTimeInterface $createdAt = null;
 
-    #[Assert\NotBlank]
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255,type: 'string')]
     private ?string $attachment = null;
+
+    // NOTE: This is not a mapped field of entity metadata, just a simple property.
+    #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'attachment')]
+    private ?File $attachmentFile = null;
 
     #[Assert\NotBlank]
     #[ORM\ManyToOne(inversedBy: 'products')]
@@ -128,6 +134,22 @@ class Product
         $this->attachment = $attachment;
 
         return $this;
+    }
+
+    public function setAttachmentFile(?File $attachmentFile = null): void
+    {
+        $this->attachmentFile = $attachmentFile;
+
+        if (null !== $attachmentFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->createdAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getAttachmentFile(): ?File
+    {
+        return $this->attachmentFile;
     }
 
     public function getCategory(): ?CategoryShop

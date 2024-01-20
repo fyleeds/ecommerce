@@ -6,12 +6,12 @@ use App\Entity\Product;
 use App\Entity\Stock;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ProductCrudController extends AbstractCrudController
 {
@@ -38,7 +38,8 @@ class ProductCrudController extends AbstractCrudController
         return [
             TextField::new('title'),
             TextEditorField::new('content'),
-            TextField::new('attachment'),
+            TextField::new('attachmentFile')->setFormType(VichImageType::class),
+            ImageField::new('attachment')->setFormType(ImageField::class)->setBasePath('/uploads/attachments/')->onlyOnIndex(),
             TextField::new('type'),
             AssociationField::new('author'),
             TextField::new('game_character'),
