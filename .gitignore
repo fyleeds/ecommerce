@@ -3,6 +3,7 @@
 
 ### Node ###
 # Logs
+db/
 ecommercedev/
 logs
 *.log
