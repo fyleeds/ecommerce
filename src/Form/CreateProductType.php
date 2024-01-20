@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class CreateProductType extends AbstractType
 {
@@ -22,7 +23,10 @@ class CreateProductType extends AbstractType
             ->add('releaseDate', DateType::class, [
                 'label' => 'Release Date'
             ])
-            ->add('attachment')
+            ->add('attachmentFile', VichFileType::class, [
+                'required' => false,
+                'label' => 'Product Attachment',
+            ])
             ->add('type')
             ->add('game_character')
             ->add('category')

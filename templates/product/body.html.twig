@@ -2,8 +2,10 @@
 
     <div class="main-content">
     <!-- Image du produit à gauche -->
-    <img src="{{ product.attachment }}" alt="{{ product.title }}" class="product-image">
-    
+    <img src="{{ asset('uploads/attachments/' ~ product.attachment) }}" 
+    onerror="this.onerror=null; this.src='{{ product.attachment }}';" 
+    alt="{{ product.title }}" 
+    class="product-image">    
     <!-- Section contenant les détails du produit à droite -->
     <div class="login-section">
         <div class="product-details">

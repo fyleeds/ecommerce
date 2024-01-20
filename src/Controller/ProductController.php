@@ -48,8 +48,12 @@ class ProductController extends AbstractController
                     $form->handleRequest($request);
                     if ($form->isSubmitted() && $form->isValid()) {
                         $product = $form->getData();
-                        $stock = $product->getStock(); // Get the Stock object from Product
 
+                        if ($product->getAttachmentFile() && $product->getAttachmentFile()->getClientOriginalName()) {
+                            $product->setAttachment($product->getAttachmentFile()->getClientOriginalName());
+                        }
+                        
+                        $stock = $product->getStock(); // Get the Stock object from Product
                         // Persist both Product and Stock
                         $entityManager->persist($product);
                         $entityManager->persist($stock);

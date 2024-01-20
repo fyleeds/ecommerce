@@ -12,7 +12,7 @@
     <div class="main-content">
     <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo" class="login-logo">
     <div class="login-section">
-    {{ form_start(form) }}
+    {{ form_start(form, {'attr': {'enctype':'multipart/form-data'}}) }}
 
     <div class="form-group">
         {{ form_row(form.title, {'attr': {'class': 'form-control'}}) }}
@@ -38,8 +38,11 @@
         'attr': {'class': 'form-control', 'placeholder': 'Password'}
     }) }} #}
 
-    <div class="form-group">
+    {# <div class="form-group">
         {{ form_row(form.attachment, {'attr': {'class': 'form-control'}}) }}
+    </div> #}
+    <div class="form-group">
+            {{ form_row(form.attachmentFile, {'attr': {'class': 'form-control'}}) }}
     </div>
 
     <div class="form-group">

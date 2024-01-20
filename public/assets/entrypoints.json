@@ -2,75 +2,75 @@
   "entrypoints": {
     "app": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/app.js"
+        "/assets/runtime.62bcf186.js",
+        "/assets/app.4fe7be59.js"
       ],
       "css": [
-        "/assets/app.css"
+        "/assets/app.77cddc12.css"
       ]
     },
     "register": {
       "js": [
-        "/assets/runtime.js"
+        "/assets/runtime.62bcf186.js"
       ],
       "css": [
-        "/assets/register.css"
+        "/assets/register.7f97686a.css"
       ]
     },
     "login": {
       "js": [
-        "/assets/runtime.js"
+        "/assets/runtime.62bcf186.js"
       ],
       "css": [
-        "/assets/login.css"
+        "/assets/login.2a0dfae8.css"
       ]
     },
     "home": {
       "js": [
-        "/assets/runtime.js"
+        "/assets/runtime.62bcf186.js"
       ],
       "css": [
-        "/assets/home.css"
+        "/assets/home.5a6f64e5.css"
       ]
     },
     "shoppingcart": {
       "js": [
-        "/assets/runtime.js"
+        "/assets/runtime.62bcf186.js"
       ],
       "css": [
-        "/assets/shoppingcart.css"
+        "/assets/shoppingcart.28aca338.css"
       ]
     },
     "cartvalidate": {
       "js": [
-        "/assets/runtime.js"
+        "/assets/runtime.62bcf186.js"
       ],
       "css": [
-        "/assets/cartvalidate.css"
+        "/assets/cartvalidate.31d6cfe0.css"
       ]
     },
     "account": {
       "js": [
-        "/assets/runtime.js"
+        "/assets/runtime.62bcf186.js"
       ],
       "css": [
-        "/assets/account.css"
+        "/assets/account.0399e5e5.css"
       ]
     },
     "sell": {
       "js": [
-        "/assets/runtime.js"
+        "/assets/runtime.62bcf186.js"
       ],
       "css": [
-        "/assets/sell.css"
+        "/assets/sell.ac4e2cad.css"
       ]
     },
     "product": {
       "js": [
-        "/assets/runtime.js"
+        "/assets/runtime.62bcf186.js"
       ],
       "css": [
-        "/assets/product.css"
+        "/assets/product.3a41bcac.css"
       ]
     }
   }
