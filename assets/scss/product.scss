@@ -3,121 +3,121 @@ body {
     font-family: Arial, sans-serif;
   }
   
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f8f8;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  .logo-section {
-    display: flex;
-    align-items: center; /* Cela aligne verticalement l'image et le texte */
-  }
-  
-  .logo-section img {
-    height: 40px; /* Ajustez la taille selon votre logo */
-    margin-right: 10px;
-    // display: flex;
-    // align-items: center; // Cela aligne verticalement l'image et le texte au centre
-    // justify-content: center; 
-  }
-  
-  .search-section {
-    display: flex;
-    border: 1px solid #cccccc;
-    border-radius: 20px;
-    overflow: hidden;
-    /* margin-left: 65%; */
-    align-items: center;
-  }
-  
-  .search-section input[type=search] {
-    border: none;
-    padding: 5px 10px;
-    outline: none;
-    /* border-radius: 5%; */
-  }
-  
-  .search-section button {
-    background-color: #e7e7e7;
-    border: none;
-    padding: 5px 15px;
-    cursor: pointer;
-  }
-  
-  .user-section {
-    display: flex;
-    align-items: center; /* Cela va centrer les icônes verticalement dans le conteneur */
-    justify-content: center; /* Cela va centrer les icônes horizontalement dans le conteneur */
-  }
-  
-  .user-section a {
-    text-decoration: none;
-    font-size: 24px;
-    margin-left: 15px;
-  }
-  
-  .utilisateur {
-    margin-right: 40px;
-    width: 44%;
-  }
-  
-  .sac {
-    margin-right: 40px;
-    width: 35%;
-  }
+.logo-section {
+  display: flex;
+  align-items: center; /* Cela aligne verticalement l'image et le texte */
+}
 
-  .main-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 900px;
-    margin: auto;
-    background-color: #f8f8f8;
-    margin-top: 4%;
-    border-radius: 4px;
+.logo-section img {
+  height: 40px; /* Ajustez la taille selon votre logo */
+  margin-right: 10px;
+  // display: flex;
+  // align-items: center; // Cela aligne verticalement l'image et le texte au centre
+  // justify-content: center; 
+}
+
+.search-section {
+  display: flex;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  overflow: hidden;
+  /* margin-left: 65%; */
+  align-items: center;
+}
+
+.search-section input[type=search] {
+  border: none;
+  padding: 5px 10px;
+  outline: none;
+  /* border-radius: 5%; */
+}
+
+.search-section button {
+  background-color: #e7e7e7;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.user-section {
+  display: flex;
+  align-items: center; /* Cela va centrer les icônes verticalement dans le conteneur */
+  justify-content: center; /* Cela va centrer les icônes horizontalement dans le conteneur */
+}
+
+.user-section a {
+  text-decoration: none;
+  font-size: 24px;
+  margin-left: 15px;
+}
+
+.utilisateur {
+  margin-right: 40px;
+  width: 44%;
+}
+
+.sac {
+  margin-right: 40px;
+  width: 35%;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: auto;
+  background-color: #f8f8f8;
+  margin-top: 4%;
+  border-radius: 4px;
 }
 
 .product-image {
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center;
-    width: 300px; /* Largeur fixe pour toutes les images */
-    height: 300px; /* Hauteur fixe pour toutes les images */
-    object-fit: contain; /* Assure que l'image entière est visible */
-    object-position: center; /* Centre l'image dans le cadre */
-    background-color: #f8f8f8; /* Optionnel: couleur de fond si l'image ne remplit pas tout l'espace */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px; 
+  height: 300px; 
+  object-fit: contain;
+  object-position: center;
+  background-color: #f8f8f8;
 }
 
 .product-image img {
-  max-width: 100%; /* Maximum 100% de la largeur du conteneur */
-  max-height: 100%; /* Maximum 100% de la hauteur du conteneur */
-  object-fit: contain; /* L'image s'adapte sans être rognée */
+  max-width: 100%; 
+  max-height: 100%;
+  object-fit: contain;
 }
 
 
 
 .login-section {
-    flex: 1;
-    text-align: left;
-    padding: 40px;
-    border-radius: 0px 4px 4px 0px;
-    background-color: #B6CDE8;
+  flex: 1;
+  text-align: left;
+  padding: 40px;
+  border-radius: 0px 4px 4px 0px;
+  background-color: #B6CDE8;
 }
 
 .product-details {
-    max-width: 50%;
-    margin-left: 25%;
+  max-width: 50%;
+  margin-left: 25%;
 }
 
 .btn {
-    display: inline-block;
-    margin-top: 10px;
-    text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
 }
 
 .info {
@@ -127,14 +127,14 @@ body {
 
 .info a.btn {
   display: block;
-  background-color: #007bff; /* Couleur de fond bleue */
-  color: white; /* Texte en blanc pour plus de contraste */
-  text-align: center; /* Centre le texte dans le bouton */
-  padding: 7px 15px; /* Espace intérieur pour agrandir le bouton */
-  margin-bottom: 10px; /* Espacement entre les boutons */
-  border-radius: 5px; /* Coins arrondis */
-  text-decoration: none; /* Supprime le soulignement des liens */
-  transition: background-color 0.3s ease; /* Transition douce pour l'effet de survol */
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 7px 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-decoration: none; 
+  transition: background-color 0.3s ease;
 }
 
 .info a.btn:hover {
@@ -149,17 +149,17 @@ body {
 
 .info_admin a.btn {
   display: block;
-  background-color: #007bff; /* Couleur de fond bleue */
-  color: white; /* Texte en blanc pour plus de contraste */
-  text-align: center; /* Centre le texte dans le bouton */
+  background-color: #007bff;
+  color: white;
+  text-align: center;
   padding: 7px 15px; /* Espace intérieur pour agrandir le bouton */
-  margin-bottom: 10px; /* Espacement entre les boutons */
-  border-radius: 5px; /* Coins arrondis */
+  margin-bottom: 10px;
+  border-radius: 5px;
   text-decoration: none; /* Supprime le soulignement des liens */
   transition: background-color 0.3s ease; /* Transition douce pour l'effet de survol */
 }
 
 .info_admin a.btn:hover {
-  background-color: #0056b3; /* Couleur de fond plus foncée lors du survol */
+  background-color: #0056b3;
   text-decoration: none; /* Assure que le soulignement n'apparaît pas au survol */
 }
