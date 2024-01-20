@@ -90,7 +90,6 @@ body {
     height: 300px; /* Hauteur fixe pour toutes les images */
     object-fit: contain; /* Assure que l'image entière est visible */
     object-position: center; /* Centre l'image dans le cadre */
-    border: 1px solid #ccc; /* Optionnel: ajoute une bordure pour mieux visualiser le cadre */
     background-color: #f8f8f8; /* Optionnel: couleur de fond si l'image ne remplit pas tout l'espace */
 }
 
@@ -119,10 +118,48 @@ body {
     display: inline-block;
     margin-top: 10px;
     text-decoration: none;
-    /* Ajoutez d'autres styles de boutons ici */
 }
 
-.infos {
+.info {
   display: flex;
-  
+  flex-direction: column;
+}
+
+.info a.btn {
+  display: block;
+  background-color: #007bff; /* Couleur de fond bleue */
+  color: white; /* Texte en blanc pour plus de contraste */
+  text-align: center; /* Centre le texte dans le bouton */
+  padding: 7px 15px; /* Espace intérieur pour agrandir le bouton */
+  margin-bottom: 10px; /* Espacement entre les boutons */
+  border-radius: 5px; /* Coins arrondis */
+  text-decoration: none; /* Supprime le soulignement des liens */
+  transition: background-color 0.3s ease; /* Transition douce pour l'effet de survol */
+}
+
+.info a.btn:hover {
+  background-color: #0056b3; /* Couleur de fond plus foncée lors du survol */
+  text-decoration: none; /* Assure que le soulignement n'apparaît pas au survol */
+}
+
+.info_admin {
+  display: flex;
+  flex-direction: column;
+}
+
+.info_admin a.btn {
+  display: block;
+  background-color: #007bff; /* Couleur de fond bleue */
+  color: white; /* Texte en blanc pour plus de contraste */
+  text-align: center; /* Centre le texte dans le bouton */
+  padding: 7px 15px; /* Espace intérieur pour agrandir le bouton */
+  margin-bottom: 10px; /* Espacement entre les boutons */
+  border-radius: 5px; /* Coins arrondis */
+  text-decoration: none; /* Supprime le soulignement des liens */
+  transition: background-color 0.3s ease; /* Transition douce pour l'effet de survol */
+}
+
+.info_admin a.btn:hover {
+  background-color: #0056b3; /* Couleur de fond plus foncée lors du survol */
+  text-decoration: none; /* Assure que le soulignement n'apparaît pas au survol */
 }

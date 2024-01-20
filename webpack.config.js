@@ -29,6 +29,7 @@ Encore
     .addStyleEntry('account', './assets/scss/account.scss')
     .addStyleEntry('sell', './assets/scss/sell.scss')
     .addStyleEntry('product', './assets/scss/product.scss')
+    .addStyleEntry('product_edit', './assets/scss/product_edit.scss')
     // .addEntry('admin','./assets/admin.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.

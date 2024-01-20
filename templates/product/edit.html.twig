@@ -1,6 +1,73 @@
 {# templates/product/edit.html.twig #}
+{% extends 'base.html.twig' %}
 
-{{ form_start(form) }}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('product_edit') }}
+{% endblock %}
+
+{% block body %}
+{# {{ form_start(form) }}
     {{ form_widget(form) }}
     <button type="submit">Save changes</button>
+{{ form_end(form) }}  #}
+
+{{ form_start(form) }}
+
+<div class="main-content">   
+    <div class="login-section">
+        <div class="form-group">
+            {{ form_label(form.title) }}
+            {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.content) }}
+            {{ form_widget(form.content, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.price) }}
+            {{ form_widget(form.price, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="date-time-container">
+            <div class="date-container">
+                {{ form_row(form.createdAt.date.day, {'attr': {'class': 'form-control date-element'}}) }}
+                {{ form_row(form.createdAt.date.month, {'attr': {'class': 'form-control date-element'}}) }}
+                {{ form_row(form.createdAt.date.year, {'attr': {'class': 'form-control date-element'}}) }}
+            </div>
+            <div class="time-container">
+                {{ form_row(form.createdAt.time, {'attr': {'class': 'form-control time-element'}}) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.attachment) }}
+            {{ form_widget(form.attachment, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.type) }}
+            {{ form_widget(form.type, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        {# <div class="form-group">
+            {{ form_label(form.gameCharacter) }}
+            {{ form_widget(form.gameCharacter, {'attr': {'class': 'form-control'}}) }}
+        </div> #}
+
+        <div class="form-group">
+            {{ form_label(form.category) }}
+            {{ form_widget(form.category, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        {{ form_end(form) }}
+        <div class="info">
+            <button type="submit" class="btn">Save changes</button>
+        </div>
+    </div>
+</div>
+
 {{ form_end(form) }}
+
+{% endblock %}

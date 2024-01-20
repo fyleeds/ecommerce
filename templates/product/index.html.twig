@@ -50,14 +50,16 @@
             <p><strong>Character :</strong> {{ product.gameCharacter }}</p>
 
             {% if product.author.id == user_id %}
+              <div class="info_admin">
                 <a href="{{ path('edit_product', {id: product.id}) }}" class="btn">Editer produit</a>
                 <a href="{{ path('homepage') }}" class="btn">Retourner à la page principale</a>
+              </div>
             {% else %}
                 {# <hr> #}
-              <div class="infos">
+              <div class="info">
                 <a href="{{ path('account_user_index', {id: product.author.id}) }}" class="btn">Info auteur</a>
                 <a href="{{ path('cart_add', {id: product.id}) }}" class="btn">Ajouter au panier</a>
-                <a href="{{ path('homepage') }}" class="btn">Retourner à la page principale</a>
+                {# <a href="{{ path('homepage') }}" class="btn">Retourner à la page principale</a> #}
               </div>
                 {# <hr> #}
 

@@ -72,6 +72,14 @@
       "css": [
         "/assets/product.css"
       ]
+    },
+    "product_edit": {
+      "js": [
+        "/assets/runtime.js"
+      ],
+      "css": [
+        "/assets/product_edit.css"
+      ]
     }
   }
 }

@@ -9,5 +9,6 @@
   "assets/account.css": "/assets/account.css",
   "assets/sell.css": "/assets/sell.css",
   "assets/product.css": "/assets/product.css",
+  "assets/product_edit.css": "/assets/product_edit.css",
   "assets/runtime.js": "/assets/runtime.js"
 }
