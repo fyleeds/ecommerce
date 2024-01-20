@@ -28,7 +28,7 @@ class SellController extends AbstractController
             $stock = new Stock();
 
             $product->setAuthor($user);
-            $product->setReleaseDate(new \DateTime());
+            $product->setCreatedAt(new \DateTime());
             $product->setStock($stock);
      
             $form = $this->createForm(CreateProductType::class, $product);

@@ -30,8 +30,12 @@ class RegistrationController extends AbstractController
     #[Route('/register', name: 'register_index')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
+        if ($this->getUser()) {
+            return $this->redirectToRoute('homepage');
+        }
         $user = new User();
         $user->setSold(0);
+        $user->setRoles(['ROLE_USER']);
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 

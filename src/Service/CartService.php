@@ -94,7 +94,7 @@ class CartService
        
 
     }
-    public function decreaseFromCart($id,$user):void
+    public function decreaseFromCart($id,$user):string
     {
         $user_id = $user->getId();
         $cart_user = $this->em->getRepository(Cart::class)->findOneBy(['user'=>$user_id]);
@@ -116,10 +116,17 @@ class CartService
                             $cart_product->setTotalPrice($product->getPrice() * $quantity );
                             $this->em->persist($cart_product);
                             $this->em->flush();
+                            $message = "Quantité réduite ";
                             break; // Exit the loop once the product is found and updated
+                        }else{
+                            $this->em->remove($cart_product);
+                            $this->em->flush(); // Flush outside the loop to apply all changes
+                            $message = "Quantité réduite à 0 : Produit Supprimé";
+                            break;
                         }
                     }
                 }
+                return $message;
             }
 
         }

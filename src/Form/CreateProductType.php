@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Product;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,7 +19,9 @@ class CreateProductType extends AbstractType
             ->add('title')
             ->add('content')
             ->add('price', NumberType::class, [])
-            ->add('createdAt')
+            ->add('releaseDate', DateType::class, [
+                'label' => 'Release Date'
+            ])
             ->add('attachment')
             ->add('type')
             ->add('game_character')

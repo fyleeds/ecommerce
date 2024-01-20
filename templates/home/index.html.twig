@@ -17,6 +17,11 @@
         {{ message }}
     </div>
     {% endfor %}
+    {% for message in app.flashes('success') %}
+    <div>
+        {{ message }}
+    </div>
+    {% endfor %}
     <div class="seachebar">
         <input type="text" placeholder="Rechercher un amiibo" name="search" class="searchbar" id="searchInput">
     </div>

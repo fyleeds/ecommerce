@@ -40,32 +40,37 @@ class ProductController extends AbstractController
         $product= $productRepository->findOneBy($id_array);
 
         if ($user){
+            if ($product){
+                if ($user->getId() == $product->getAuthor()->getId() ||  $user->getRoles() == ['ROLE_ADMIN']) {
 
-            if ($user->getId() == $product->getAuthor()->getId() ||  $user->getRoles() == ['ROLE_ADMIN']) {
+                    $form = $this->createForm(CreateProductType::class, $product);
 
-                $form = $this->createForm(CreateProductType::class, $product);
+                    $form->handleRequest($request);
+                    if ($form->isSubmitted() && $form->isValid()) {
+                        $product = $form->getData();
+                        $stock = $product->getStock(); // Get the Stock object from Product
 
-                $form->handleRequest($request);
-                if ($form->isSubmitted() && $form->isValid()) {
-                    $product = $form->getData();
-                    $stock = $product->getStock(); // Get the Stock object from Product
+                        // Persist both Product and Stock
+                        $entityManager->persist($product);
+                        $entityManager->persist($stock);
+                        $entityManager->flush();
 
-                    // Persist both Product and Stock
-                    $entityManager->persist($product);
-                    $entityManager->persist($stock);
-                    $entityManager->flush();
+                        return $this->redirectToRoute('product_index',$id_array);
+                    }
 
-                    return $this->redirectToRoute('product_index',$id_array);
+                    return $this->render('product/edit.html.twig', [
+                        'form' => $form->createView(),
+                        'userEmail' => $user
+                    ]);
                 }
-
-                return $this->render('product/edit.html.twig', [
-                    'form' => $form->createView(),
-                    'userEmail' => $user
-                ]);
+                $message = "Vous n'êtes pas l'auteur du produit ou admin : Aucune action effectuée";
+                $this->addFlash('error', $message);
+                return $this->redirectToRoute('homepage');
+            }else{
+                $message = "le produit à éditer n'existe pas: Aucune action effectuée";
+                $this->addFlash('error', $message);
+                return $this->redirectToRoute('homepage');
             }
-            $message = "Vous n'êtes pas l'auteur du produit ou admin / le produit à éditer n'a peut-être pas aussi été trouvé: Aucune action effectuée";
-            $this->addFlash('error', $message);
-            return $this->redirectToRoute('homepage');
         }
     }
 

@@ -50,8 +50,8 @@ class CartController extends AbstractController
         if ($user) {
 
             if(!empty($cartService->getProduct($id))) {
-                $cartService->decreaseFromCart($id,$user);
-                $this->addFlash('success', "Quantité du produit baissé !");
+                $message = $cartService->decreaseFromCart($id,$user);
+                $this->addFlash('success', $message);
                 return $this->redirectToRoute('cart_index');
             }else{
                 $this->addFlash('error','Tu ne peux pas retirer un produit inconnu : Aucune quantité modifié');
