@@ -41,23 +41,23 @@ body {
 // }
 
 .btn {
-  display: block;
-  background-color: #007bff; /* Couleur de fond bleue */
-  color: white; /* Texte en blanc pour plus de contraste */
-  text-align: center; /* Centre le texte dans le bouton */
-  padding: 7px 15px; /* Espace intérieur pour agrandir le bouton */
-  margin-bottom: 10px; /* Espacement entre les boutons */
-  border-radius: 5px; /* Coins arrondis */
-  text-decoration: none; /* Supprime le soulignement des liens */
-  transition: background-color 0.3s ease; /* Transition douce pour l'effet de survol */
-  margin-left: 25%;
-  margin-top: 10%;
-  cursor: pointer;
+        background-color: #D9D9D9;
+        border: none;
+        cursor: pointer;
+        border-radius: 50px;
+        margin-top: 20%;
+        height: 30px;
+        width: 50%;
+        margin-left: 25%;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;      
+        
 }
 
 .btn:hover {
-  background-color: #0056b3; /* Couleur de fond plus foncée lors du survol */
-  text-decoration: none; /* Assure que le soulignement n'apparaît pas au survol */
+    background-color: #B0B0B0; /* Couleur de fond plus foncée au survol */
+    color: #fff; /* Changement de la couleur du texte */
+    transform: scale(1.05); /* Agrandit légèrement le bouton */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .date-time-container {
