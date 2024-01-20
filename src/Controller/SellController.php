@@ -49,7 +49,7 @@ class SellController extends AbstractController
      
             return $this->render('sell/index.html.twig', [
                 'form' => $form ->createView(),
-                'userEmail' => $user
+                'user_id' => $user
             ]);
  
         }

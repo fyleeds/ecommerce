@@ -19,8 +19,8 @@ class HomeController extends AbstractController
         $user = $this->getUser();
         if ($user) {
             $userEmail = $user->getEmail();
-            return $this->render('home/index.html.twig',['products'=>$products, 'userEmail'=>$userEmail]);
+            return $this->render('home/index.html.twig',['products'=>$products, 'user_id'=>$userEmail]);
         }
-        return $this->render('home/index.html.twig',['products'=>$products, 'userEmail'=>$user]);
+        return $this->render('home/index.html.twig',['products'=>$products, 'user_id'=>$user]);
     }
 }

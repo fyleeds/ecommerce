@@ -1,0 +1,67 @@
+
+
+    <div class="main-content">
+    <!-- Image du produit à gauche -->
+    <img src="{{ product.attachment }}" alt="{{ product.title }}" class="product-image">
+    
+    <!-- Section contenant les détails du produit à droite -->
+    <div class="login-section">
+        <div class="product-details">
+            <h3>{{ product.title }}</h3>
+            <p><strong>Description :</strong> {{ product.content }}</p>
+            <p><strong>Prix :</strong> {{ product.price|number_format(2, ',', ' ') }}€</p>
+            <p><strong>En Stock :</strong> {{ product.stock.quantity }}</p>
+            <p><strong>Date de Sortie :</strong> {{ product.releaseDate|date('d/m/Y') }}</p>
+            <p><strong>Crée le :</strong> {{ product.createdAt|date('d/m/Y') }}</p>
+            <p><strong>Nom de l'Auteur :</strong> {{ product.author.username }}</p>
+            <p><strong>Série :</strong> {{ product.category.name }}</p>
+            <p><strong>Type :</strong> {{ product.type }}</p>
+            <p><strong>Character :</strong> {{ product.gameCharacter }}</p>
+
+            {% if product.author.id == user_id %}
+                <a href="{{ path('edit_product', {id: product.id}) }}" class="btn">Editer produit</a>
+                <a href="{{ path('homepage') }}" class="btn">Retourner à la page principale</a>
+            {% else %}
+                <hr>
+                <a href="{{ path('account_user_index', {id: product.author.id}) }}" class="btn">Info auteur</a>
+                <a href="{{ path('cart_add', {id: product.id}) }}" class="btn">Ajouter au panier</a>
+                <a href="{{ path('homepage') }}" class="btn">Retourner à la page principale</a>
+                <hr>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+
+    {# <h2>Détails du Produit</h2> #}
+
+    {% if product %}
+        <div class="product">
+            {# {{dump(product)}} #}
+            {# <h3>{{ product.title }}</h3>
+            <img src="{{ product.attachment }}" alt="{{ product.title }}">
+            <p><strong>Description :</strong> {{ product.content }}</p>
+            <p><strong>Prix :</strong> {{ product.price|number_format(2, ',', ' ') }}€</p>
+            <p><strong> En Stock :</strong> {{ product.stock.quantity }}</p>
+            <p><strong>Date de Sortie :</strong> {{ product.createdAt|date('d/m/Y')}}</p>
+            <p><strong>Nom de l'Auteur :</strong> {{ product.author.username }}</p>
+            <p><strong>Série :</strong> {{ product.category.name }}</p>
+            <p><strong>Type: {{ product.type }}<strong></p>
+            <p><strong>Character: {{ product.gameCharacter}}<strong></p> #}
+
+            {% if product.author.id == user_id %}
+            {# <a href="{{ path('edit_product',{id:product.id}) }}">Editer produit</a> #}
+            {# <a href="{{ path('homepage') }}">retourner page principale</a> #}
+            {% else %}
+            {# <hr> #}
+            {# <a href="{{ path('account_user_index',{id:product.author.id}) }}">Info auteur</a> #}
+            {# <a href="{{ path('cart_add',{id:product.id}) }}">Ajouter au panier</a> #}
+            {# <a href="{{ path('homepage') }}">Retourner page principale</a> #}
+            {# <hr> #}
+            {% endif %}
+            
+        </div>
+    {% else %}
+        <p>Aucun produit trouvé.</p>
+    {% endif %}

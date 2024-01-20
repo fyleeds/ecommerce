@@ -35,8 +35,7 @@ class AccountController extends AbstractController
                 return $this->render('account/account_user_index.html.twig', [
                     'products' => $accountService->getProductsUser($user_found),
                     'user_found'=> $user_found,
-                    'user_id'=> $user_id,
-                    'userEmail' => $user
+                    'user_id'=> $user_id
                 ]);
             }else{
                 $this->addFlash('error', "Aucun Compte trouvé : Veuillez réessayez avec un compte existant");
@@ -81,8 +80,7 @@ class AccountController extends AbstractController
                 'products' => $accountService->getProductsUser($user),
                 'invoices' => $accountService->getInvoicesUser($user),
                 'user_id'=> $user->getId(),
-                'form' => $form ->createView(),
-                'userEmail' => $user,
+                'form' => $form ->createView()
             ]);
         }
         return $this->redirectToRoute('app_login');
