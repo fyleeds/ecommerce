@@ -60,14 +60,15 @@
             {{ form_label(form.category) }}
             {{ form_widget(form.category, {'attr': {'class': 'form-control'}}) }}
         </div>
-
-        {{ form_end(form) }}
+        <div class="form-group">
+            {{ form_end(form) }}
+        </div>
         <div class="info">
             <button type="submit" class="btn">Save changes</button>
         </div>
     </div>
 </div>
 
-{{ form_end(form) }}
+{# {{ form_end(form) }} #}
 
 {% endblock %}
