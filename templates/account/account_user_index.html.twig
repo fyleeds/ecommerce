@@ -36,13 +36,6 @@
 
 <div class="products-wrapper">
 
-    {# {% for label, messages in app.flashes %}
-        {% for message in messages %}
-            <div class="flash-{{ label }}">
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endfor %} #}
     <hr>
     <h2>User Information</h2>
     {% if user_found %}
@@ -50,12 +43,10 @@
         <p><strong>Username:</strong> {{ user_found.username }}</p>
         <p><strong>Profile Picture:</strong> {{ user_found.pfp }}</p>
         <hr>
-        {# {{ dump(user_found) }} #}
     {% else %}
         <p>User not found.</p>
         <hr>
     {% endif %}
-    {# {{ dump(products) }} #}
 
     {% if products|length == 0 %}
     <p>Aucun produit trouvé.</p>

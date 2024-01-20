@@ -36,16 +36,12 @@
 <a href="{{ path('homepage') }}">Clickez ici pour retourner à la page principale</a>
 
 <div class="example-wrapper">
-
-    
-    {# {% if app.flashes('error') %} #}
     {% for message in app.flashes('error') %}
     <div>
         {{ message }}
     </div>
     {% endfor %}
     <hr>
-    {# {% endif %} #}
 
     {% if cart|length > 0 %}
 

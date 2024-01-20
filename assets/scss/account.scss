@@ -3,124 +3,119 @@ body {
     font-family: Arial, sans-serif;
   }
   
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f8f8;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logo-section {
-    display: flex;
-    align-items: center; /* Cela aligne verticalement l'image et le texte */
-  }
-  .logo-section img {
-    height: 40px; /* Ajustez la taille selon votre logo */
-    margin-right: 10px;
-//     // display: flex;
-//     // align-items: center; 
-  }
-  
-  .search-section {
-    display: flex;
-    border: 1px solid #cccccc;
-    border-radius: 20px;
-    overflow: hidden;
-    /* margin-left: 65%; */
-    align-items: center;
-  }
-  
-  .search-section input[type=search] {
-    border: none;
-    padding: 5px 10px;
-    outline: none;
-    /* border-radius: 5%; */
-  }
-  
-  .search-section button {
-    background-color: #e7e7e7;
-    border: none;
-    padding: 5px 15px;
-    cursor: pointer;
-  }
-  
-  .user-section {
-    display: flex;
-    align-items: center; /* Cela va centrer les icônes verticalement dans le conteneur */
-    justify-content: center; /* Cela va centrer les icônes horizontalement dans le conteneur */
-  }
-  
-  .user-section a {
-    text-decoration: none;
-    font-size: 24px;
-    margin-left: 15px;
-  }
-  
-  .utilisateur {
-    margin-right: 40px;
-    width: 44%;
-  }
-  
-  .sac {
-    margin-right: 40px;
-    width: 35%;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+.logo-section img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.search-section {
+  display: flex;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  overflow: hidden;
+  align-items: center;
+}
+
+.search-section input[type=search] {
+  border: none;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.search-section button {
+  background-color: #e7e7e7;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-section a {
+  text-decoration: none;
+  font-size: 24px;
+  margin-left: 15px;
+}
+
+.utilisateur {
+  margin-right: 40px;
+  width: 44%;
+}
+
+.sac {
+  margin-right: 40px;
+  width: 35%;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #B6CDE8;
+  margin-top: 2%;
+  border-radius: 10px;
+  }  
+
+
+.login-section {
+  flex: none;
+  padding: 50px;
+  border-radius: 20px;
+  margin-top: 20px;
   }
 
-  .main-content {
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap; /* Permet aux éléments de se replier sur de petits écrans */
-    max-width: 1200px; /* ou la largeur maximale souhaitée */
-    margin: auto; /* Centre horizontalement si l'écran est plus large */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #B6CDE8;
-    margin-top: 2%;
-    border-radius: 10px;
-    }  
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
 
-  
-    .login-section {
-      flex: none; /* Empêche la section de grandir pour remplir l'espace flexible */
-      padding: 50px; /* ou ajustez selon l'espacement souhaité */
-      /* background-color: #007bff; */
-      border-radius: 20px; /* Optionnel : coins arrondis */
-      margin-top: 20px; /* Centre verticalement et horizontalement */
-      }
+.but {
+  background-color: #D9D9D9;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-top: 20%;
+  height: 30px;
+  width: 50%;
+  margin-left: 25%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;      
+  }
 
-    .form-control {
-      width: 100%; /* Exemple pour la largeur */
-      padding: 10px; /* Exemple pour le padding */
-      margin-bottom: 10px; /* Espacement entre les champs */
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
+.but:hover {
+  background-color: #B0B0B0;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
 
-    .but {
-      background-color: #D9D9D9;
-      border: none;
-      cursor: pointer;
-      border-radius: 50px;
-      margin-top: 20%;
-      height: 30px;
-      width: 50%;
-      margin-left: 25%;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;      
-      }
-
-      .but:hover {
-        background-color: #B0B0B0; /* Couleur de fond plus foncée au survol */
-        color: #fff; /* Changement de la couleur du texte */
-        transform: scale(1.05); /* Agrandit légèrement le bouton */
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Ombre portée plus prononcée */
-    }
-    
-        .login-logo {
-          display: block; /* Affiche le logo sur sa propre ligne */
-          margin: 0 auto; /* Centre le logo horizontalement */
-          width: 500px; /* Taille fixe du logo */
-          height: 500px; /* Hauteur fixe pour forcer le logo à rester dans un cadre carré */
-          object-fit: contain; /* Assure que tout le logo est visible */
-          object-position: center; /* Centre le logo dans son cadre */   
-      }
+.login-logo {
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+  object-position: center; 
+}

@@ -14,13 +14,12 @@ body {
 
 .logo-section {
   display: flex;
-  align-items: center; /* Cela aligne verticalement l'image et le texte */
+  align-items: center; 
 }
+
 .logo-section img {
-  height: 40px; /* Ajustez la taille selon votre logo */
+  height: 40px;
   margin-right: 10px;
-//     // display: flex;
-//     // align-items: center; 
 }
 
 .search-section {
@@ -28,7 +27,6 @@ body {
   border: 1px solid #cccccc;
   border-radius: 20px;
   overflow: hidden;
-  /* margin-left: 65%; */
   align-items: center;
 }
 
@@ -36,7 +34,6 @@ body {
   border: none;
   padding: 5px 10px;
   outline: none;
-  /* border-radius: 5%; */
 }
 
 .search-section button {
@@ -48,8 +45,8 @@ body {
 
 .user-section {
   display: flex;
-  align-items: center; /* Cela va centrer les icônes verticalement dans le conteneur */
-  justify-content: center; /* Cela va centrer les icônes horizontalement dans le conteneur */
+  align-items: center;
+  justify-content: center;
 }
 
 .user-section a {
@@ -82,7 +79,6 @@ body {
 
 .login-section {
   flex-basis: 35%;
-  // flex: 1;
   text-align: left;
   padding: 40px;
   border-radius: 0px 4px 4px 0px;
@@ -90,13 +86,12 @@ body {
 }
 
 .form-control {
-  width: 100%; /* Exemple pour la largeur */
-  padding: 10px; /* Exemple pour le padding */
-  margin-bottom: 4px; /* Espacement entre les champs */
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 4px;
   border: 1px solid #ccc;
   border-radius: 8px;
   margin-left: -2%;
-  // resize: none;
 }
 
 .btn {
@@ -113,8 +108,8 @@ body {
 }
 
 .btn:hover {
-background-color: #B0B0B0; /* Couleur de fond plus foncée au survol */
-color: #fff; /* Changement de la couleur du texte */
-transform: scale(1.05); /* Agrandit légèrement le bouton */
+background-color: #B0B0B0;
+color: #fff;
+transform: scale(1.05);
 box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
