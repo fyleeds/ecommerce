@@ -42,7 +42,10 @@
                         </p>
                     </div>
                     <div class="imagecontainer">
-                        <img src="{{ item.product.attachment }}" alt="{{ item.product.title }}">
+                        <img src="{{ asset('uploads/attachments/' ~ item.product.attachment) }}" 
+                        onerror="this.onerror=null; this.src='{{ item.product.attachment }}';" 
+                        alt="{{ item.product.title }}" 
+                        class="product-image">
                     </div>
                 </div>
             {% endfor %}

@@ -1,0 +1,58 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[1].use[3]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[4]!./assets/scss/product.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: auto;
+  background-color: #f8f8f8;
+  margin-top: 4%;
+  border-radius: 4px;
+}
+
+.product-image {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center;
+  width: 300px; /* Largeur fixe pour toutes les images */
+  height: 300px; /* Hauteur fixe pour toutes les images */
+  -o-object-fit: contain;
+     object-fit: contain; /* Assure que l'image entière est visible */
+  -o-object-position: center;
+     object-position: center; /* Centre l'image dans le cadre */
+  border: 1px solid #ccc; /* Optionnel: ajoute une bordure pour mieux visualiser le cadre */
+  background-color: #f8f8f8; /* Optionnel: couleur de fond si l'image ne remplit pas tout l'espace */
+}
+
+.product-image img {
+  max-width: 100%; /* Maximum 100% de la largeur du conteneur */
+  max-height: 100%; /* Maximum 100% de la hauteur du conteneur */
+  -o-object-fit: contain;
+     object-fit: contain; /* L'image s'adapte sans être rognée */
+}
+
+.login-section {
+  flex: 1;
+  text-align: left;
+  padding: 40px;
+  border-radius: 0px 4px 4px 0px;
+  background-color: #B6CDE8;
+}
+
+.product-details {
+  max-width: 50%;
+  margin-left: 25%;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  /* Ajoutez d'autres styles de boutons ici */
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHJvZHVjdC5jc3MiLCJtYXBwaW5ncyI6Ijs7O0FBQUEsZ0JBQWdCO0FBQWhCO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0FBRUY7O0FBQ0E7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7S0FBQTtFQUNBO0tBQUE7RUFDQTtFQUNBO0FBRUY7O0FBQ0E7RUFDQTtFQUNBO0VBQ0E7S0FBQTtBQUVBOztBQUdBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtBQUFGOztBQUdBO0VBQ0U7RUFDQTtBQUFGOztBQUdBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7QUFBRixDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vYXNzZXRzL3Njc3MvcHJvZHVjdC5zY3NzIl0sInNvdXJjZXNDb250ZW50IjpbIi5tYWluLWNvbnRlbnQge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBmbGV4LXdyYXA6IHdyYXA7XHJcbiAgbWF4LXdpZHRoOiA5MDBweDtcclxuICBtYXJnaW46IGF1dG87XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y4ZjhmODtcclxuICBtYXJnaW4tdG9wOiA0JTtcclxuICBib3JkZXItcmFkaXVzOiA0cHg7XHJcbn1cclxuXHJcbi5wcm9kdWN0LWltYWdlIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyOyAvKiBDZW50cmUgaG9yaXpvbnRhbGVtZW50ICovXHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICB3aWR0aDogMzAwcHg7IC8qIExhcmdldXIgZml4ZSBwb3VyIHRvdXRlcyBsZXMgaW1hZ2VzICovXHJcbiAgaGVpZ2h0OiAzMDBweDsgLyogSGF1dGV1ciBmaXhlIHBvdXIgdG91dGVzIGxlcyBpbWFnZXMgKi9cclxuICBvYmplY3QtZml0OiBjb250YWluOyAvKiBBc3N1cmUgcXVlIGwnaW1hZ2UgZW50acOocmUgZXN0IHZpc2libGUgKi9cclxuICBvYmplY3QtcG9zaXRpb246IGNlbnRlcjsgLyogQ2VudHJlIGwnaW1hZ2UgZGFucyBsZSBjYWRyZSAqL1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7IC8qIE9wdGlvbm5lbDogYWpvdXRlIHVuZSBib3JkdXJlIHBvdXIgbWlldXggdmlzdWFsaXNlciBsZSBjYWRyZSAqL1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmOGY4Zjg7IC8qIE9wdGlvbm5lbDogY291bGV1ciBkZSBmb25kIHNpIGwnaW1hZ2UgbmUgcmVtcGxpdCBwYXMgdG91dCBsJ2VzcGFjZSAqL1xyXG59XHJcblxyXG4ucHJvZHVjdC1pbWFnZSBpbWcge1xyXG5tYXgtd2lkdGg6IDEwMCU7IC8qIE1heGltdW0gMTAwJSBkZSBsYSBsYXJnZXVyIGR1IGNvbnRlbmV1ciAqL1xyXG5tYXgtaGVpZ2h0OiAxMDAlOyAvKiBNYXhpbXVtIDEwMCUgZGUgbGEgaGF1dGV1ciBkdSBjb250ZW5ldXIgKi9cclxub2JqZWN0LWZpdDogY29udGFpbjsgLyogTCdpbWFnZSBzJ2FkYXB0ZSBzYW5zIMOqdHJlIHJvZ27DqWUgKi9cclxufVxyXG5cclxuXHJcblxyXG4ubG9naW4tc2VjdGlvbiB7XHJcbiAgZmxleDogMTtcclxuICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gIHBhZGRpbmc6IDQwcHg7XHJcbiAgYm9yZGVyLXJhZGl1czogMHB4IDRweCA0cHggMHB4O1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNCNkNERTg7XHJcbn1cclxuXHJcbi5wcm9kdWN0LWRldGFpbHMge1xyXG4gIG1heC13aWR0aDogNTAlO1xyXG4gIG1hcmdpbi1sZWZ0OiAyNSU7XHJcbn1cclxuXHJcbi5idG4ge1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICAvKiBBam91dGV6IGQnYXV0cmVzIHN0eWxlcyBkZSBib3V0b25zIGljaSAqL1xyXG59XHJcbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==*/
