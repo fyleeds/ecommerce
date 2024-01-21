@@ -1,0 +1,101 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[1].use[3]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[4]!./assets/scss/register.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #B6CDE8;
+  margin-top: 4%;
+  border-radius: 10px;
+}
+
+.login-section {
+  flex: none;
+  padding: 50px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.illustration-section {
+  flex: 1;
+  text-align: center;
+  padding: 50px;
+}
+
+.illustration-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+.login-logo {
+  display: block;
+  margin: 0 auto 30px;
+  max-width: 80px;
+  height: auto;
+}
+
+.logo2 {
+  border-radius: 20px;
+  width: 95%;
+  height: auto;
+}
+
+.login-title {
+  text-align: center;
+  margin: 50px auto;
+  margin-top: -35px;
+}
+
+.but {
+  background-color: #D9D9D9;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-top: 20%;
+  height: 30px;
+  width: 50%;
+  margin-left: 25%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.but:hover {
+  background-color: #B0B0B0; /* Couleur de fond plus foncée au survol */
+  color: #fff;
+  transform: scale(1.05); /* Agrandit légèrement le bouton */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Ombre portée plus prononcée */
+}
+
+.lastbut {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  margin-top: 4%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form-error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.form-agree-terms {
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicmVnaXN0ZXIuY3NzIiwibWFwcGluZ3MiOiI7OztBQUFBLGdCQUFnQjtBQUFoQjtFQUNJO0VBQ0E7QUFFSjs7QUFDQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7QUFFRjs7QUFDQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0FBRUY7O0FBQ0E7RUFDRTtFQUNBO0VBQ0E7QUFFRjs7QUFDQTtFQUNFO0VBQ0E7QUFFRjs7QUFDQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0FBRUY7O0FBQ0E7RUFDRTtFQUNBO0VBQ0E7QUFFRjs7QUFDQTtFQUNFO0VBQ0E7RUFDQTtBQUVGOztBQUNBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0FBRUY7O0FBQ0E7RUFDRTtFQUNBO0VBQ0E7RUFDQTtBQUVGOztBQUNBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7QUFFRjs7QUFDQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7QUFFRjs7QUFDQTtFQUNFO0VBQ0E7QUFFRjs7QUFDQTtFQUNFO0FBRUYsQyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL2Fzc2V0cy9zY3NzL3JlZ2lzdGVyLnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiYm9keSB7XG4gICAgbWFyZ2luOiAwO1xuICAgIGZvbnQtZmFtaWx5OiBBcmlhbCwgc2Fucy1zZXJpZjtcbiAgfVxuICBcbi5tYWluLWNvbnRlbnQge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LXdyYXA6IHdyYXA7XG4gIG1heC13aWR0aDogMTIwMHB4O1xuICBtYXJnaW46IGF1dG87XG4gIGJveC1zaGFkb3c6IDAgNHB4IDhweCByZ2JhKDAsIDAsIDAsIDAuMSk7XG4gIGJhY2tncm91bmQtY29sb3I6ICNCNkNERTg7XG4gIG1hcmdpbi10b3A6IDQlO1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICB9XG4gIFxuLmxvZ2luLXNlY3Rpb24ge1xuICBmbGV4OiBub25lOyBcbiAgcGFkZGluZzogNTBweDsgXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7IFxuICBtYXJnaW4tdG9wOiAyMHB4O1xufVxuICBcbi5pbGx1c3RyYXRpb24tc2VjdGlvbiB7XG4gIGZsZXg6IDE7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgcGFkZGluZzogNTBweDtcbn1cbiAgXG4uaWxsdXN0cmF0aW9uLXNlY3Rpb24gaW1nIHtcbiAgbWF4LXdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IGF1dG87XG59XG4gIFxuLmxvZ2luLWxvZ28ge1xuICBkaXNwbGF5OiBibG9jazsgXG4gIG1hcmdpbjogMCBhdXRvIDMwcHg7IFxuICBtYXgtd2lkdGg6IDgwcHg7IFxuICBoZWlnaHQ6IGF1dG87IFxufVxuICBcbi5sb2dvMiB7XG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XG4gIHdpZHRoOiA5NSU7XG4gIGhlaWdodDogYXV0bztcbn1cbiAgXG4ubG9naW4tdGl0bGUge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIG1hcmdpbjogNTBweCBhdXRvO1xuICBtYXJnaW4tdG9wOiAtMzVweDtcbn1cblxuLmJ1dCB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNEOUQ5RDk7XG4gIGJvcmRlcjogbm9uZTtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBib3JkZXItcmFkaXVzOiA1MHB4O1xuICBtYXJnaW4tdG9wOiAyMCU7XG4gIGhlaWdodDogMzBweDtcbiAgd2lkdGg6IDUwJTtcbiAgbWFyZ2luLWxlZnQ6IDI1JTtcbiAgdHJhbnNpdGlvbjogYmFja2dyb3VuZC1jb2xvciAwLjNzIGVhc2UsIGJveC1zaGFkb3cgMC4zcyBlYXNlO1xufVxuXG4uYnV0OmhvdmVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI0IwQjBCMDsgLyogQ291bGV1ciBkZSBmb25kIHBsdXMgZm9uY8OpZSBhdSBzdXJ2b2wgKi9cbiAgY29sb3I6ICNmZmY7XG4gIHRyYW5zZm9ybTogc2NhbGUoMS4wNSk7IC8qIEFncmFuZGl0IGzDqWfDqHJlbWVudCBsZSBib3V0b24gKi9cbiAgYm94LXNoYWRvdzogMCA4cHggMTVweCByZ2JhKDAsIDAsIDAsIDAuMik7IC8qIE9tYnJlIHBvcnTDqWUgcGx1cyBwcm9ub25jw6llICovXG59XG5cbi5sYXN0YnV0IHtcbiAgZGlzcGxheTogZmxleDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTtcbiAgbWFyZ2luLXRvcDogNCVcbn1cblxuLmZvcm0tY29udHJvbCB7XG4gIHdpZHRoOiAxMDAlO1xuICBwYWRkaW5nOiAxMHB4O1xuICBtYXJnaW4tYm90dG9tOiAzMHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuICBib3JkZXItcmFkaXVzOiA4cHg7XG59XG5cbi5mb3JtLWVycm9yIHtcbiAgY29sb3I6IHJlZDtcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcbn1cblxuLmZvcm0tYWdyZWUtdGVybXMge1xuICBtYXJnaW4tdG9wOiAyMHB4O1xufVxuXG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=*/

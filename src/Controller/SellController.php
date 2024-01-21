@@ -28,9 +28,9 @@ class SellController extends AbstractController
             $stock = new Stock();
 
             $product->setAuthor($user);
-            $product->setReleaseDate(new \DateTime());
+            $product->setCreatedAt(new \DateTime());
             $product->setStock($stock);
-     
+            
             $form = $this->createForm(CreateProductType::class, $product);
      
             $form->handleRequest($request);
@@ -38,7 +38,7 @@ class SellController extends AbstractController
                 $product = $form->getData();
                 
                 $stock = $stock->setProduct($product);
-
+                // $product->setAttachment($product->getAttachmentFile()->getClientOriginalName());
                 // Persist both Product and Stock
                 $entityManager->persist($product);
                 $entityManager->persist($stock);
@@ -49,6 +49,7 @@ class SellController extends AbstractController
      
             return $this->render('sell/index.html.twig', [
                 'form' => $form ->createView(),
+                'user_id' => $user
             ]);
  
         }

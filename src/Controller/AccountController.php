@@ -35,7 +35,7 @@ class AccountController extends AbstractController
                 return $this->render('account/account_user_index.html.twig', [
                     'products' => $accountService->getProductsUser($user_found),
                     'user_found'=> $user_found,
-                    'user_id'=> $user_id,
+                    'user_id'=> $user_id
                 ]);
             }else{
                 $this->addFlash('error', "Aucun Compte trouvé : Veuillez réessayez avec un compte existant");
@@ -59,6 +59,10 @@ class AccountController extends AbstractController
 
                 $user = $form->getData();
 
+                if ($user->getPfpFile() && $user->getPfpFile()->getClientOriginalName()) {
+                    $user->setPfp($user->getPfpFile()->getClientOriginalName());
+                }
+
                 $plainPassword = $form->get('plainPassword')->getData();
                 $hashedPassword = $passwordHasher->hashPassword($user, $plainPassword);
                 $user->setPassword($hashedPassword);
@@ -80,7 +84,7 @@ class AccountController extends AbstractController
                 'products' => $accountService->getProductsUser($user),
                 'invoices' => $accountService->getInvoicesUser($user),
                 'user_id'=> $user->getId(),
-                'form' => $form ->createView(),
+                'form' => $form ->createView()
             ]);
         }
         return $this->redirectToRoute('app_login');

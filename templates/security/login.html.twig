@@ -2,6 +2,11 @@
 
 {% block title %}Log in!{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('login') }}
+{% endblock %}
+
 {% block body %}
 <form method="post">
     {% if error %}
@@ -14,23 +19,27 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
-
-    <button class="btn btn-lg btn-primary" type="submit">
-        Se connecter
-    </button>
-
-    <a href="{{ path('register_index') }}">Clickez ici si vous n'avez pas de compte</a>
-    <a href="{{ path('homepage') }}">Clickez ici pour retourner à la page principale</a>
-
-
+  <div class="main-content">
+    <div class="login-section">
+      <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo" class="login-logo">
+      <h2 class="login-title">Amiishop</h2>
+      <form>
+        <input class="case form-control" type="email" value="{{ last_username }}" name="email" id="inputEmail" placeholder="Email" autocomplete="email" required autofocus>
+        <input class="case form-control" type="password" name="password" id="inputPassword" placeholder="Password" autocomplete="current-password" required>
+        <input class="case" type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}">
+        <button class="but" type="submit">Login</button>
+      </form>
+    </div>
+    <div class="illustration-section">
+      <img src="{{ asset('img/international.png') }}" alt="Illustration" class="logo2">
+    </div>
+  </div>
+{# </div> #}
+  <div class="lastbut">
+    <a href="{{ path('register_index') }}">Click here if you don't have an account</a>
+    <a href="{{ path('homepage') }}">Click here to return to the main page</a>
+  </div>
+    
 </form>
 {% endblock %}

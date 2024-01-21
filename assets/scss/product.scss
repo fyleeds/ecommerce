@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: auto;
+  background-color: #f8f8f8;
+  margin-top: 4%;
+  border-radius: 4px;
+}
+
+.product-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px; 
+  height: 300px; 
+  object-fit: contain;
+  object-position: center;
+  background-color: #f8f8f8;
+}
+
+.product-image img {
+  max-width: 100%; 
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+
+.login-section {
+  flex: 1;
+  text-align: left;
+  padding: 40px;
+  border-radius: 0px 4px 4px 0px;
+  background-color: #B6CDE8;
+}
+
+.product-details {
+  max-width: 50%;
+  margin-left: 25%;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info a.btn {
+  display: block;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 7px 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-decoration: none; 
+  transition: background-color 0.3s ease;
+}
+
+.info a.btn:hover {
+  background-color: #0056b3; /* Couleur de fond plus foncée lors du survol */
+  text-decoration: none; /* Assure que le soulignement n'apparaît pas au survol */
+}
+
+.info_admin {
+  display: flex;
+  flex-direction: column;
+}
+
+.info_admin a.btn {
+  display: block;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 7px 15px; /* Espace intérieur pour agrandir le bouton */
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-decoration: none; /* Supprime le soulignement des liens */
+  transition: background-color 0.3s ease; /* Transition douce pour l'effet de survol */
+}
+
+.info_admin a.btn:hover {
+  background-color: #0056b3;
+  text-decoration: none; /* Assure que le soulignement n'apparaît pas au survol */
+}

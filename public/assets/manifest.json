@@ -1,5 +1,14 @@
 {
-  "assets/app.css": "/assets/app.b75294ae.css",
-  "assets/app.js": "/assets/app.4fe7be59.js",
-  "assets/runtime.js": "/assets/runtime.62bcf186.js"
+  "assets/app.css": "/assets/app.css",
+  "assets/app.js": "/assets/app.js",
+  "assets/register.css": "/assets/register.css",
+  "assets/login.css": "/assets/login.css",
+  "assets/home.css": "/assets/home.css",
+  "assets/shoppingcart.css": "/assets/shoppingcart.css",
+  "assets/cartvalidate.css": "/assets/cartvalidate.css",
+  "assets/account.css": "/assets/account.css",
+  "assets/sell.css": "/assets/sell.css",
+  "assets/product.css": "/assets/product.css",
+  "assets/product_edit.css": "/assets/product_edit.css",
+  "assets/runtime.js": "/assets/runtime.js"
 }

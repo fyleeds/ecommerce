@@ -18,7 +18,7 @@ class CartController extends AbstractController
         // Check if the user is logged in
         if ($user) {
 
-            return $this->render('cart/index.html.twig',['cart'=>$cartService->getTotalProducts($user),'total_price'=>$cartService->calculateTotalPrice($user)]);
+            return $this->render('cart/index.html.twig',['cart'=>$cartService->getTotalProducts($user),'total_price'=>$cartService->calculateTotalPrice($user), 'user_id'=> $user]);
         }
         return $this->redirectToRoute('app_login');
     }
@@ -50,8 +50,8 @@ class CartController extends AbstractController
         if ($user) {
 
             if(!empty($cartService->getProduct($id))) {
-                $cartService->decreaseFromCart($id,$user);
-                $this->addFlash('success', "Quantité du produit baissé !");
+                $message = $cartService->decreaseFromCart($id,$user);
+                $this->addFlash('success', $message);
                 return $this->redirectToRoute('cart_index');
             }else{
                 $this->addFlash('error','Tu ne peux pas retirer un produit inconnu : Aucune quantité modifié');

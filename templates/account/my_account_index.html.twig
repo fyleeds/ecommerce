@@ -2,6 +2,11 @@
 
 {% block title %}Bonjour AccountController !{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('account') }}
+{% endblock %}
+
 {% block body %}
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
@@ -17,42 +22,65 @@
             </div>
         {% endfor %}
     {% endfor %}
-    <hr>
-    <a href="{{ path('homepage') }}">Retourner page principale</a>
-    <hr>
-        {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button type="submit">Enregistrer les modifications</button>
-    {{ form_end(form) }}
-    <hr>
+    <div class="main-content">
+         <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo" class="login-logo">
+        <div class="login-section">
+            {{ form_start(form, {'attr': {'enctype':'multipart/form-data'}}) }}
+
+            <div class="form-group">
+                {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(form.plainPassword, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(form.username, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.sold, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(form.pfpFile, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <button class="but" type="submit">Save changes</button>
+
+{{ form_end(form) }}
+
+        </div>
+    </div>
+    {# <hr> #}
     {# {{ dump(products) }} #}
     {% if products|length == 0 %}
     <p>Aucun produit trouvé.</p>
-    <hr>
+    {# <hr> #}
     {% elseif products|length == 1 %}
     
         <p>Il y a un produit :</p>
         {% for product in products %}
             {# {{ dump(product) }} #}
-            {% include 'product/index.html.twig' with {'product': product} %}
+            {% include 'product/body.html.twig' with {'product': product,'user_id': user_id} only %}
         {% endfor %}
-        <hr>
+        {# <hr> #}
     {% else %}
     {# {{ dump(products) }} #}
         <p>Il y a plusieurs produits :</p>
         {% for product in products %}
             {# {{ dump(product) }} #}
-            {% include 'product/index.html.twig' with {'product': product} %}
+            {% include 'product/body.html.twig' with {'product': product,'user_id': user_id} only %}
             <hr>
         {% endfor %}
     {% endif %}
 
     {% if invoices|length == 0 %}
     <p>Aucune facture trouvée.</p>
-    <hr>
+    {# <hr> #}
     {% elseif invoices|length == 1 %}
         <p>Il y a une facture :</p>
-        <hr>
+        {# <hr> #}
         {% for invoice in invoices %}
             <p><strong>Date de la transaction :</strong> {{ invoice.dateTransaction|date('d/m/Y H:i') }}</p>
             <p><strong>Prix total :</strong> {{ invoice.totalPrice }} €</p> {# Ajuster le formatage de la monnaie si nécessaire #}
@@ -60,17 +88,17 @@
             <p><strong>Ville :</strong> {{ invoice.town }}</p>
             <p><strong>Code postal :</strong> {{ invoice.postalCode }}</p>
         {% endfor %}
-        <hr>
+        {# <hr> #}
     {% else %}
         <p>Il y a plusieurs factures :</p>
-        <hr>
+        {# <hr> #}
         {% for invoice in invoices %}
             <p><strong>Date de la transaction :</strong> {{ invoice.dateTransaction|date('d/m/Y H:i') }}</p>
             <p><strong>Prix total :</strong> {{ invoice.totalPrice|number_format(2, '.', ',') }} €</p> {# Ajuster le formatage de la monnaie si nécessaire #}
             <p><strong>Adresse :</strong> {{ invoice.address }}</p>
             <p><strong>Ville :</strong> {{ invoice.town }}</p>
             <p><strong>Code postal :</strong> {{ invoice.postalCode }}</p>
-            <hr>
+            {# <hr> #}
         {% endfor %}
     {% endif %}
 

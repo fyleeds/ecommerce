@@ -13,6 +13,9 @@ services:
       - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
     networks:
       - ecommerce-network
+      - ../db:/var/lib/mysql
+      - ../seed/ecommercedev.sql:/docker-entrypoint-initdb.d/ecommercedev.sql
+      - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
 
   web:
     image: fyleeds/ecommerce:v2
@@ -20,8 +23,6 @@ services:
       - "80:80"
     depends_on:
       - db
-    networks:
-      - ecommerce-network
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -33,10 +34,4 @@ services:
       - "8080:80"
     depends_on:
       - db
-    networks:
-      - ecommerce-network
-
-networks:
-  ecommerce-network:
-    driver: bridge
 

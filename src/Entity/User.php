@@ -10,11 +10,14 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
+#[Vich\Uploadable]
 #[UniqueEntity(fields: ['email'], message: 'Un compte utilisateur possède déja cet email')]
 #[UniqueEntity(fields: ['username'], message: 'Un compte utilisateur possède déja cet username')]
-class User implements UserInterface, PasswordAuthenticatedUserInterface
+class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serializable
 {
     public function __toString(): string
     {
@@ -46,8 +49,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?float $sold = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 255, type:'string')]
     private ?string $pfp = null;
+
+    // NOTE: This is not a mapped field of entity metadata, just a simple property.
+    #[Vich\UploadableField(mapping: 'users', fileNameProperty: 'pfp')]
+    private ?File $pfpFile = null;
 
     #[ORM\OneToMany(mappedBy: 'author', targetEntity: Product::class)]
     private Collection $products;
@@ -63,7 +70,23 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->products = new ArrayCollection();
         $this->invoices = new ArrayCollection();
     }
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->email,
+            $this->password,
+        ));
+    }
 
+    public function unserialize($serialized)
+    {
+        list(
+            $this->id,
+            $this->email,
+            $this->password,
+        ) = unserialize($serialized);
+    }
     public function getId(): ?int
     {
         return $this->id;
@@ -163,11 +186,27 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->pfp;
     }
 
-    public function setPfp(?string $pfp): static
+    public function setPfp(?string $pfp): string
     {
         $this->pfp = $pfp;
 
         return $this;
+    }
+    public function setPfpFile(?File $pfpFile = null): self
+    {
+        $this->pfpFile = $pfpFile;
+
+        // if (null !== $pfpFile) {
+        //     // It is required that at least one field changes if you are using doctrine
+        //     // otherwise the event listeners won't be called and the file is lost
+        //     $this->createdAt = new \DateTimeImmutable();
+        // }
+        return $this;
+    }
+
+    public function getPfpFile(): ?File
+    {
+        return $this->pfpFile;
     }
 
     /**

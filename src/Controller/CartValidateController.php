@@ -56,6 +56,7 @@ class CartValidateController extends AbstractController
         }
         return $this->render('cart_validate/index.html.twig', [
             'form' => $form ->createView(),
+            'user_id' => $user
         ]);
     }
 }

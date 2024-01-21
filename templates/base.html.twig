@@ -14,6 +14,31 @@
     {% endblock %}
 </head>
 <body>
+<header class="header">
+    <div class="logo-section">
+        <a href="{{ path('homepage') }}">
+            <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo">
+        </a>
+        <span>Amiishop</span>  
+    </div>
+    <div class="user-section">
+    {% if user_id %}
+        <a href="{{ path('my_account_index') }}">A</a>
+        <a href="{{ path('cart_index') }}">C</a>
+        <a href="{{ path('sell_index') }}">S</a>
+        <a href="{{ path('app_logout') }}">D</a>
+    {% else %}
+        <a href="{{ path('app_login') }}">Se Connecter</a>
+        <a href="{{ path('register_index') }}">S'inscrire</a>
+    {% endif %}
+    </div>
+
+</header>
 {% block body %}{% endblock %}
+<div class="footer">
+    <img  class="logofooter" src="{{ asset('img/logo.png') }}" alt="Amiishop Logo">
+    <p class="textfooter">Amiishop</p>
+    <div class="bar"></div>
+</div>
 </body>
 </html>

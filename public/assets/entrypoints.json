@@ -2,11 +2,83 @@
   "entrypoints": {
     "app": {
       "js": [
-        "/assets/runtime.62bcf186.js",
-        "/assets/app.4fe7be59.js"
+        "/assets/runtime.js",
+        "/assets/app.js"
       ],
       "css": [
-        "/assets/app.b75294ae.css"
+        "/assets/app.css"
+      ]
+    },
+    "register": {
+      "js": [
+        "/assets/runtime.js"
+      ],
+      "css": [
+        "/assets/register.css"
+      ]
+    },
+    "login": {
+      "js": [
+        "/assets/runtime.js"
+      ],
+      "css": [
+        "/assets/login.css"
+      ]
+    },
+    "home": {
+      "js": [
+        "/assets/runtime.js"
+      ],
+      "css": [
+        "/assets/home.css"
+      ]
+    },
+    "shoppingcart": {
+      "js": [
+        "/assets/runtime.js"
+      ],
+      "css": [
+        "/assets/shoppingcart.css"
+      ]
+    },
+    "cartvalidate": {
+      "js": [
+        "/assets/runtime.js"
+      ],
+      "css": [
+        "/assets/cartvalidate.css"
+      ]
+    },
+    "account": {
+      "js": [
+        "/assets/runtime.js"
+      ],
+      "css": [
+        "/assets/account.css"
+      ]
+    },
+    "sell": {
+      "js": [
+        "/assets/runtime.js"
+      ],
+      "css": [
+        "/assets/sell.css"
+      ]
+    },
+    "product": {
+      "js": [
+        "/assets/runtime.js"
+      ],
+      "css": [
+        "/assets/product.css"
+      ]
+    },
+    "product_edit": {
+      "js": [
+        "/assets/runtime.js"
+      ],
+      "css": [
+        "/assets/product_edit.css"
       ]
     }
   }

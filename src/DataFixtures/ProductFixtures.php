@@ -7,7 +7,7 @@ use App\Entity\User;
 use App\Service\ApiAmiiboService;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Doctrine\Common\DataFixtures\OrderedFixtureInterface; 
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Faker;
 
 class ProductFixtures extends Fixture implements OrderedFixtureInterface
