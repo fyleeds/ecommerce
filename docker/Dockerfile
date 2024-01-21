@@ -45,8 +45,8 @@ RUN cd /var/www && \
 RUN chown -R www-data:www-data /var/www/var && \
     chmod -R 755 /var/www/var
 
-RUN chown -R www-data:www-data /var/www/public/users && \
-    chmod -R 755 /var/www/public/users
+RUN chown -R www-data:www-data /var/www/public/uploads/attachments && \
+    chmod -R 755 /var/www/public/uploads/attachments
 
 RUN chown -R www-data:www-data /var/www/public/users && \
     chmod -R 755 /var/www/public/users
