@@ -27,6 +27,7 @@ RUN a2dissite 000-default && a2ensite ecommerce
 # Set permissions for the Symfony log directory
 RUN mkdir -p /var/www/var/log 
 RUN mkdir -p /var/www/public/uploads/attachments
+RUN mkdir -p /var/www/public/users
 # Install composer dependencies and run npm build
 
 RUN cd /var/www && \
@@ -44,8 +45,12 @@ RUN cd /var/www && \
 RUN chown -R www-data:www-data /var/www/var && \
     chmod -R 755 /var/www/var
 
-RUN chown -R www-data:www-data /var/www/public/uploads/attachments && \
-    chmod -R 755 /var/www/public/uploads/attachments
+RUN chown -R www-data:www-data /var/www/public/users && \
+    chmod -R 755 /var/www/public/users
+
+RUN chown -R www-data:www-data /var/www/public/users && \
+    chmod -R 755 /var/www/public/users
+
 
 
 # Set the working directory
