@@ -33,12 +33,10 @@
         <img src="{{ asset('users/' ~ user_found.pfp) }}"
         alt="{{ user_found.username }}" 
         <hr>
-        {# {{ dump(user_found) }} #}
     {% else %}
         <p>User not found.</p>
         <hr>
     {% endif %}
-    {# {{ dump(products) }} #}
 
     {% if products|length == 0 %}
     <p>Aucun produit trouvé.</p>

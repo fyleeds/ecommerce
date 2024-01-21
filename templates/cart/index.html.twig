@@ -10,9 +10,6 @@
 {% block body %}
 
 <div class="example-wrapper">
-
-    
-    {# {% if app.flashes %} #}
     {% for message in app.flashes('error') %}
     <div>
         {{ message }}

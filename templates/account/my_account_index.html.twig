@@ -22,13 +22,10 @@
             </div>
         {% endfor %}
     {% endfor %}
-    {# <hr>
-    <a href="{{ path('homepage') }}">Retourner page principale</a>
-    <hr> #}
     <div class="main-content">
          <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo" class="login-logo">
         <div class="login-section">
-             {{ form_start(form, {'attr': {'enctype':'multipart/form-data'}}) }}
+            {{ form_start(form, {'attr': {'enctype':'multipart/form-data'}}) }}
 
             <div class="form-group">
                 {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
@@ -49,19 +46,17 @@
                 {{ form_row(form.pfpFile, {'attr': {'class': 'form-control'}}) }}
             </div>
 
-<!-- Répétez pour les autres champs du formulaire -->
-
-<button class="but" type="submit">Save changes</button>
+            <button class="but" type="submit">Save changes</button>
 
 {{ form_end(form) }}
 
         </div>
     </div>
-    <hr>
+    {# <hr> #}
     {# {{ dump(products) }} #}
     {% if products|length == 0 %}
     <p>Aucun produit trouvé.</p>
-    <hr>
+    {# <hr> #}
     {% elseif products|length == 1 %}
     
         <p>Il y a un produit :</p>
@@ -69,7 +64,7 @@
             {# {{ dump(product) }} #}
             {% include 'product/body.html.twig' with {'product': product,'user_id': user_id} only %}
         {% endfor %}
-        <hr>
+        {# <hr> #}
     {% else %}
     {# {{ dump(products) }} #}
         <p>Il y a plusieurs produits :</p>
@@ -82,10 +77,10 @@
 
     {% if invoices|length == 0 %}
     <p>Aucune facture trouvée.</p>
-    <hr>
+    {# <hr> #}
     {% elseif invoices|length == 1 %}
         <p>Il y a une facture :</p>
-        <hr>
+        {# <hr> #}
         {% for invoice in invoices %}
             <p><strong>Date de la transaction :</strong> {{ invoice.dateTransaction|date('d/m/Y H:i') }}</p>
             <p><strong>Prix total :</strong> {{ invoice.totalPrice }} €</p> {# Ajuster le formatage de la monnaie si nécessaire #}
@@ -93,17 +88,17 @@
             <p><strong>Ville :</strong> {{ invoice.town }}</p>
             <p><strong>Code postal :</strong> {{ invoice.postalCode }}</p>
         {% endfor %}
-        <hr>
+        {# <hr> #}
     {% else %}
         <p>Il y a plusieurs factures :</p>
-        <hr>
+        {# <hr> #}
         {% for invoice in invoices %}
             <p><strong>Date de la transaction :</strong> {{ invoice.dateTransaction|date('d/m/Y H:i') }}</p>
             <p><strong>Prix total :</strong> {{ invoice.totalPrice|number_format(2, '.', ',') }} €</p> {# Ajuster le formatage de la monnaie si nécessaire #}
             <p><strong>Adresse :</strong> {{ invoice.address }}</p>
             <p><strong>Ville :</strong> {{ invoice.town }}</p>
             <p><strong>Code postal :</strong> {{ invoice.postalCode }}</p>
-            <hr>
+            {# <hr> #}
         {% endfor %}
     {% endif %}
 

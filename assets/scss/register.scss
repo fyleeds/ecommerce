@@ -3,106 +3,94 @@ body {
     font-family: Arial, sans-serif;
   }
   
-  .main-content {
-    display: flex;
-    flex-wrap: wrap; /* Permet aux éléments de se replier sur de petits écrans */
-    max-width: 1200px; /* ou la largeur maximale souhaitée */
-    margin: auto; /* Centre horizontalement si l'écran est plus large */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #B6CDE8;
-    margin-top: 4%;
-    border-radius: 10px;
-    }
-    
-    .login-section {
-    flex: none; /* Empêche la section de grandir pour remplir l'espace flexible */
-    padding: 50px; /* ou ajustez selon l'espacement souhaité */
-    /* background-color: #007bff; */
-    border-radius: 20px; /* Optionnel : coins arrondis */
-    margin-top: 20px; /* Centre verticalement et horizontalement */
-    
-    
-    }
-    
-    .illustration-section {
-    flex: 1; /* Prend le reste de l'espace disponible */
-    text-align: center; /* Centre l'image si la section est plus large */
-    padding: 50px; /* Maintient la cohérence avec la section de connexion */
-    }
-    
-    .illustration-section img {
-    max-width: 100%;
-    height: auto;
-    }
-    
-    .login-logo {
-    display: block; /* S'assure que le logo prend sa propre ligne */
-    margin: 0 auto 30px; /* Centre le logo et ajoute de la marge en dessous */
-    max-width: 80px; /* Ou la taille souhaitée pour votre logo */
-    height: auto; /* Garde le ratio d'aspect du logo */
-    /* margin-left: 42%; */
-    }
-    
-    .logo2 {
-    border-radius: 20px;
-    width: 95%;
-    /* width: auto; */
-    height: auto;
-    }
-    
-    .login-title {
-    text-align: center; /* Centre le texte horizontalement */
-    margin: 50px auto; /* Ajoute de l'espace au-dessus et en dessous du titre */
-    margin-top: -35px;
-    /* margin-left: 25%; */
-    }
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #B6CDE8;
+  margin-top: 4%;
+  border-radius: 10px;
+  }
+  
+.login-section {
+  flex: none; 
+  padding: 50px; 
+  border-radius: 20px; 
+  margin-top: 20px;
+}
+  
+.illustration-section {
+  flex: 1;
+  text-align: center;
+  padding: 50px;
+}
+  
+.illustration-section img {
+  max-width: 100%;
+  height: auto;
+}
+  
+.login-logo {
+  display: block; 
+  margin: 0 auto 30px; 
+  max-width: 80px; 
+  height: auto; 
+}
+  
+.logo2 {
+  border-radius: 20px;
+  width: 95%;
+  height: auto;
+}
+  
+.login-title {
+  text-align: center;
+  margin: 50px auto;
+  margin-top: -35px;
+}
 
-    // form button {
-    //   background-color: #D9D9D9;
-    //   border: none;
-    //   cursor: pointer;
-    //   border-radius: 50px;
-    //   margin-top: 30%;
-    //   width: 80%;
-    //   margin-left: 10%;
-    //   }
+.but {
+  background-color: #D9D9D9;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-top: 20%;
+  height: 30px;
+  width: 50%;
+  margin-left: 25%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
 
-    
-    .but {
-      background-color: #D9D9D9;
-      border: none;
-      cursor: pointer;
-      border-radius: 50px;
-      margin-top: 10%;
-      height: 6%;
-      width: 50%;
-      margin-left: 25%;
-      }
+.but:hover {
+  background-color: #B0B0B0; /* Couleur de fond plus foncée au survol */
+  color: #fff;
+  transform: scale(1.05); /* Agrandit légèrement le bouton */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Ombre portée plus prononcée */
+}
 
-    .lastbut {
-      display: flex;
-      text-align: center;
-      justify-content: space-evenly;
-      margin-top: 4%
-    }
+.lastbut {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  margin-top: 4%
+}
 
-    /* Styles globaux pour les éléments de formulaire */
-    .form-control {
-      width: 100%; /* Exemple pour la largeur */
-      padding: 10px; /* Exemple pour le padding */
-      margin-bottom: 15px; /* Espacement entre les champs */
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
 
-    /* Styles spécifiques pour les erreurs de formulaire */
-    .form-error {
-      color: red;
-      margin-bottom: 10px;
-    }
+.form-error {
+  color: red;
+  margin-bottom: 10px;
+}
 
-    /* Styles spécifiques pour les termes et conditions */
-    .form-agree-terms {
-      margin-top: 20px; /* Espacement avant le bouton d'envoi */
-    }
+.form-agree-terms {
+  margin-top: 20px;
+}
 
