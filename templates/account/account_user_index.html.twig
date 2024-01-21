@@ -30,7 +30,8 @@
     {% if user_found %}
         <p><strong>Email:</strong> {{ user_found.email }}</p>
         <p><strong>Username:</strong> {{ user_found.username }}</p>
-        <p><strong>Profile Picture:</strong> {{ user_found.pfp }}</p>
+        <img src="{{ asset('users/' ~ user_found.pfp) }}"
+        alt="{{ user_found.username }}" 
         <hr>
         {# {{ dump(user_found) }} #}
     {% else %}
