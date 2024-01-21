@@ -10,6 +10,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -25,7 +27,8 @@ class UserCrudController extends AbstractCrudController
             EmailField::new('email'),
             TextField::new('username'),
             TextField::new('password'),
-            TextField::new('pfp'),
+            TextField::new('pfpFile')->setFormType(VichImageType::class),
+            ImageField::new('pfp')->setFormType(ImageField::class)->setBasePath('/uploads/attachments/')->onlyOnIndex(),
             ArrayField::new('roles'),
             NumberField::new('sold'),
         ];

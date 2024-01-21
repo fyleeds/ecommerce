@@ -38,7 +38,7 @@ class SellController extends AbstractController
                 $product = $form->getData();
                 
                 $stock = $stock->setProduct($product);
-                $product->setAttachment($product->getAttachmentFile()->getClientOriginalName());
+                // $product->setAttachment($product->getAttachmentFile()->getClientOriginalName());
                 // Persist both Product and Stock
                 $entityManager->persist($product);
                 $entityManager->persist($stock);

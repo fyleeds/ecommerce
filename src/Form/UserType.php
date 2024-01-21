@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class UserType extends AbstractType
 {
@@ -20,7 +21,10 @@ class UserType extends AbstractType
             ])
             ->add('username')
             ->add('sold')
-            ->add('pfp')
+            ->add('pfpFile', VichFileType::class, [
+                'required' => false,
+                'label' => 'Pfp Attachment',
+            ])
         ;
     }
 

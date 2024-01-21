@@ -28,7 +28,7 @@
     <div class="main-content">
          <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo" class="login-logo">
         <div class="login-section">
-            {{ form_start(form) }}
+             {{ form_start(form, {'attr': {'enctype':'multipart/form-data'}}) }}
 
             <div class="form-group">
                 {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
@@ -46,7 +46,7 @@
             </div>
 
             <div class="form-group">
-                {{ form_row(form.pfp, {'attr': {'class': 'form-control'}}) }}
+                {{ form_row(form.pfpFile, {'attr': {'class': 'form-control'}}) }}
             </div>
 
 <!-- Répétez pour les autres champs du formulaire -->

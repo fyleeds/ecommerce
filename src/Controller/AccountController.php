@@ -59,6 +59,10 @@ class AccountController extends AbstractController
 
                 $user = $form->getData();
 
+                if ($user->getPfpFile() && $user->getPfpFile()->getClientOriginalName()) {
+                    $user->setPfp($user->getPfpFile()->getClientOriginalName());
+                }
+
                 $plainPassword = $form->get('plainPassword')->getData();
                 $hashedPassword = $passwordHasher->hashPassword($user, $plainPassword);
                 $user->setPassword($hashedPassword);
