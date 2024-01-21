@@ -9,7 +9,7 @@
 
 {% block body %}
 
-    <div class="main-content">
+<div class="main-content">
     <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo" class="login-logo">
     <div class="login-section">
     {{ form_start(form, {'attr': {'enctype':'multipart/form-data'}}) }}
@@ -26,12 +26,14 @@
         {{ form_row(form.price, {'attr': {'class': 'form-control'}}) }}
     </div>
 
-    <div class="form-group">
-       {{ form_row(form.releaseDate, {
-        'label': 'Release Date',
-        'attr': {'class': 'form-control'}
-    }) }}
+    <div class="date-time-container">
+        <div class="date-container">
+            {{ form_row(form.releaseDate.day, {'attr': {'class': 'form-control date-element'}}) }}
+            {{ form_row(form.releaseDate.month, {'attr': {'class': 'form-control date-element'}}) }}
+            {{ form_row(form.releaseDate.year, {'attr': {'class': 'form-control date-element'}}) }}
+        </div>
     </div>
+
     <div class="form-group">
             {{ form_row(form.attachmentFile, {'attr': {'class': 'form-control'}}) }}
     </div>
@@ -50,48 +52,7 @@
 
     <button type="submit" class="but">Submit</button>
 
-<div class="main-content">
-  <img src="{{ asset('img/logo.png') }}" alt="Amiishop Logo" class="login-logo">
-  <div class="login-section">
-    {{ form_start(form) }}
 
-    <div class="form-group">
-        {{ form_row(form.title, {'attr': {'class': 'form-control'}}) }}
-    </div>
-
-    <div class="form-group">
-        {{ form_row(form.content, {'attr': {'class': 'form-control'}}) }}
-    </div>
-
-    <div class="form-group">
-        {{ form_row(form.price, {'attr': {'class': 'form-control'}}) }}
-    </div>
-
-    <div class="date-time-container">
-        <div class="date-container">
-            {{ form_row(form.releaseDate.date.day, {'attr': {'class': 'form-control date-element'}}) }}
-            {{ form_row(form.releaseDate.date.month, {'attr': {'class': 'form-control date-element'}}) }}
-            {{ form_row(form.releaseDate.date.year, {'attr': {'class': 'form-control date-element'}}) }}
-        </div>
-    </div>
-
-    <div class="form-group">
-        {{ form_row(form.attachment, {'attr': {'class': 'form-control'}}) }}
-    </div>
-
-    <div class="form-group">
-        {{ form_row(form.type, {'attr': {'class': 'form-control'}}) }}
-    </div>
-
-    <div class="form-group">
-        {{ form_row(form.game_character, {'attr': {'class': 'form-control'}}) }}
-    </div>
-
-    <div class="form-group">
-        {{ form_row(form.category, {'attr': {'class': 'form-control'}}) }}
-    </div>
-
-    <button type="submit" class="but">Submit</button>
 
   {{ form_end(form) }}
 

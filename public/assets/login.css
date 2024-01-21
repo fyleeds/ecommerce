@@ -1,0 +1,93 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[1].use[3]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].oneOf[1].use[4]!./assets/scss/login.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de se replier sur de petits écrans */
+  max-width: 1200px;
+  margin: auto; /* Centre horizontalement si l'écran est plus large */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #B6CDE8;
+  margin-top: 4%;
+  border-radius: 10px;
+}
+
+.login-section {
+  flex: none;
+  padding: 50px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.illustration-section {
+  flex: 1;
+  text-align: center;
+  padding: 50px;
+}
+
+.illustration-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+.login-logo {
+  display: block;
+  margin: 0 auto 30px;
+  max-width: 80px;
+  height: auto;
+}
+
+.logo2 {
+  border-radius: 20px;
+  width: 95%;
+  height: auto;
+}
+
+.login-title {
+  text-align: center;
+  margin: 50px auto;
+  margin-top: -35px;
+}
+
+.but {
+  background-color: #D9D9D9;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-top: 10%;
+  height: 6%;
+  width: 50%;
+  margin-left: 25%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.but:hover {
+  background-color: #B0B0B0;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.case {
+  display: flex;
+  flex-direction: column;
+  margin: 35px;
+  border-radius: 8px;
+  height: 25px;
+  width: 250px;
+}
+
+.lastbut {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  margin-top: 4%;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibG9naW4uY3NzIiwibWFwcGluZ3MiOiI7OztBQUFBLGdCQUFnQjtBQUFoQjtFQUNJO0VBQ0E7QUFFSjs7QUFDQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7QUFFRjs7QUFDQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0FBRUY7O0FBQ0E7RUFDRTtFQUNBO0VBQ0E7QUFFRjs7QUFDQTtFQUNFO0VBQ0E7QUFFRjs7QUFDQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0FBRUY7O0FBQ0E7RUFDRTtFQUNBO0VBQ0E7QUFFRjs7QUFDQTtFQUNFO0VBQ0E7RUFDQTtBQUVGOztBQUNBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0FBRUY7O0FBQ0E7RUFDRTtFQUNBO0VBQ0E7RUFDQTtBQUVGOztBQUNBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0FBRUY7O0FBQ0E7RUFDRTtFQUNBO0VBQ0E7RUFDQTtBQUVGLEMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hc3NldHMvc2Nzcy9sb2dpbi5zY3NzIl0sInNvdXJjZXNDb250ZW50IjpbImJvZHkge1xuICAgIG1hcmdpbjogMDtcbiAgICBmb250LWZhbWlseTogQXJpYWwsIHNhbnMtc2VyaWY7XG4gIH1cblxuLm1haW4tY29udGVudCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtd3JhcDogd3JhcDsgLyogUGVybWV0IGF1eCDDqWzDqW1lbnRzIGRlIHNlIHJlcGxpZXIgc3VyIGRlIHBldGl0cyDDqWNyYW5zICovXG4gIG1heC13aWR0aDogMTIwMHB4O1xuICBtYXJnaW46IGF1dG87IC8qIENlbnRyZSBob3Jpem9udGFsZW1lbnQgc2kgbCfDqWNyYW4gZXN0IHBsdXMgbGFyZ2UgKi9cbiAgYm94LXNoYWRvdzogMCA0cHggOHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogI0I2Q0RFODtcbiAgbWFyZ2luLXRvcDogNCU7XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG59XG4gIFxuLmxvZ2luLXNlY3Rpb24ge1xuICBmbGV4OiBub25lO1xuICBwYWRkaW5nOiA1MHB4O1xuICBib3JkZXItcmFkaXVzOiAyMHB4O1xuICBtYXJnaW4tdG9wOiAyMHB4O1xufVxuICBcbi5pbGx1c3RyYXRpb24tc2VjdGlvbiB7XG4gIGZsZXg6IDE7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgcGFkZGluZzogNTBweDtcbn1cbiAgXG4uaWxsdXN0cmF0aW9uLXNlY3Rpb24gaW1nIHtcbiAgbWF4LXdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IGF1dG87XG59XG5cbi5sb2dpbi1sb2dvIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG1hcmdpbjogMCBhdXRvIDMwcHg7XG4gIG1heC13aWR0aDogODBweDtcbiAgaGVpZ2h0OiBhdXRvO1xufVxuXG4ubG9nbzIge1xuICBib3JkZXItcmFkaXVzOiAyMHB4O1xuICB3aWR0aDogOTUlO1xuICBoZWlnaHQ6IGF1dG87XG59XG5cbi5sb2dpbi10aXRsZSB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbWFyZ2luOiA1MHB4IGF1dG87XG4gIG1hcmdpbi10b3A6IC0zNXB4O1xufVxuXG4uYnV0IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI0Q5RDlEOTtcbiAgYm9yZGVyOiBub25lO1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIGJvcmRlci1yYWRpdXM6IDUwcHg7XG4gIG1hcmdpbi10b3A6IDEwJTtcbiAgaGVpZ2h0OiA2JTtcbiAgd2lkdGg6IDUwJTtcbiAgbWFyZ2luLWxlZnQ6IDI1JTtcbiAgdHJhbnNpdGlvbjogYmFja2dyb3VuZC1jb2xvciAwLjNzIGVhc2UsIGJveC1zaGFkb3cgMC4zcyBlYXNlO1xufVxuXG4uYnV0OmhvdmVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI0IwQjBCMDtcbiAgY29sb3I6ICNmZmY7XG4gIHRyYW5zZm9ybTogc2NhbGUoMS4wNSk7XG4gIGJveC1zaGFkb3c6IDAgOHB4IDE1cHggcmdiYSgwLCAwLCAwLCAwLjIpO1xufVxuXG4uY2FzZSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIG1hcmdpbjogMzVweDtcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xuICBoZWlnaHQ6IDI1cHg7XG4gIHdpZHRoOiAyNTBweDtcbn1cblxuLmxhc3RidXQge1xuICBkaXNwbGF5OiBmbGV4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5O1xuICBtYXJnaW4tdG9wOiA0JVxufSJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==*/
