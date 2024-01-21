@@ -26,6 +26,7 @@ class CreateProductType extends AbstractType
             ->add('attachmentFile', VichFileType::class, [
                 'required' => false,
                 'label' => 'Product Attachment',
+                'allow_delete'  => false, // not mandatory, default is true
             ])
             ->add('type')
             ->add('game_character')

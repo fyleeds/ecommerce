@@ -24,6 +24,7 @@ class UserType extends AbstractType
             ->add('pfpFile', VichFileType::class, [
                 'required' => false,
                 'label' => 'Pfp Attachment',
+                'allow_delete'  => false, // not mandatory, default is true
             ])
         ;
     }
