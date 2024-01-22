@@ -1,14 +1,14 @@
 {
-  "assets/app.css": "/assets/app.css",
-  "assets/app.js": "/assets/app.js",
-  "assets/register.css": "/assets/register.css",
-  "assets/login.css": "/assets/login.css",
-  "assets/home.css": "/assets/home.css",
-  "assets/shoppingcart.css": "/assets/shoppingcart.css",
-  "assets/cartvalidate.css": "/assets/cartvalidate.css",
-  "assets/account.css": "/assets/account.css",
-  "assets/sell.css": "/assets/sell.css",
-  "assets/product.css": "/assets/product.css",
-  "assets/product_edit.css": "/assets/product_edit.css",
-  "assets/runtime.js": "/assets/runtime.js"
+  "assets/app.css": "/assets/app.77cddc12.css",
+  "assets/app.js": "/assets/app.4fe7be59.js",
+  "assets/register.css": "/assets/register.17e1af03.css",
+  "assets/login.css": "/assets/login.e67e79ed.css",
+  "assets/home.css": "/assets/home.5a6f64e5.css",
+  "assets/shoppingcart.css": "/assets/shoppingcart.28aca338.css",
+  "assets/cartvalidate.css": "/assets/cartvalidate.8267d626.css",
+  "assets/account.css": "/assets/account.ac1245d0.css",
+  "assets/sell.css": "/assets/sell.0759d925.css",
+  "assets/product.css": "/assets/product.7dece9ee.css",
+  "assets/product_edit.css": "/assets/product_edit.1e962652.css",
+  "assets/runtime.js": "/assets/runtime.62bcf186.js"
 }
