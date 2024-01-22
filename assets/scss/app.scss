@@ -14,11 +14,11 @@ body {
   
   .logo-section {
     display: flex;
-    align-items: center; /* Cela aligne verticalement l'image et le texte */
+    align-items: center;
   }
   
   .logo-section img {
-    height: 40px; /* Ajustez la taille selon votre logo */
+    height: 40px; 
     margin-right: 10px;
   }
   
@@ -47,8 +47,8 @@ body {
   
   .user-section {
     display: flex;
-    align-items: center; /* Cela va centrer les icônes verticalement dans le conteneur */
-    justify-content: center; /* Cela va centrer les icônes horizontalement dans le conteneur */
+    align-items: center;
+    justify-content: center;
   }
   
   .user-section a {
