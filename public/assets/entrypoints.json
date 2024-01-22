@@ -2,83 +2,83 @@
   "entrypoints": {
     "app": {
       "js": [
-        "/assets/runtime.62bcf186.js",
-        "/assets/app.4fe7be59.js"
+        "/assets/runtime.js",
+        "/assets/app.js"
       ],
       "css": [
-        "/assets/app.77cddc12.css"
+        "/assets/app.css"
       ]
     },
     "register": {
       "js": [
-        "/assets/runtime.62bcf186.js"
+        "/assets/runtime.js"
       ],
       "css": [
-        "/assets/register.17e1af03.css"
+        "/assets/register.css"
       ]
     },
     "login": {
       "js": [
-        "/assets/runtime.62bcf186.js"
+        "/assets/runtime.js"
       ],
       "css": [
-        "/assets/login.e67e79ed.css"
+        "/assets/login.css"
       ]
     },
     "home": {
       "js": [
-        "/assets/runtime.62bcf186.js"
+        "/assets/runtime.js"
       ],
       "css": [
-        "/assets/home.5a6f64e5.css"
+        "/assets/home.css"
       ]
     },
     "shoppingcart": {
       "js": [
-        "/assets/runtime.62bcf186.js"
+        "/assets/runtime.js"
       ],
       "css": [
-        "/assets/shoppingcart.28aca338.css"
+        "/assets/shoppingcart.css"
       ]
     },
     "cartvalidate": {
       "js": [
-        "/assets/runtime.62bcf186.js"
+        "/assets/runtime.js"
       ],
       "css": [
-        "/assets/cartvalidate.8267d626.css"
+        "/assets/cartvalidate.css"
       ]
     },
     "account": {
       "js": [
-        "/assets/runtime.62bcf186.js"
+        "/assets/runtime.js"
       ],
       "css": [
-        "/assets/account.ac1245d0.css"
+        "/assets/account.css"
       ]
     },
     "sell": {
       "js": [
-        "/assets/runtime.62bcf186.js"
+        "/assets/runtime.js"
       ],
       "css": [
-        "/assets/sell.0759d925.css"
+        "/assets/sell.css"
       ]
     },
     "product": {
       "js": [
-        "/assets/runtime.62bcf186.js"
+        "/assets/runtime.js"
       ],
       "css": [
-        "/assets/product.7dece9ee.css"
+        "/assets/product.css"
       ]
     },
     "product_edit": {
       "js": [
-        "/assets/runtime.62bcf186.js"
+        "/assets/runtime.js"
       ],
       "css": [
-        "/assets/product_edit.1e962652.css"
+        "/assets/product_edit.css"
       ]
     }
   }
