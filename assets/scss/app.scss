@@ -54,17 +54,35 @@ body {
   .user-section a {
     text-decoration: none;
     font-size: 24px;
-    margin-left: 15px;
+    margin-left: 40px;
+    
   }
   
-  .utilisateur {
-    margin-right: 40px;
-    width: 44%;
+  .user {
+    // margin-right: 40px;
+    width: 90%;
+    transition: transform 0.3s ease;
   }
   
-  .sac {
-    margin-right: 40px;
-    width: 35%;
+  .bag {
+    // margin-right: 40px;
+    width: 95%;
+    transition: transform 0.3s ease;
+  }
+
+  // .sell {
+  //   width: 5%;
+  // }
+
+  .log_out {
+    width: 90%;
+    transition: transform 0.3s ease;
+  }
+
+  .user:hover,
+  .bag:hover,
+  .log_out:hover {
+      transform: scale(1.1); /* Agrandit l'image de 10% */
   }
 
   a {
