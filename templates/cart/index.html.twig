@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CartController!{% endblock %}
+{% block title %}Amiishop Cart{% endblock %}
 
 {% block stylesheets %}
     {{ parent() }}
@@ -15,28 +15,21 @@
         {{ message }}
     </div>
     {% endfor %}
-    {% for message in app.flashes('success') %}
-
-        {{ message }}
-
-    {% endfor %}
-    {# {% endif %} #}
 
     {% if cart|length > 0 %}
         <div class="items">
             {% for item in cart %}
                 <div class="item">
                     <div class="infocontainer">
-                        <p>{{ item.product.title }}</p>
-                        <p>Price à l'unité: {{ item.product.price|number_format(2,',',' ') }}€</p>
-                        <p>Quantity: {{ item.quantity }}</p>
-                        <p>Total: {{ (item.totalPrice)|number_format(2,',',' ') }}€</p>
-                        <p>Created At: {{ item.product.createdAt|date('Y-m-d H:i:s') }} </p>
-                        <p>
-                            <a href="{{ path('cart_remove',{id:item.product.id}) }}">Retirer totalement du panier / </a>
-                            <a href="{{ path('cart_add',{id:item.product.id}) }}">Ajouter un autre au panier / </a>
-                            <a href="{{ path('cart_decrease',{id:item.product.id}) }}">Diminuer quantité</a>
+                        <p class="nameamiibo"><strong>{{ item.product.title }}</strong> - {{ item.product.price|number_format(2,',',' ') }} €</p>
+                        <p class="createdat">Created At: {{ item.product.createdAt|date('Y-m-d H:i:s') }} </p>
+                        <p class="info"><a href="{{ path('product_index',{id:item.product.id}) }}">more info</a></p>
+                        <p class="quantity"> Quantity: <strong>{{ item.quantity }}</strong> 
+                            <a class='i' href="{{ path('cart_add',{id:item.product.id}) }}"><img src="{{ asset('img/add.png') }}" alt="add"></a>
+                            <a href="{{ path('cart_decrease',{id:item.product.id}) }}"><img src="{{ asset('img/minus.png') }}" alt="minus"></a>
+                            <a href="{{ path('cart_remove',{id:item.product.id}) }}"><img src="{{ asset('img/delete.png') }}" alt="delete"></a>
                         </p>
+                        <p class="total">Total: <strong>{{ (item.totalPrice)|number_format(2,',',' ') }}€</strong></p>
                     </div>
                     <div class="imagecontainer">
                         <img src="{{ asset('uploads/attachments/' ~ item.product.attachment) }}" 
