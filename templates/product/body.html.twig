@@ -8,26 +8,25 @@
         <div class="product-details">
             <h3>{{ product.title }}</h3>
             <p><strong>Description :</strong> {{ product.content }}</p>
-            <p><strong>Prix :</strong> {{ product.price|number_format(2, ',', ' ') }}€</p>
-            <p><strong>En Stock :</strong> {{ product.stock.quantity }}</p>
-            <p><strong>Date de Sortie :</strong> {{ product.releaseDate|date('d/m/Y') }}</p>
-            <p><strong>Crée le :</strong> {{ product.createdAt|date('d/m/Y') }}</p>
-            <p><strong>Nom de l'Auteur :</strong> {{ product.author.username }}</p>
-            <p><strong>Série :</strong> {{ product.category.name }}</p>
+            <p><strong>Price :</strong> {{ product.price|number_format(2, ',', ' ') }}€</p>
+            <p><strong>In stock :</strong> {{ product.stock.quantity }}</p>
+            <p><strong>Release date :</strong> {{ product.releaseDate|date('d/m/Y') }}</p>
+            <p><strong>Created the :</strong> {{ product.createdAt|date('d/m/Y') }}</p>
+            <p><strong>Name of the author :</strong> {{ product.author.username }}</p>
+            <p><strong>Series :</strong> {{ product.category.name }}</p>
             <p><strong>Type :</strong> {{ product.type }}</p>
             <p><strong>Character :</strong> {{ product.gameCharacter }}</p>
 
             {% if product.author.id == user_id %}
               <div class="info_admin">
-                <a href="{{ path('edit_product', {id: product.id}) }}" class="btn">Editer produit</a>
-                <a href="{{ path('homepage') }}" class="btn">Retourner à la page principale</a>
+                <a href="{{ path('edit_product', {id: product.id}) }}" class="btn">Edit product</a>
+                <a href="{{ path('homepage') }}" class="btn">Return to home page</a>
               </div>
             {% else %}
 
               <div class="info">
-                <a href="{{ path('account_user_index', {id: product.author.id}) }}" class="btn">Info auteur</a>
-                <a href="{{ path('cart_add', {id: product.id}) }}" class="btn">Ajouter au panier</a>
-                {# <a href="{{ path('homepage') }}" class="btn">Retourner à la page principale</a> #}
+                <a href="{{ path('account_user_index', {id: product.author.id}) }}" class="btn">Info author</a>
+                <a href="{{ path('cart_add', {id: product.id}) }}" class="btn">Add to cart</a>
               </div>
 
             {% endif %}
@@ -46,5 +45,5 @@
           
     </div>
 {% else %}
-    <p>Aucun produit trouvé.</p>
+    <p>No product found.</p>
 {% endif %}

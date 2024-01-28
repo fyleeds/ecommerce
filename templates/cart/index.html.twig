@@ -41,12 +41,12 @@
             {% endfor %}
         </div>
         <div class="action">
-            <a href="{{ path('cart_validate_index') }}">Valider commande ! </a>
-            <a href="{{ path('removeCart') }}">Retirer tout du panier</a>
-            <p>Total du Panier : {{ total_price|number_format(2,',',' ') }}€</p>
+            <a href="{{ path('cart_validate_index') }}">validate the order ! </a>
+            <a href="{{ path('removeCart') }}">Remove everything from cart</a>
+            <p>Total cart Price : {{ total_price|number_format(2,',',' ') }}€</p>
         </div>
     {% else %}
-        <h2 class="paniervide"> Panier vide <h2>
+        <h2 class="paniervide">empty cart !<h2>
     {% endif %}
 
 

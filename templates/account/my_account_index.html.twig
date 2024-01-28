@@ -57,11 +57,11 @@
     <hr>
     {# {{ dump(products) }} #}
     {% if products|length == 0 %}
-    <p>Aucun produit trouvé.</p>
+    <p>no product found.</p>
     <hr>
     {% elseif products|length == 1 %}
     
-        <p>Il y a un produit :</p>
+        <p>there is a product :</p>
         {% for product in products %}
             {# {{ dump(product) }} #}
             {% include 'product/body.html.twig' with {'product': product,'user_id': user_id} only %}
@@ -69,7 +69,7 @@
         <hr>
     {% else %}
     {# {{ dump(products) }} #}
-        <p>Il y a plusieurs produits :</p>
+        <p>there are several products :</p>
         {% for product in products %}
             {# {{ dump(product) }} #}
             {% include 'product/body.html.twig' with {'product': product,'user_id': user_id} only %}
@@ -78,28 +78,32 @@
     {% endif %}
 
     {% if invoices|length == 0 %}
-    <p>Aucune facture trouvée.</p>
+    <p>no invoices found.</p>
     {# <hr> #}
     {% elseif invoices|length == 1 %}
-        <p>Il y a une facture :</p>
+        <p>there is an invoice :</p>
         {# <hr> #}
         {% for invoice in invoices %}
-            <p><strong>Date de la transaction :</strong> {{ invoice.dateTransaction|date('d/m/Y H:i') }}</p>
-            <p><strong>Prix total :</strong> {{ invoice.totalPrice }} €</p> {# Ajuster le formatage de la monnaie si nécessaire #}
-            <p><strong>Adresse :</strong> {{ invoice.address }}</p>
-            <p><strong>Ville :</strong> {{ invoice.town }}</p>
-            <p><strong>Code postal :</strong> {{ invoice.postalCode }}</p>
+            <div class="facture">
+                <p><strong>transaction date :</strong> {{ invoice.dateTransaction|date('d/m/Y H:i') }}</p>
+                <p><strong>total price :</strong> {{ invoice.totalPrice }} €</p> {# Ajuster le formatage de la monnaie si nécessaire #}
+                <p><strong>address :</strong> {{ invoice.address }}</p>
+                <p><strong>town :</strong> {{ invoice.town }}</p>
+                <p><strong>ZIP code :</strong> {{ invoice.postalCode }}</p>
+            </div>
         {% endfor %}
         {# <hr> #}
     {% else %}
-        <p>Il y a plusieurs factures :</p>
+        <p>there are several invoices :</p>
         {# <hr> #}
         {% for invoice in invoices %}
-            <p><strong>Date de la transaction :</strong> {{ invoice.dateTransaction|date('d/m/Y H:i') }}</p>
-            <p><strong>Prix total :</strong> {{ invoice.totalPrice|number_format(2, '.', ',') }} €</p> {# Ajuster le formatage de la monnaie si nécessaire #}
-            <p><strong>Adresse :</strong> {{ invoice.address }}</p>
-            <p><strong>Ville :</strong> {{ invoice.town }}</p>
-            <p><strong>Code postal :</strong> {{ invoice.postalCode }}</p>
+            <div class="facture">
+                <p><strong>transaction date :</strong> {{ invoice.dateTransaction|date('d/m/Y H:i') }}</p>
+                <p><strong>total price :</strong> {{ invoice.totalPrice|number_format(2, '.', ',') }} €</p> {# Ajuster le formatage de la monnaie si nécessaire #}
+                <p><strong>address :</strong> {{ invoice.address }}</p>
+                <p><strong>town :</strong> {{ invoice.town }}</p>
+                <p><strong>ZIP code :</strong> {{ invoice.postalCode }}</p>
+            </div>
             {# <hr> #}
         {% endfor %}
     {% endif %}

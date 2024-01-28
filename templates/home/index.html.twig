@@ -33,7 +33,7 @@
                 </a>
             </div>            
         {% else %}
-            <p>Aucun produit trouvé.</p>
+            <p>No product found.</p>
         {% endfor %}
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -54,10 +54,3 @@
     </script>
 {% endblock %}
 
-{# <p><strong>Connecté en tant que :</strong>{{ userEmail }}</p>
-        <hr>
-        <a href="{{ path('app_logout') }}">Se Deconnecter</a>
-        <a href="{{ path('sell_index') }}">Vendre</a>
-        <a href="{{ path('cart_index') }}">Mon Panier</a>
-        <a href="{{ path('my_account_index') }}">Mon Compte</a>
-        <hr> #}

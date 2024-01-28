@@ -41,11 +41,11 @@
     {% endif %}
 
     {% if products|length == 0 %}
-    <p>Aucun produit trouvé.</p>
+    <p>no product found.</p>
     <hr>
     {% elseif products|length == 1 %}
     
-        <p>Il y a un produit :</p>
+        <p>there is a product :</p>
         {% for product in products %}
             {# {{ dump(product) }} #}
             {% include 'product/body.html.twig' with {'product': product, 'user_id': user_id} only %}
@@ -54,7 +54,7 @@
         <hr>
     {% else %}
     {# {{ dump(products) }} #}
-        <p>Il y a plusieurs produits :</p>
+        <p>there are several products :</p>
         {% for product in products %}
             {# {{ dump(product) }} #}
             {% include 'product/body.html.twig' with {'product': product, 'user_id': user_id} only %}
