@@ -46,6 +46,9 @@ class Product
     private ?string $attachment = null;
 
     // NOTE: This is not a mapped field of entity metadata, just a simple property.
+    #[Assert\File(maxSize: '1024k')]
+    #[Assert\File(mimeTypes: ["image/png", "image/jpeg", "image/jpg"])]
+    #[Assert\File(mimeTypesMessage: "Please upload a valid image (PNG or JPEG")]
     #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'attachment')]
     private ?File $attachmentFile = null;
 
