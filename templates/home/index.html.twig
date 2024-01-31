@@ -43,7 +43,7 @@
     $(document).ready(function() {
         $("#searchInput").on("keyup", function() {
         var searchText = $(this).val().toLowerCase();
-        $(".case").each(function() {
+        $(".box2").each(function() {
             var Name = $(this).data("name").toLowerCase();
             if (Name.indexOf(searchText) === -1) {
                 $(this).hide();
