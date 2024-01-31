@@ -29,11 +29,11 @@
         <a href="{{ path('cart_index') }}">
             <img src="{{ asset('img/sac.png') }}" alt="bag" class="bag">
         </a>
-        {# <a href="{{ path('sell_index') }}">S
-            <img src="{{ asset('img/vendre.png') }}" alt="sell" class="sell">
-        </a> #}
         <a href="{{ path('app_logout') }}">
             <img src="{{ asset('img/deconnecter.png') }}" alt="log_out" class="log_out">
+        </a>
+        <a href="{{ path('sell_index') }}">S
+            <img src="{{ asset('img/vente.png') }}" alt="sell" class="sell">
         </a>
     {% else %}
         <a href="{{ path('app_login') }}">LOGIN</a>
@@ -49,6 +49,11 @@
     <img  class="logofooter" src="{{ asset('img/logo.png') }}" alt="Amiishop Logo">
     <p class="textfooter">Amiishop</p>
     <div class="bar"></div>
+    <div class="footer_theme">
+        <p>navigation</p>
+        <p>themes</p>
+        <p>Contact us</p>
+    </div>
 </div>
 </body>
 </html>

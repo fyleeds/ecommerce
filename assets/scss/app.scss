@@ -9,94 +9,96 @@ body {
   min-height: 40vh;
 }
 
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f8f8;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
   
-  .logo-section {
-    display: flex;
-    align-items: center;
-  }
+.logo-section {
+  display: flex;
+  align-items: center;
+}
   
-  .logo-section img {
-    height: 40px; 
-    margin-right: 10px;
-  }
+.logo-section img {
+  height: 40px; 
+  margin-right: 10px;
+}
   
-  .search-section {
-    display: flex;
-    border: 1px solid #cccccc;
-    border-radius: 20px;
-    overflow: hidden;
-    /* margin-left: 65%; */
-    align-items: center;
-  }
+.search-section {
+  display: flex;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  overflow: hidden;
+  /* margin-left: 65%; */
+  align-items: center;
+}
   
-  .search-section input[type="search"] {
-    border: none;
-    padding: 5px 10px;
-    outline: none;
-    /* border-radius: 5%; */
-  }
+.search-section input[type="search"] {
+  border: none;
+  padding: 5px 10px;
+  outline: none;
+  /* border-radius: 5%; */
+}
   
-  .search-section button {
-    background-color: #e7e7e7;
-    border: none;
-    padding: 5px 15px;
-    cursor: pointer;
-  }
+.search-section button {
+  background-color: #e7e7e7;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+}
   
   .user-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
   
   .user-section a {
-    text-decoration: none;
-    font-size: 24px;
-    margin-left: 40px;
-    
-  }
+  text-decoration: none;
+  font-size: 24px;
+  margin-left: 40px; 
+}
+
+.user {
+  // margin-right: 40px;
+  width: 90%;
+  transition: transform 0.3s ease;
+}
   
-  .user {
-    // margin-right: 40px;
-    width: 90%;
-    transition: transform 0.3s ease;
-  }
-  
-  .bag {
-    // margin-right: 40px;
-    width: 95%;
-    transition: transform 0.3s ease;
-  }
+.bag {
+  // margin-right: 40px;
+  width: 95%;
+  transition: transform 0.3s ease;
+}
 
-  // .sell {
-  //   width: 5%;
-  // }
+.sell {
+  width: 8%;
+  transition: transform 0.3s ease;
+}
 
-  .log_out {
-    width: 90%;
-    transition: transform 0.3s ease;
-  }
+.log_out {
+  width: 90%;
+  transition: transform 0.3s ease;
+}
 
-  .user:hover,
-  .bag:hover,
-  .log_out:hover {
-      transform: scale(1.1); /* Agrandit l'image de 10% */
-  }
+.user:hover,
+.bag:hover,
+.log_out:hover,
+.sell:hover {
+  transform: scale(1.1); /* Agrandit l'image de 10% */
+}
 
-  a {
-    color: black;
-    text-decoration: none;
-  }
+a {
+  color: black;
+  text-decoration: none;
+}
 
- .footer{
+.footer{
   flex-shrink: 0;
   margin-top: 50px;
   width: 100%;
@@ -105,23 +107,31 @@ body {
   display: flex;
   justify-content: left;
   align-items: center;
- }
+}
 
- .logofooter{
+.logofooter{
   width: 200px;
   height: 200px;
   background-color: #f8f8f8;
   margin-left: 7.5%;
  }
 
- .textfooter{
+.textfooter{
   font-size: 80px;
  }
 
- .bar{
+.bar{
   margin-left: 16.5%;
   height: 200px;
   width: 1px;
   background-color: black;
+}
 
- }
+.footer_theme {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // background-color: aqua;
+  width: 35%;
+  margin-left: 6%;
+}
