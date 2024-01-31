@@ -15,6 +15,7 @@
     <div class="seachebar">
         <input type="text" placeholder="Rechercher un amiibo" name="search" class="searchbar" id="searchInput">
     </div>
+    <div class="casess">
     <div class="cases">
         {% for product in products %}
             <div class="case" data-name="{{ product.title }}">
@@ -35,6 +36,7 @@
         {% else %}
             <p>No product found.</p>
         {% endfor %}
+    </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>

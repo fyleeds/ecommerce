@@ -54,14 +54,14 @@
 
         </div>
     </div>
-    <hr>
+    {# <hr> #}
     {# {{ dump(products) }} #}
     {% if products|length == 0 %}
     <p>no product found.</p>
     <hr>
     {% elseif products|length == 1 %}
     
-        <p>there is a product :</p>
+        <h1 class="title3">there is a product :</h1>
         {% for product in products %}
             {# {{ dump(product) }} #}
             {% include 'product/body.html.twig' with {'product': product,'user_id': user_id} only %}
