@@ -1,3 +1,6 @@
+
+
+{% if product %}
 <div class="main-content">
     <img src="{{ asset('uploads/attachments/' ~ product.attachment) }}" 
     onerror="this.onerror=null; this.src='{{ product.attachment }}';" 
@@ -33,17 +36,6 @@
         </div>
     </div>
 </div>
-
-{% if product %}
-    <div class="product">
-
-        {% if product.author.id == user_id %}
-
-        {% else %}
-        
-        {% endif %}
-          
-    </div>
 {% else %}
     <p>No product found.</p>
 {% endif %}
