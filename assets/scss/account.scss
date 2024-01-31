@@ -60,6 +60,60 @@ body {
   object-position: center; 
 }
 
-.facture{
+.facture {
   margin: 70px;
+}
+
+.detail {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  max-width: 900px;
+  height: 300px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #B6CDE8;
+  margin-top: 2%;
+  border-radius: 10px;
+}
+
+.detail2 {
+  display: block;
+  // align-items: center;
+  justify-content: center;
+  text-align: left;
+  // background-color: red; 
+  width: 38%;
+  // margin-left: 8%;
+
+}
+
+.detail3 {
+  // background-color: blue; 
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // border-left: 1px solid black; 
+
+}
+
+.detail4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px; 
+  height: 250px; 
+  object-fit: contain;
+  object-position: center;
+  background-color: #f8f8f8;
+  margin-right: 10%;
+}
+
+.title_product {
+  display: flex;
+  text-align: center;
+  margin-left: 2%;
+  margin-top: 3%;
+  // background-color: #B6CDE8;
 }

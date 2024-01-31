@@ -27,14 +27,24 @@
         {{ message }}
 
     {% endfor %}
-    <hr>
-    <h2>User Information</h2>
-    {% if user_found %}
-        <p><strong>Email:</strong> {{ user_found.email }}</p>
-        <p><strong>Username:</strong> {{ user_found.username }}</p>
+    {# <hr> #}
+<div class="detail">
+    <div class="detail3">
+        <div class="detail4">
         <img src="{{ asset('users/' ~ user_found.pfp) }}"
-        alt="{{ user_found.username }}" 
-        <hr>
+        alt="{{ user_found.username }}" >
+        </div>
+    </div>
+    <div class="detail2">
+        <h2>User Information</h2>
+        {% if user_found %}
+            <p><strong>Email:</strong> {{ user_found.email }}</p>
+            <p><strong>Username:</strong> {{ user_found.username }}</p>
+            {# <img src="{{ asset('users/' ~ user_found.pfp) }}"
+            alt="{{ user_found.username }}" > #}
+            {# <hr> #}
+    </div>
+</div>
     {% else %}
         <p>User not found.</p>
         <hr>
@@ -54,7 +64,7 @@
         <hr>
     {% else %}
     {# {{ dump(products) }} #}
-        <p>there are several products :</p>
+        <h1 class="title_product">there are several products :</h1>
         {% for product in products %}
             {# {{ dump(product) }} #}
             {% include 'product/body.html.twig' with {'product': product, 'user_id': user_id} only %}
