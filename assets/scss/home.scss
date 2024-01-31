@@ -3,14 +3,14 @@ body {
     font-family: Arial, sans-serif;
   }
 
-.casess {
+.box {
     display: flex;
     justify-content: center;
     align-items: center;
     // background-color: aqua;
     margin-left: 1.5%;
 }
-.cases
+.box1
 {
     display: flex;
     // justify-content: center;
@@ -21,7 +21,7 @@ body {
     // margin-left: 10px;
 }
 
-.case
+.box2
 {
     margin: 10px;
   
@@ -69,7 +69,7 @@ body {
     margin: 0px;
 }
 
-.nom
+.name
 {
     font-size: 18px;
     font-weight: bold;
@@ -85,7 +85,7 @@ body {
     text-align: justify;
 }
 
-.prix {
+.price {
     font-size: 20px;
     font-weight: bold;
     position: absolute;
@@ -95,7 +95,7 @@ body {
     text-align: right;
 }
 
-.baniere{
+.baniere {
     display: flex;
     margin-top: 20px;
     margin-left: 5%;
@@ -108,7 +108,7 @@ body {
     border-radius: 30px;
 }
 
-.baniere img{
+.baniere img {
     width: 100%;
     margin-top: 100px;
     border-radius: 30px;
